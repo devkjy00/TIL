@@ -14,7 +14,7 @@ pt1 = namedtuple('Point', ['x', 'y'])
 pt2 = namedtuple('Point', ['x, y'])
 pt3 = namedtuple('Point', ['x y'])
 pt4 = namedtuple('Point', ['x y x class', rename=True])
-        # 중복되는 키나 예약어는 쓸 수 없지만 rename=True로 하면 새로운 변수명을 자동으로 만들어서 생성할 수 있다, Default는 False로 설정되어 있다
+        # 중복되는 키나 예약어는 쓸 수 없지만 rename=True로 하면 새로운 변수명을 \자동으로 만들어서 생성할 수 있다, Default는 False로 설정되어 있다
 p1 = pt1(x=10, y=35)
 p2 = pt2(20, 40)
 p3 = pt3(45, y=20)
