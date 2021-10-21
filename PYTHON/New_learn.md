@@ -1,0 +1,11 @@
+- iterable 호출시 실행되는 것
+    - 객체를 ***iter객체로 변환***하기 위해 --iter-- 메소드가 호출된다
+    - iter객체의 ***다음 노드를 얻기위해*** --next-- 메소드가 호출 된다
+    - 더 이상 가져올 노드가 없을 때 ***StopIteration exception*** 이 실행되서 루프를 멈춘다
+
+- Generator 
+    - 다른 iter객체와 다르게 for문에서 메모리를 유지하지 않아서 메모리를 적게 사용한다
+    - 매번 값을 가져와서 실행하기 위해 함수의 값들을 저장해야하기 때문에 느려질 수 있다.
+    - Generator는 인자로 받는 iter객체를 한 개씩 연산한다.(--next-- 메소드가 자동실행되지 않음)
+    - yield문은 인자인 iter객체가 마지막 시퀀스까지 연산이 끝날때 까지 객체의 값을 기억한다
+    - Generator Expression은 yield문 없이 간단하게 Generator를 생성한다
