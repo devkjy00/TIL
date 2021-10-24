@@ -1,12 +1,21 @@
-- async_iterable
+- ## in-place operation
+    - += 와 같은 연산자
+    - in-place연산자는 실행시 값을 다른 주소값에 생성하지 않고 원래 주소에 결과 값을 저장한다
+    - ***예외 사항***
+        - **Immtable(불변)변수** 일 때는 새로운 주소값에 결과값 생성
+        - 객체타입이 --iadd-- 메서드를 호출하지 않으면 x = x + 1 으로 실행된다(int...) 
+        - --iadd-- 메서드가 NotImplemented(지원하지 않는 연산) 를 반환하면 x = x + 1 으로 실행된다
+    - *값을 계속해서 연산하는 경우 in-place연산을 지원하는 타입을 쓰면 계속 같은 메모리주소의 값을 저장하기 때문에 메모리를 아낄 수 있겠다*
+- ## async_iterable
     - 비동기 이터레이터
     - aiter(), anext()메서드를 구현하는 객체
-- iterable 호출시 실행되는 것
+
+- ## iterable 호출시 실행되는 것
     - 객체를 ***iter객체로 변환***하기 위해 --iter-- 메소드가 호출된다
     - iter객체의 ***다음 노드를 얻기위해*** --next-- 메소드가 호출 된다
     - 더 이상 가져올 노드가 없을 때 ***StopIteration exception*** 이 실행되서 루프를 멈춘다
 
-- Generator 
+- ## Generator 
     - 다른 iter객체와 다르게 for문에서 메모리를 유지하지 않아서 메모리를 적게 사용한다
     - 매번 값을 가져와서 실행하기 위해 함수의 값들을 저장해야하기 때문에 느려질 수 있다.
     - Generator는 인자로 받는 iter객체를 한 개씩 연산한다.(--next-- 메소드가 자동실행되지 않음)
@@ -14,7 +23,7 @@
     - Generator Expression은 yield문 없이 간단하게 Generator를 생성한다
 
 
-- *args, **kwargs   
+- ## *args, **kwargs   
 
     -  args 는 *arguments 의 줄임말 사실상 * 다음 어떤문자열이와도 상관없다.
 이 지시어는 여러개의 인자를 팩킹해서 함수에 인자로 받고 언팩킹 할때 쓰인다
