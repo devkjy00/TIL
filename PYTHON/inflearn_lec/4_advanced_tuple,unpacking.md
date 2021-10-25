@@ -49,4 +49,3 @@ x, y, *rest = range(2)
     # 반환 값은 None
     ```
 
-    

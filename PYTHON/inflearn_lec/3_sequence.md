@@ -13,8 +13,7 @@
 ### 가변형, 불변형
 - 가변형 (mutable: [list, bytearray, array.array, memoryview, deque])
 - 불변형 (imutable: [tuple, str, bytes])
-- ### **그 외**
-    - 가변형(mutable: )
+
 
 ### 지능형 리스트(Comprehending Lists)
 - 데이터 양이 많을 수록 Comprehension을 사용하는 것이 조금 더 빠르다.
