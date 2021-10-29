@@ -46,7 +46,6 @@ https://soooprmx.com/python-namespace-and-variable-scope/
             y.append(x)
         return b
     # 함수 b의 관점에서 a는 nonlocal 범위이다
-    # 결과적으로는 호출 했을 때 a - b 순으로 순차 실행된다
     
     # a()를 호출, b함수를 변수에 할당한다
     closure = a()
