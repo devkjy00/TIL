@@ -63,7 +63,7 @@ https://soooprmx.com/python-namespace-and-variable-scope/
 
     ```
 - 클래스를 활용한 예
-    ```py
+    ```
     class Averager():
         def __init__(self) -> None:
             self._series = []
