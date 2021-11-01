@@ -1,4 +1,75 @@
 
+- ## 디스크립터(Descriptor)
+    -  ***읽거나, 쓰거나, 삭제하는 메서드중 하나라도 미리 정의된 객체를 디스크립터(Descriptor)*** 라고 한다
+    - @classmethod, @staticmethod, @property 구현에 사용된다
+    - 디스크립터를 사용하려면, 다른 클래스에 클래스 변수로 저장해야 한다
+    - 장점
+        - 디스크립터는 동적으로 값을 연산할 때 이점이 있다
+        - 함수나 메소드를 써서 동적으로 계산할 수 도 있지만 디스크립터를 사용하면 클래스의 개인속성값들에 접근할 수 있기때문에 함수보다 안전하다
+        - 메서드로도 할 수 있지만 속성에 접근하는 방식으로 호출할 수 있기 때문에 직관적이고 편리하다
+            - 메서드는 ```___str___```과 같이 인스턴스의 전체 속성값을 다루는 느낌
+            - 디스크립터는 속성값 하나를 잡고 다루는 
+    - 디스크립터의 ```__get__()과 __set__()```메서드는 공용속성으로 접근할 때 호출 된다
+    - 예제
+    ```py
+    class DirectorySize:
+
+        def __get__(self, obj, objtype=None):
+            self.sizeofdir = len(os.listdir(obj.dirname))
+            return sizeofdir
+
+        def __set__(self, obj, value)
+            self.sizeofdir = value
+
+    class Directory:
+        size = DirectorySize()              
+        # Descriptor instance
+
+        def __init__(self, dirname):
+            self.dirname = dirname          
+            # Regular instance attribute
+    
+    dir = Directory('songs')
+    print(dir.size)
+    dir.size = 
+    ```
+    - ```__get___(self, obj, objtype=None)```
+        - self : 상위 클래스의 속성이면서 하위 클래스의 인스턴스이다 (size)
+        - obj : 상위 클래스의 인스턴스 (dir)
+        - objtype : 상위 클래스 (Directory)
+    - ```__set___(self, obj, value)```
+        - self :  ~~
+        - obj : ~~
+        - value : 대입할 값
+    
+    - 사용자 정의 이름
+        - 디스크립터를 호출할 때 하나의 식별자(속성명을대신하는)로만 호출 할 수 있다
+        - 
+
+- ## property
+    - 프로퍼티(property)는 일부 객체 지향 프로그래밍 언어에서 필드(데이터 멤버)와 메소드 간 기능의 중간인 클래스 멤버의 특수한 유형이다. 프로퍼티의 읽기와 쓰기는 일반적으로 게터(getter)와 세터(setter) 메소드 호출로 변환된다
+    ```py
+    class a():
+        def __init__(self) -> None:
+            self._x = 1
+
+        @ property
+        def x(self):
+            print('getter', self._x)
+
+        @ x.setter
+        def x(self, num):
+            self._x = num
+            print('setter')
+
+    b = a()
+    b.x = 10
+    b.x
+    ```
+    - x메소드 위에 @property 데코레이터를 선언함으로써 @x.setter가 데코레이터가 사용가능해진다
+    - 사실상 메소드를 호출하는 방식만 바꿔진거고 값에 접근하는 명령문은 직접 작성해야한다
+    - 속성 값을 _(언더바)로 직접 접근하지 못하게 하고 메서드로 의도한 방향으로만 접근하게 하는 좋은 방법이다
+    - 하나의 속성에 해당하는 결과만 구현할 수 있어서 재사용성이 매우 떨어지고 속성마다 작성하면 가독성이 매우 떨어진다
 
 - ## mutablity, immutablity
     - 객체가 가리키는 값이 바뀐다는 것은 그 주소값을 참조하고 있는 모든 객체의 값이 바뀐다는 뜻이다
