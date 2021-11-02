@@ -63,7 +63,7 @@ https://soooprmx.com/python-namespace-and-variable-scope/
 
     ```
 - 클래스를 활용한 예
-    ```
+    ```py
     class Averager():
         def __init__(self) -> None:
             self._series = []
@@ -92,9 +92,9 @@ https://soooprmx.com/python-namespace-and-variable-scope/
         def sum(x):
             a += 1
             b += x
-            return total / cnt
+            return a + b
         return sum
-    avg = closure_ex():
+    avg = closure_ex()
     avg(2)
     # 오류 발생 : nonlocal변수를 참조하지 못하고 local변수 a,b로 값을 인식하기 때문에 오류가 발생한다
     # 해결법 : nonlocal a,b 를 선언해서 자유 변수의 값을 참조하도록 만든다
