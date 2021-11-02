@@ -1,4 +1,30 @@
 
+- ## 메타 클래스(Meta Class)
+    - 클래스가 인스턴스를 생성하듯이 클래스를 생성하느 또다른 클래스다
+    ```py
+    type(int)
+    # -> class 'type'을 반환한다
+    # type()함수가 다른 클래스를 만드는 클래스이다
+
+    type('', (), {})
+    # '클래스명', (클래스상속), {속성명:값, 메서드명:함수}
+    # 위와 같이 선언해서 동적으로 클래스를 생성할 수 있다
+    ```
+    - 커스텀 메타 클래스 만들기
+    ```py
+    class MetaClass(type):
+        # type클래스를 상속받아야 한다
+        def __new__(cls, clsname, bases, dct):
+            # __new__를 오버라이딩 한다
+            # 클래스명, 상속, 속성/메서드를 입력
+            return type.__new__(cls, clsname, bases, dct)
+
+    class temp(metaclass=MetaClass)
+        x = 1
+    a = temp()
+    ```
+
+
 - ## 디스크립터(Descriptor)
     -  ***읽거나, 쓰거나, 삭제하는 메서드중 하나라도 미리 정의된 객체를 디스크립터(Descriptor)*** 라고 한다
     - @classmethod, @staticmethod, @property 구현에 사용된다
