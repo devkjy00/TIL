@@ -113,7 +113,34 @@
     
     - 사용자 정의 이름
         - 디스크립터를 호출할 때 하나의 식별자(속성명을대신하는)로만 호출 할 수 있다
-        - 
+    - 활용
+    ```py
+    class desc():
+    def __init__(self) -> None:
+        self.data = {}
+    # 사전형 값에는 item을 붙혀야 한다
+    def __getitem__(self, key):
+        return self.data[key]
+
+    def __setitem__(self, key, value):
+        self.data[key] = value
+
+    def __repr__(self):
+        return f"{self.data}"
+
+
+    def sort_num(numbers: dict, ranks: desc):
+        nums = list(numbers.values())
+
+        for i, num in enumerate(nums, 1):
+            ranks[num] = i
+        # 디스크립터 호출 __setitem__실행
+
+    num = {1: 3, 2: 2, 3: 1}
+    rank = desc()
+    sort_num(num, rank)
+    print(rank)
+    ```
 
 - ## property
     - 프로퍼티(property)는 일부 객체 지향 프로그래밍 언어에서 필드(데이터 멤버)와 메소드 간 기능의 중간인 클래스 멤버의 특수한 유형이다. 프로퍼티의 읽기와 쓰기는 일반적으로 게터(getter)와 세터(setter) 메소드 호출로 변환된다
