@@ -27,7 +27,7 @@ for k, v in source:
 
 # Use Setdefault
 for k, v in source:
-    dict2.setdefault(k, [])
+    dict2.setdefault(k, []).append(v)
 # setdefault()메서드로 k인 키가 없으면 []를 밸류로 선언한다
 # 값이 있으면 동작하지 않는다
 ```
