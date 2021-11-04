@@ -27,8 +27,9 @@ for k, v in source:
 
 # Use Setdefault
 for k, v in source:
-    dict2.setdefault(k, [].append(v))
-# setdefault()메서드로 같은 값을 키값으로 가진 밸류를 하나의 키값으로 선언한다
+    dict2.setdefault(k, [])
+# setdefault()메서드로 k인 키가 없으면 []를 밸류로 선언한다
+# 값이 있으면 동작하지 않는다
 ```
 # immutable Dict
 
