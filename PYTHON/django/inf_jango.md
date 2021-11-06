@@ -7,9 +7,6 @@
 - django-admin startproject 파일명
 - 파일명으로 생성된 디렉토리는 프로젝트디렉토리를 담고있는 단순한 컨테이너 이다
 
-
-
-
 django-admin 
 - 작업을 관리하기위한 커멘드라인 유틸리티이다
 
