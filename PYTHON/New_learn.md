@@ -1,3 +1,9 @@
+- ## 파이썬의 인덱싱
+    - 인덱싱 하면 인덱스 객체가 사용되고 특정 매직메소드를 호출한다
+    - 대입식에서 오른쪽의 이터러블한 객체를 읽어서 값으로 만든다
+        - list()와 같은 역할을 한다
+
+
 - ## python Garbage Collection
     - reference counting과 garbage collection을 이용해서 메모리를 할당,해제하는 장치이다
     
