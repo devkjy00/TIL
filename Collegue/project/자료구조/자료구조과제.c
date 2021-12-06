@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 typedef struct treeNode
 {
     char key;
@@ -43,11 +44,13 @@ void deleteNode(treeNode *root, element key)
         else
             p = p->right;
     }
+
     if (p == NULL)
     {
         printf("\n 찾는 키가 이진트리에 없습니다!!");
         return;
     }
+
     if ((p->left == NULL) && (p->right == NULL))
     {
         if (parent != NULL)
@@ -76,6 +79,7 @@ void deleteNode(treeNode *root, element key)
         else
             root = child;
     }
+
     else
     {
         succ_parent = p;
@@ -95,6 +99,55 @@ void deleteNode(treeNode *root, element key)
     free(p);
 }
 
+treeNode *searchBST(treeNode *root, char x)
+{
+    treeNode *p;
+    p = root;
+    while (p != NULL)
+    {
+        if (x < p->key)
+            p = p->left;
+        else if (x == p->key)
+            return p;
+        else
+            p = p->right;
+    }
+    printf("\n 찾는 키가 없습니다!");
+    return p;
+}
+
+void displayInorder(treeNode *root)
+{
+    if (root)
+    {
+        displayInorder(root->left);
+        printf("%c_", root->key);
+        displayInorder(root->right);
+    }
+}
+
+void displayFullnodes(treeNode *root)
+{
+    if (root)
+    {
+        displayFullnodes(root->left);
+        if (root->left != NULL && root->right != NULL)
+            printf("%c_", root->key);
+        displayFullnodes(root->right);
+    }
+}
+
+void displayEmptynodes(treeNode *root)
+{
+    if (root)
+    {
+        displayEmptynodes(root->left);
+        if (root->left == NULL && root->right == NULL)
+            printf("%c_", root->key);
+        displayEmptynodes(root->right);
+    }
+}
+
 void menu()
 {
     printf("\n*---------------------------*");
@@ -102,7 +155,9 @@ void menu()
     printf("\n\t2 : 문자 삽입");
     printf("\n\t3 : 문자 삭제");
     printf("\n\t4 : 문자 검색");
-    printf("\n\t5 : 종료");
+    printf("\n\t5 : 자식노드의 개수가 2개인 노드들의 이름 출력");
+    printf("\n\t6 : 단말노드들의 이름 출력");
+    printf("\n\t7 : 종료");
     printf("\n*---------------------------*");
     printf("\n메뉴입력 >> ");
 }
@@ -113,6 +168,8 @@ int main()
     treeNode *foundedNode = NULL;
     char choice, key;
     root = insertNode(root, 'G');
+    insertNode(root, 'I');
+    insertNode(root, 'H');
     insertNode(root, 'D');
     insertNode(root, 'B');
     insertNode(root, 'M');
@@ -127,26 +184,28 @@ int main()
         menu();
         choice = getchar();
         getchar();
+
         switch (choice)
         {
-        case 1:
+        case '1':
             printf("\t[이진트리 출력] ");
             displayInorder(root);
-            printf("/n");
+            printf("\n");
             break;
-        case 2:
+        case '2':
             printf("삽입할 문자를 입력하세요 : ");
             key = getchar();
             getchar();
             insertNode(root, key);
             break;
-        case 3:
+
+        case '3':
             printf("삭제할 문자를 입력하세요 : ");
             key = getchar();
             getchar();
-            insertNode(root, key);
+            deleteNode(root, key);
             break;
-        case 4:
+        case '4':
             printf("찾을 문자를 입력하세요 : ");
             key = getchar();
             getchar();
@@ -156,7 +215,13 @@ int main()
             else
                 printf("\n 문자를 찾지 못했습니다. \n");
             break;
-        case 5:
+        case '5':
+            displayFullnodes(root);
+            break;
+        case '6':
+            displayEmptynodes(root);
+            break;
+        case '7':
             return 0;
         default:
             printf("없는 메뉴입니다. 메뉴를 다시 선택하세요! \n");
