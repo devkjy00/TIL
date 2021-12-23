@@ -26,6 +26,7 @@
 - chr(int)
     - 유니코드값을 문자열로 반환한다.
     - int값이 범위(0~1,114,111) 밖에 있을 때 ValueError발생
+    
 - delattr(object, name)
     - 허용된 속성을 삭제한다
     - delattr(x, 'foobar') = del x.foobar
@@ -48,8 +49,12 @@
     - --next--() 메서드를 호출 해서 iterator에서 다음 항목을 꺼낸다. 
 - ord(chars)
     - 인자값의 유니코드값을 반환
+## Str 함수
+- rjust(자릿수, 공백에채울텍스트)
+    - 문자열의 길이를 정하고 공백을 정해서 채울 수 있다
 
-
+## Int 함수
+- 
 ## Dictionary 함수
 - setdefault(key,[default])
     - key 값이 dict에 없으면 default를 저장
