@@ -59,7 +59,9 @@
 - 한번에 주석처리: 블럭처리 -> :'<,'>norm i//(앞에 해당글자 추가)
 - 한번에 주석해제: 블럭처리 -> :'<,'>norm 2x (앞에서2글자삭제)
 
-
+##### 한번에 tab 하기 (visual)
+- 블럭처리하고 <, >  
+ 
 ##### vim buffer, window, tabs
 > What is a buffer?
 A buffer is an in-memory space where you can write and edit some text. When you open a file in Vim, the data is bound to a buffer. When you open 3 files in Vim, you have 3 buffers.

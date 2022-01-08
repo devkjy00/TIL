@@ -1,8 +1,18 @@
-- ### Git CLI
-[자주쓰는 Git CLI](https://syaku.tistory.com/388)
+### .gitignore
+- no .a files
+	- *.a
 
-- ### git 사용환경이 변했을때 꼭 이메일 설정하기
-    - git hub의 디폴트 이메일로 커밋해야만 잔디가 기록된다
-    - 이메일 설정하기
-        - git config --list  : git 설정확인
-        - git global user.email"디폴트이메일" : 로컬에서 이메일 설정하기
+- but do track lib.a, even though you're ignoring .a files above
+	- !lib.a
+
+- only ignore the TODO file in the current directory, not subdir/TODO
+	- /TODO
+
+- ignore all files in the build/ directory
+	- build/
+
+- ignore doc/notes.txt, but not doc/server/arch.txt
+	- doc/*.txt
+
+- ignore all .pdf files in the doc/ directory
+	- doc/**/*.pdf
