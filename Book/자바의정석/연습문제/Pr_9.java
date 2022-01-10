@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class Pr_9 {
 
@@ -58,11 +60,94 @@ class Pr_9 {
 		// System.out.println(contains("12345","67"));
 
 		// 8.
-		System.out.println(round(3.1415,1));
-		System.out.println(round(3.1415,2));
-		System.out.println(round(3.1415,3));
-		System.out.println(round(3.1415,4));
-		System.out.println(round(3.1415,5));
+		// System.out.println(round(3.1415,1));
+		// System.out.println(round(3.1415,2));
+		// System.out.println(round(3.1415,3));
+		// System.out.println(round(3.1415,4));
+		// System.out.println(round(3.1415,5));
+
+		// 9.
+		// System.out.println("(1!2@3^4~5)"+" -> "
+		// 		+ delChar("(1!2@3^4~5)","~!@#$%^&*()"));
+		
+		// System.out.println("(1 2   3  4/t5"+" -> "
+		// 		+ delChar("(1 2   3  4/t5)"," /t"));
+				
+		// 10.
+		// String str = "가나다";
+		// System.out.println(format(str,7,0)); 	//왼쪽 정렬
+		// System.out.println(format(str,7,1));	//가운데 정렬
+		// System.out.println(format(str,7,2));	//오른쪽 정렬
+
+		// 11.
+		// if (args.length != 2){
+		// 	System.out.println("2 개의 수를 입력하세요");
+		// 	return;
+		// }
+		// if (args[0].charAt(0) >= args[1].charAt(0)) {
+		// 	System.out.println("0~9까지의 숫자를 오름차순으로 입력하세요");
+		// 	return;
+		// }
+		// int x = Integer.parseInt(args[0]);
+		// int y = Integer.parseInt(args[1]);
+		
+		// for (;x<=y; x++) {
+		// 	for (int i=0; i<10; i++) {
+		// 		System.out.println(x+"*"+i+"="+x*i);
+		// 	}
+		// 	System.out.println();
+		// }
+
+		// 12.
+		// for (int i=0; i<20; i++) 
+		// 	System.out.print(getRand(1, -3)+",");
+
+		// 13.
+		// String src = "aabbccAABBCCaa";
+		// System.out.println(src);
+		// System.out.println("aa를 " + stringCount(src, "aa") +"개 찾았습니다.");
+
+		// 14.
+		String[] phoneNumArr = {
+			"012-2345-7890",
+			"099-2345-7980",
+			"088-2346-9870",
+			"013-3456-7890"
+		};
+
+		Vector list = new Vector();
+		Scanner s = new Scanner(System.in);
+
+		while(true) {
+			System.out.print(">>");
+			String input = s.nextLine().trim();
+
+			if (input.equals("")) {
+				continue;
+			}else if (input.equalsIgnoreCase("Q")){
+				System.exit(0);
+			}
+		
+			String pattern = ".*"+input+".*";
+			Pattern p = Pattern.compile(pattern);
+
+			for (String str:phoneNumArr){
+				String tmp = str.replace("-","");
+
+				Matcher m = p.matcher(tmp);
+				
+				if (m.find()){
+					list.add(str);	
+				}
+			}
+
+			if (list.size() > 0) {
+				System.out.println(list);
+				list.clear();
+			}else {
+				System.out.println("일치하는 번호가 없습니다.");
+			}
+		}
 	}
 	// 4. 
 	static void printGraph(int[] dataArr, char ch) {
@@ -118,11 +203,88 @@ class Pr_9 {
 		return src.contains(target);
 	}
 
-	// 8.
+	// 8. n제곱, n이 1이면 현재자릿수에서 소수점 1자리만,,,
 	public static double round(double d, int n) {
 		d = Math.round(d*Math.pow(10, n));
 		return d/Math.pow(10, n);
+	
+	}
 
+	// 9. 
+	public static String delChar(String src, String delCh) {
+		StringBuffer sb = new StringBuffer(src.length());
+
+		for (int i=0; i<src.length(); i++) {
+			char ch = src.charAt(i);
+			// 검사할 문자열에서 문자를 빼서
+			// 삭제할 데이터에 있는지 비교
+			if (delCh.indexOf(ch)==-1)
+				sb.append(ch);
+		}
+		return sb.toString();
+	}
+
+	// 10.
+	static String format(String str, int length, int alignment) {
+		if(str.length() > length) {
+			return str.substring(0, length);
+		}
+
+		char[] aliArr = new char[length];
+		
+		Arrays.fill(aliArr, ' ');
+		int n = 0;
+		switch(alignment){
+			 case(1):{
+				n = length/2-(str.length()/2);
+				break;
+			} case(2):{
+				n = length - str.length();
+				break;
+			}
+			// break 문 꼭 쓰기!
+		}
+		System.arraycopy(str.toCharArray(),0,aliArr,n,str.length());
+
+		return String.valueOf(aliArr);
+	}
+
+	// 12.
+	static int getRand(int from, int to){
+		int min = Math.min(from, to);
+		int max = Math.max(from, to);
+		if (min < 0) {
+			max += Math.abs(min);
+		}else if(min > 0) {
+			max -= min;
+		}
+
+		int rand = new Random().nextInt(max+1);
+		return rand+min;
+		
+
+		
+	}
+
+	// 13.
+	static int stringCount(String src, String key) {
+		return stringCount(src, key, 0);
+	}
+
+	static int stringCount(String src, String key, int pos) {
+		int count = 0;
+
+		if (key == null || key.length() == 0)
+			return 0;
+		
+		Pattern p = Pattern.compile(key);
+		Matcher m = p.matcher(src);
+		
+		while(m.find()) {
+			count ++;
+		} 
+
+		return count;
 	}
 
 }
