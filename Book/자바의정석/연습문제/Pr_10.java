@@ -4,21 +4,20 @@
 // 4. 입력받은 날짜데이터로 요일 출력하기
 // 5. 입력받는 두 날짜간에 차이 계산하기
 // 6. 입력한 날로 부터 오늘까지 몇일, 몇달 지났는지 출력
-import java.text.SimpleDateFormat;
+// 7. 4번째 주 화요일 날짜 출력하기
+// 8. 서울, 뉴욕 시차 계산하기
+
+import java.text.*;
 import java.time.*;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAccessor;
+import java.time.format.*;
+import java.time.temporal.*;
 import java.util.*;
-import java.time.*;
 
 public class Pr_10 {
     public static void main(String[] args){
         // 1. 매달 2번째 일요일 날짜 출력하기
         // Calendar cal = Calendar.getInstance();
         // cal.set(2010, 0, 1);
-
 
         // for (int i=0; i<12; i++){
         //     int weekday = cal.get(Calendar.DAY_OF_WEEK);
@@ -67,8 +66,9 @@ public class Pr_10 {
         // 3. 문자열을 파싱해서 다른 포맷으로 출력하기
         // String data = "123,456,789.5";
         // System.out.println(data);
-        // DecimalFormat df1 = new DecimalFormat("###,###,###.#");
-        // DecimalFormat df2 = new DecimalFormat("#,####,####");
+        // // #,### 패턴은 몇글자를 나눌지 한번만 작성하면 된다
+        // DecimalFormat df1 = new DecimalFormat("#,###.#");
+        // DecimalFormat df2 = new DecimalFormat("#,####");
 
         // try {
         //     int parNum  = df1.parse(data).intValue();
@@ -108,19 +108,40 @@ public class Pr_10 {
         // System.out.println(getDayDiff("20010103", "200103"));
 
         // 6. 태어난 날부터 현재까지 day 계산
-        getDaysFromBirth("1996-04-18");
+        // getDaysFromBirth("1996-04-18");
+
+        // 7. 2016/12 네번째 화요일 출력하기
+        // LocalDate d = LocalDate.parse("2016-12-01");
+        // int week = 4;
+        // if (d.get(ChronoField.DAY_OF_WEEK) <= 2) {
+        //     week --;
+        // }
+        // d = d.plusWeeks(week).with(ChronoField.DAY_OF_WEEK, 2);
+        // System.out.println(d);
+
+        // 8. 서울과 뉴욕의 시차 계산하기
+        // ZonedDateTime zdt = ZonedDateTime.now();
+        // ZoneId nyId = ZoneId.of("America/New_York");
+        
+        // // withZoneSameInstant(ZoneId)로 zdt객체의 시간대를 변경할 수있다
+        // ZonedDateTime zdtNy = ZonedDateTime.now().withZoneSameInstant(nyId);
+        
+        // // zdt.getOffset은 ZoneOffset을 반환
+        // long sec1 = zdt.getOffset().getTotalSeconds();
+        // long sec2 = zdtNy.getOffset().getTotalSeconds();
+        // long diff = (sec1 - sec2)/3600;
+
+        // System.out.println("sec1="+sec1);
+        // System.out.println("sec2="+sec2);   
+        // System.out.printf("diff= %d hrs%n", diff);
     }   
     
 
     // 2.
     static int paycheckCount(Calendar from, Calendar to) {
-        if (Objects.isNull(from) || Objects.isNull(to)) {
-            return 0;
-        }
+        if (Objects.isNull(from) || Objects.isNull(to)) return 0;
+        if (from.equals(to) || from.get(Calendar.DAY_OF_MONTH)==21) return 1;
 
-        if (from.equals(to) || from.get(Calendar.DAY_OF_MONTH)==21) {
-            return 1;
-        }
 
         int monDiff = to.get(Calendar.MONTH) - from.get(Calendar.MONTH);
         int yearDiff = to.get(Calendar.YEAR) - from.get(Calendar.YEAR); 
@@ -148,6 +169,7 @@ public class Pr_10 {
 
     }
     
+    // 6.
     static int getDayDiff(String yyyymmdd1, String yyyymmdd2) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
 
@@ -185,6 +207,7 @@ public class Pr_10 {
         System.out.println("today     = "+d2);
         System.out.println(days + "  days");
         System.out.println(months+ " months");
+        
         
 
     }
