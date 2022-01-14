@@ -32,6 +32,43 @@
 	- -r 	디렉토리 복사
 	- cp file1 ./dir2/file2 복사해서경로에 저장
 	 
+### 파일 출력
+- cat 	: 파일 출력
+	- cat 파일명 | more 	모두출력
+	- cat 파일명 > 파일명  파일복사
+	- cat 파일명 >> 파일명 파일뒤에 붙여넣기
+	- 명령어에서 명령어로 데이터를 보내는 방식
+		- | : 파이프라인
+		- > : 꺽쇠(Redirection)
+
+- head	: 10라인만 출력
+- tail 	: 끝에서 10라인만출력
+	- -f 파일명 	: 라인이추가되면 바로 추가된라인 출력
+		- 로그데이터를 쉽게 확인할 수 있다
+
+### less 텍스트뷰어
+- less 파일명
+	- vi는 파일전체를 메모리에 올리는 것에 비해 less는 화면에 출력되는 내용만 메모리에 올려서 무거운 파일도 가볍게 확인하고 자원낭비를 막을 수있다
+
+### tar 압축
+- tar cvfz target.tar.gz 파일명 파일명 ...
+	- tar를 사용해 gz로 압축
+	- * 로 폴더의 모든 파일압축
+	- c(create),z(gzip)
+
+- tar xvfz 파일명	
+	- 압축해제
+	- x(extract)
+
+
+### grep 문자열검색
+- grep 문자열 파일이름
+	- grep abc *.txt
+	- 문자열을 포함한 파일을 찾아준다
+
+- -H	어떤파일인지 출력
+- -w	정확히 일치하는 문자열만검색
+
 ### 접근권한
 - chmod	: 접근 권한설정
 	- wrxwrx--x 771 ,user/group/other
@@ -54,5 +91,34 @@
 		- 바로가기기능
 		- Link 파일을 참조하는 Link파일을 만드는 방식, 파일,폴더 모두가능
 		- ln -s source target 	소프트링크 생성(원본소스, 만들소스명)
+
+### sudo
+- root계정은 ip설정, 네트워크작업, 웹서버, 인증서설치, rebooting등의 작업을 하기위한 수퍼관리자이다
+
+- sudo명령어로 root계정의 권한을 사용한다
+
+- root권한부여(root계정을진행)
+	- vi /etc/sudoers
+	- 계정이름 ALL=(ALL:ALL) NOPASSWD:ALL
+
+### which 명령어의 위치찾기
+- which python3
+
+### top 모니터링
+- o <> 입력된 기준으로 정렬
+
+### ping 네트워크 모니터
+- ping google.com
+	- google.com 네트워크 연결정보를 모니터링 할 수 있다
+	- time= 은 레이턴시로 값이 적을 수록 인터넷이 빠른것
+
+- nslookup google.com
+	- 구글의 ip주소를 알려준다
+
+### kill 
+- sudo kill -9 process.id
+
+- ps -ef | grep 파일명
+	- 첫번째 수가 process.id이다
 
 
