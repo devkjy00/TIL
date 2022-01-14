@@ -124,6 +124,6 @@
 
 ### SSH 키 만들기
 - ssh-keygen
-	- is_rsa  디폴트 파일명
+	- id_rsa  디폴트 파일명
 	- 비밀번호는 패스가능
 	- ~/.ssh/id_rsa.pub  
