@@ -2,6 +2,7 @@
 - 속성값 저장
 	- git config --globla <속성값> <저장할 값>
 
+
 - 로그인 정보 저장
 	- credential.helper <저장할 값>
 	- cache --timeout=<int> : 입력한 초단위 시간만큼 저장
