@@ -1,7 +1,7 @@
 // 1. 교집합, 차집합, 합집합
 // 5. Comparable 정렬기준 정의
+// 6. TreeSet의 생성자 매개변수로 Comparator익명클래스(Student객체의 점수로정렬) 지정
 
-import java.sql.*;
 import java.util.*;
 class pr_11{
     public static void main(String[] args) {
@@ -60,7 +60,7 @@ class pr_11{
         // }
 
         // 6. 
-        // Tree~ 의 생성자 매개변수로 정렬객체 Comparator를 지정
+        // Tree~ 의 생성자 매개변수로 Comparator익명클래스(Student객체의 점수로정렬) 지정
         TreeSet<Student> set = new TreeSet<>(new Comparator<Student>(){
             public int compare(Student s1, Student s2) {
                 if (s1 instanceof Student && s2 instanceof Student) {
