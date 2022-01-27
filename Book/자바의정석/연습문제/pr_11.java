@@ -1,9 +1,10 @@
+import java.util.*;
 
 // 1. 교집합, 차집합, 합집합
 // 5. Comparable 정렬기준 정의
 // 6. TreeSet의 생성자 매개변수로 Comparator익명클래스(Student객체의 점수로정렬) 지정
-
-    
+// 10. HashSet은 순서를 유지하지 않고 임의의 순서도 제대로 구현하지 못한다
+// 11. 클래스를 HashSet에 저장하고 출력, hashCode 오버라이딩
     
 public class Pr_11{
     public static void main(String[] args) {
@@ -158,6 +159,18 @@ public class Pr_11{
     //     System.out.println();
     // }
 
+    // 11.
+    SutdaCard c1 = new SutdaCard(3, true);
+    SutdaCard c2 = new SutdaCard(3, true);
+    SutdaCard c3 = new SutdaCard(1, true);
+
+    HashSet set = new HashSet();
+    set.add(c1);
+    set.add(c2);
+    set.add(c3);
+
+    System.out.println(set);
+
 }// end of main 
 
 // 6.
@@ -304,4 +317,39 @@ class BanNoAscending implements Comparator {
 
 	}
 } // class BanNoAscendign
+
+// 11.
+class SutdaCard {
+    int num;
+    boolean isKwang;
+
+    SutdaCard() {
+        this(1, true);
+    }
+
+    SutdaCard(int num, boolean isKwang) {
+        this.num = num;
+        this.isKwang = isKwang;
+    }
+
+    public boolean equals(Object obj) {
+        if(obj instanceof SutdaCard) {
+            SutdaCard c = (SutdaCard)obj;
+            return num==c.num && isKwang == c.isKwang;
+        } else {
+            return false;
+        }
+    }
+
+    public String toString() {
+        return num + (isKwang ? "K":"");
+    }
+
+    public int hashCode() {
+            String thisStr = ""+num+isKwang;
+            return thisStr.hashCode();
+        }
+    
+} // class Sutdacard
+
 
