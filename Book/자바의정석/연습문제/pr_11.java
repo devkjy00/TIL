@@ -1,4 +1,7 @@
 import java.util.*;
+import java.util.concurrent.SynchronousQueue;
+
+import javax.swing.text.PlainDocument;
 
 // 1. 교집합, 차집합, 합집합
 // 5. Comparable 정렬기준 정의
@@ -160,16 +163,81 @@ public class Pr_11{
     // }
 
     // 11.
-    SutdaCard c1 = new SutdaCard(3, true);
-    SutdaCard c2 = new SutdaCard(3, true);
-    SutdaCard c3 = new SutdaCard(1, true);
+    // SutdaCard c1 = new SutdaCard(3, true);
+    // SutdaCard c2 = new SutdaCard(3, true);
+    // SutdaCard c3 = new SutdaCard(1, true);
 
-    HashSet set = new HashSet();
-    set.add(c1);
-    set.add(c2);
-    set.add(c3);
+    // HashSet set = new HashSet();
+    // set.add(c1);
+    // set.add(c2);
+    // set.add(c3);
 
-    System.out.println(set);
+    // System.out.println(set);
+
+    // 12. 임의의 값으로 HashMap의 값 가져오기
+    // SutdaDeck deck = new SutdaDeck();
+
+    // deck.shuffle();
+    // Player p1 = null;
+    // Player p2 = null;
+    // try {
+    //     p1 = new Player("타짜", deck.pick(), deck.pick());
+    //     p2 = new Player("고수", deck.pick(), deck.pick());
+    // } catch (Exception e) {
+    //     e.printStackTrace();
+    // }
+
+    // System.out.println(p1+" "+deck.getPoint(p1));
+    // System.out.println(p2+" "+deck.getPoint(p2));
+
+    // 13. 클래스 멤버를 기준으로 정렬하기
+    // SutdaDeck deck = new SutdaDeck();
+
+    // deck.shuffle();
+
+    // Player[] pArr = new Player[5];
+    // String[] names = {"타짜", "고수", "물주", "중수", "하수"};
+
+    // for (int i=0; i<pArr.length; i++) {
+    //     Player tempP = null;
+    //     try {
+    //         tempP = new Player(names[i], deck.pick(), deck.pick());
+    //     } catch(Exception e) {
+    //         e.printStackTrace();
+    //     }
+    //     pArr[i] = tempP;
+    // }
+
+    // TreeMap rank = new TreeMap(new Comparator<Player>(){
+    //     public int compare(Player p1, Player p2) {
+    //             return p2.point - p1.point;
+    //         }
+    //     });
+    
+    // for (int i=0; i<pArr.length; i++){
+    //     Player p = pArr[i];
+    //     rank.put(p, deck.getPoint(p));
+    //     System.out.println(p+" "+deck.getPoint(p));
+    // }
+
+    // System.out.println();
+    // System.out.println("1위는 "+rank.firstKey()+"입니다. ");
+    
+    // 14. 성적처리 프로그램
+    while(true) {
+        switch(displayMenu()) {
+            case 1:
+                inputRecord();
+                break;
+            case 2:
+                displayRecord();
+                break;
+            case 3:
+                System.out.println("프로그램을 종료합니다.");
+                System.exit(0);
+        }
+    } // while(true)
+
 
 }// end of main 
 
@@ -183,6 +251,7 @@ static int getGroupCount(TreeSet<Student> tset, int from, int to) {
 
 // 8.
 public static void calculateSchoolRank(List list) {
+
 	Collections.sort(list);
 
 	int prevRank = -1;
@@ -236,9 +305,97 @@ public static void calculateClassRank(List<Student> list) {
         prevRank = tmp.classRank;
         prevTotal = tmp.total;
     }
-
 }
 
+// 14
+static ArrayList record = new ArrayList();
+static Scanner s = new Scanner(System.in);
+
+static int displayMenu() {
+    System.out.println("**************************************************");
+    System.out.println("* 성적 관리 프로그램 *"); 
+    System.out.println("**************************************************");
+    System.out.println();
+    System.out.println(" 1. 학생성적 입력하기 "); 
+    System.out.println();
+    System.out.println(" 2. 학생성적 보기"); 
+    System.out.println();
+    System.out.println(" 3. 프로그램 종료 "); 
+    System.out.println();
+    
+    int menu = 0;
+    // 14.
+    while(true){
+        System.out.print("원하는 메뉴를 선택하세요.(1~3) : ");
+        menu = s.nextInt();
+        if(1<=menu&&menu<=3) {
+            break;
+        }else {
+            System.out.println("메뉴를 잘못 선택했습니다, 다시 입력해주세요");
+        }
+    }
+    //  
+    return menu;
+} // public static int displayMenu
+
+static void inputRecord() {
+    System.out.println("1. 학생성적 입력하기"); 
+    System.out.println("이름,반,번호,국어성적,영어성적,수학성적'의 순서로 공백없이 입력하세요."); 
+    System.out.println("입력을 마치려면 q를 입력하세요. 메인화면으로 돌아갑니다.");    
+
+    while(true) {
+        System.out.print(">>");
+        String info = s.nextLine();
+        if (info.equalsIgnoreCase("q")) {
+            return;
+        }
+        try {
+            String[] s = info.split(",");
+            int[] nums = new int[s.length];
+            for (int i=1; i<s.length; i++) {
+               nums[i] = Integer.parseInt(s[i]);
+            }
+            Student st = new Student(s[0], nums[1], nums[2], nums[3], nums[4], nums[5]);
+            record.add(st);
+            
+        } catch (Exception e) {
+            System.out.println("입력오류입니다.");
+            continue;
+        }
+        System.out.println("입력되었습니다");
+    }   
+}
+
+static void displayRecord() {
+    int koreanTotal = 0;
+    int englishTotal = 0;
+    int mathTotal = 0;
+    int total = 0;
+
+    int length = record.size();
+
+    if(length > 0) {
+        System.out.println();
+        System.out.println("이름 반 번호 국어 영어 수학 총점 평균 전교등수 반등수");
+        System.out.println("====================================================");
+        for (int i = 0; i < length ; i++) {
+            Student student = (Student)record.get(i); 
+            System.out.println(student);
+            koreanTotal += student.kor;
+            mathTotal += student.math;
+            englishTotal += student.eng;
+            total += student.total;
+        }
+        System.out.println("===================================================="); 
+        System.out.println("총점: "+koreanTotal+" "+englishTotal+" "+mathTotal+" "+total);
+        System.out.println(); 
+    } else {
+        System.out.println("===================================================="); 
+        System.out.println(" 데이터가 없습니다.");
+        System.out.println("===================================================="); 
+
+}
+}
 } // class Pr_11.java 
 
 
@@ -265,7 +422,7 @@ class Student implements Comparable {
     }
 
     int getTotal() {
-        return kor+eng+math;
+        return total; 
     }
 
     float getAverage() {
@@ -352,4 +509,110 @@ class SutdaCard {
     
 } // class Sutdacard
 
+class SutdaDeck {
+    final int CARD_NUM = 20;
+    SutdaCard[] cards = new SutdaCard[CARD_NUM];
 
+    int pos = 0;
+    HashMap jokbo = new HashMap();
+
+    SutdaDeck() {
+        for(int i=0; i<cards.length; i++){
+            int num = i%10 + 1;
+            boolean isKwang = i < 10 && (num==1 || num==3 || num==8);
+
+            cards[i] = new SutdaCard(num, isKwang);
+        }
+        registerJokbo();
+       }    
+
+
+    void registerJokbo() {
+        jokbo.put("KK", 4000);
+        jokbo.put("1010",3100); 
+        jokbo.put("99", 3090);
+        jokbo.put("88", 3080);
+        jokbo.put("77", 3070);
+        jokbo.put("66", 3060);
+        jokbo.put("55", 3050);
+        jokbo.put("44", 3040);
+        jokbo.put("33", 3030);
+        jokbo.put("22", 3020);
+        jokbo.put("11", 3010);
+
+        jokbo.put("12", 2060);
+        jokbo.put("21", 2060);
+        jokbo.put("14", 2050);
+        jokbo.put("41", 2050);
+        jokbo.put("19", 2040);
+        jokbo.put("91", 2040);
+        jokbo.put("110", 2030);
+        jokbo.put("101", 2030);
+        jokbo.put("104", 2020);
+        jokbo.put("410", 2020);
+        jokbo.put("46",  2010);
+        jokbo.put("64", 2010);
+    }
+
+    int getPoint(Player p) {    
+        if(p==null) return 0;
+        SutdaCard c1 = p.c1; 
+        SutdaCard c2 = p.c2;
+
+        Integer result = 0;  
+        String tempJokbo = ""+c1.num+c2.num;
+        
+        if (c1.isKwang==true && c2.isKwang==true) {
+            result = (int)jokbo.get("KK");
+        }else if(jokbo.containsKey(tempJokbo)){
+            result = (int)jokbo.get(tempJokbo);
+        }else{
+            result = (c1.num + c2.num) % 10 + 1000;
+        }
+        p.point = result;
+        return result;
+    }
+
+    SutdaCard pick() throws Exception {
+        SutdaCard c = null;
+        if (0 <= pos && pos < CARD_NUM) {
+            c = cards[pos];
+            cards[pos++] = null; 
+        } else {
+            throw new Exception("남아있는 카드가 없습니다");
+        }
+
+        return c;
+    }
+
+    void shuffle() {
+        for (int x=0; x<CARD_NUM*2; x++) {
+            Random random = new Random();
+            int i = random.nextInt(CARD_NUM);
+            int j = random.nextInt(CARD_NUM);
+
+            SutdaCard tmp = cards[i];
+            cards[i] = cards[j];
+            cards[j] = tmp;
+
+        }
+    }
+} // class SutdaDeck
+        
+class Player {
+    String name;
+    SutdaCard c1;
+    SutdaCard c2;
+
+    int point;
+
+    Player(String name, SutdaCard c1, SutdaCard c2) {
+        this.name = name;
+        this.c1 = c1;
+        this.c2 = c2;
+    }
+
+    public String toString() {
+        return "["+name+"]"+c1.toString()+","+c2.toString();
+    }
+}   // class Player
