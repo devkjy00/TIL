@@ -182,7 +182,7 @@ static int getGroupCount(TreeSet<Student> tset, int from, int to) {
 }
 
 // 8.
-publ5ic static void calculateSchoolRank(List list) {
+public static void calculateSchoolRank(List list) {
 	Collections.sort(list);
 
 	int prevRank = -1;
