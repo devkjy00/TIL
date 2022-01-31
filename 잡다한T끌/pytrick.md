@@ -27,4 +27,18 @@ True
 [7, 8, 9]
 >>> b is lst
 False
+
+```
+
+# collections.Counter 활용해서 요소 카운트하기
+- elements in an iterable:
+```py
+>>> import collections
+>>> c = collections.Counter('helloworld')
+
+>>> c
+Counter({'l': 3, 'o': 2, 'e': 1, 'd': 1, 'h': 1, 'r': 1, 'w': 1})
+
+>>> c.most_common(3)
+[('l', 3), ('o', 2), ('e', 1)]
 ```
