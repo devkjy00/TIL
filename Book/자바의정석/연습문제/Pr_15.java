@@ -6,6 +6,8 @@
 // 5. 파일에서 태그만 빼고 출력하기
 import java.io.*;
 import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
 
 public class Pr_15 {
     public static void main(String[] args) {
@@ -118,40 +120,45 @@ public class Pr_15 {
         // } catch (Exception e) { }
 
         // 6.
-        Scanner s = new Scanner(System.in);
+        // Scanner s = new Scanner(System.in);
 
-        while(true) {
-            try {
-                String prompt = curDir.getCanonicalPath()+">>";
-                System.out.print(prompt);
+        // while(true) {
+        //     try {
+        //         String prompt = curDir.getCanonicalPath()+">>";
+        //         System.out.print(prompt);
 
-                String input = s.nextLine();
+        //         String input = s.nextLine();
 
-                input = input.trim();
-                argArr = input.split(" +");
+        //         input = input.trim();
+        //         argArr = input.split(" +");
 
-                String command = argArr[0].trim();
+        //         String command = argArr[0].trim();
 
-                if("".equals(command)) continue;
+        //         if("".equals(command)) continue;
 
-                command = command.toLowerCase();
+        //         command = command.toLowerCase();
 
-                if(command.equals("q")) {
-                    System.exit(0);
-                } else if(command.equals("cd")) {
-                    cd();
-                } else {
-                    for(int i=0; i<argArr.length; i++) {
-                        System.out.println(argArr[i]);
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.out.println("입력오류입니다.");
-            }
-        } //while(true)
+        //         if(command.equals("q")) {
+        //             System.exit(0);
+        //         } else if(command.equals("cd")) {
+        //             cd();
+        //         } else {
+        //             for(int i=0; i<argArr.length; i++) {
+        //                 System.out.println(argArr[i]);
+        //             }
+        //         }
+        //     } catch (Exception e) {
+        //         e.printStackTrace();
+        //         System.out.println("입력오류입니다.");
+        //     }
+        // } //while(true)
         
-
+        if(args.length != 1) {
+            System.out.println("USAGE : java ChatWin NICKNAME");
+            System.exit(0);
+        }
+        new ChatWin(args[0]);
+        
     } // main
 
     static int totalFiles = 0;
@@ -245,4 +252,91 @@ class HtmlTagFilterWriter extends FilterWriter {
         out.write(tmp.toString());
         super.close();
     }
+} // class HtmlTagFilterWriter 
+
+
+class ChatWin extends Frame {
+    String nickname = "";
+    TextArea ta = new TextArea();
+    Panel p = new Panel();
+    TextField tf = new TextField(30);
+    Button bSave = new Button("저장");
+
+    ChatWin(String nickname) {
+        super("Chatting");
+        this.nickname = nickname;
+
+        setBounds(200, 100, 300, 200);
+
+        p.setLayout(new FlowLayout());
+        p.add(tf);
+        p.add(bSave);
+
+        add(ta, "Center");
+        add(p, "South");
+        
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+
+        bSave.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae) {
+                FileDialog fileSave = new FileDialog(ChatWin.this, 
+                                "파일저장", FileDialog.SAVE);
+                
+                fileSave.setVisible(true);
+                String fileName = fileSave.getDirectory() + fileSave.getFile();
+                saveAs(fileName);
+            }
+        });
+
+        EventHandler  handler = new EventHandler();
+        ta.addFocusListener(handler);
+        tf.addFocusListener(handler);
+        tf.addActionListener(handler);
+
+        ta.setText("#" + nickname + "님 즐거운 채팅 되세요.");
+        ta.setEditable(false);
+
+        setResizable(false);
+        setVisible(true);
+        tf.requestFocus();
+    }
+
+    
+} // class ChatWin
+
+void saveAs(String fileName) {
+
+    FileWriter fw = null;
+    BufferedWriter bw = null;
+
+    try {
+        fw = new FileWriter(fileName);
+        bw = new BufferedWriter(fw);
+        bw.write(ta.getText());
+
+    } catch (IOException ie) {
+        ie.printStackTrace();
+    } finally {
+        try {
+            if (bw != null)
+                bw.close();
+        } catch (IOException e) { }
+    }
 }
+
+class EventHandler extends FocusAdapter implements ActionListener {
+    public void actionPerformed(ActionEvent ae) {
+        String msg = tf.getText();
+        if("".equals(msg)) return;
+
+        ta.append("\r\n" + nickname + ">" + msg);
+    }
+
+    public void focusGained(FocusEvent e) {
+        tf.requestFocus();
+    }
+} // EventHandler 
