@@ -4,50 +4,47 @@
 # key의 1의 위치가 lock의 1과 같은 위치가 되면 안됨
 
 
+def rotate_a_matrix(a):
+    n = len(a)
+    m = len(a[0])
+    result = [[0] * n for _ in range(m)]
+    for i in range(n):
+        for j in range(m):
+            result[j][n-i-1] = a[i][j]
 
+    return result
+
+def check(new_lock):
+    lock_length = len(new_lock)
+    for i in range(lock_length, lock_length * 2):
+        for j in range(lock_length, lock_length * 2):
+            if new_lock[i][j] != i:
+                return False
+    return True
 
 def solution(key, lock):
-    key_count = count_vector(key, 1)
-    lock_count = count_vector(lock, 0)
-    if key_count < lock_count: 
-        return False
+    n = len(lock)
+    m = len(key)
+
+    new_lock = [[0] * (n * 3) for _ in range(n*3)]
+
+    for i in range(n):
+        for j in range(n):
+            new_lock[i+n][j+n] = lock[i][j]
     
-    while True:
-        if match_key_lock(key, lock):
-            return True
+    for rotation in range(4):
+        key = rotate_a_matrix(key)
+        for x in range(n * 2):
+            for y in range(n * 2):
+                for i in range(m):
+                    for j in range(m):
+                        new_lock[x+i][y+j] += key[i][j]
+                
+                if check(new_lock) == True:
+                    return True
+                
+                for i in range(m):
+                    for j in range(m):
+                        new_lock[x+i][y+i] -= key[i][j]
         
-
-
-
-def count_vector(source: list, finding: int):
-    return sum([i.count(finding) for i in source])
-
-def match_key_lock(key: list, lock: list):
-    for i in range(lock):
-        for j in range(lock[0]):
-            lock[i][j] += key[i][j]
-    
-    if not lock.count(0) and not lock.count(2):
-        return True
-    else: return False
-
-def move_key(key, way):
-
-def rotate_key(key: list) -> list:
-    temp_key = [[] for _ in range(len(key))]
-    for i in key[::-1]:
-        idx = 0
-        for j in i:
-            temp_key[idx].append(j)
-            idx += 1
-    return temp_key
-
-key = [[0, 0, 0],
-        [1, 0, 0],
-        [0, 1, 1]]
-    
-lock = [[1, 1, 1],
-        [1, 1, 0],
-        [1, 0, 1]]
-
-print(solution(key, lock))
+        return False
