@@ -31,6 +31,9 @@ for x, y in apple:
 # 움직임 연산
 move_x_y = (0, 1), (1, 0), (0, -1), (-1, 0)
 direction = 0
+# 방향전환을 시간을 각 행동의 인터벌로 변환
+for i in range(l-1, 0, -1):
+    move[i][0] -= move[i-1][0]
 
 # 뱀을 que를 사용해서 표현
 q = deque()
@@ -41,7 +44,7 @@ head_y = 1
 # 뱀을 2로 표기
 board[1][1] = 2
 # 살아있는 시간
-alive_time = 1
+alive_time = 0 
 # 종료상태
 game_over = False
 
@@ -66,10 +69,6 @@ for i, way in move:
             game_over = True
             break
 
-        
-        [print(i) for i in board]   
-        print()
-
         # for _ in range(i)
 
     if game_over:
@@ -78,5 +77,5 @@ for i, way in move:
     direction += 1 if way == "D" else 3 
     direction %= 4
 
-print(alive_time)
-print(q)
+print(alive_time+1)
+
