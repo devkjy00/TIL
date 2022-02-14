@@ -15,11 +15,11 @@ student_score = [["Junkyu", 50, 60, 100],
                 ["Haebin", 50, 60, 100],
                 ["Kangsoo", 60, 80, 100],
                 ["Donghyuk", 80, 60, 100],
-                ["Sei", 70, 70, 90],
-                ["Wonseob", 70, 70, 80],
-                ["Sanghyun", 80, 80, 80],
+                ["Sei", 70, 70, 70],
+                ["Wonseob", 70, 70, 90],
+                ["Sanghyun", 70, 70, 80],
                 ["nsj", 80, 80, 80],
                 ["Taewhan", 50, 60, 90]]
 
-student_score.sort()
-print(student_score)
+student_score.sort(key=lambda x : (-x[1], x[2], -x[3], x[0]))
+[print(i[0]) for i in student_score]
