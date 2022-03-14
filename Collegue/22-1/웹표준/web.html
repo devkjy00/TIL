@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, 
+    inital-scale=1, minimum-scale=1, maximun-scale=1, user-scalable-no">
+
+    <title>웹</title>
+</head>
+<body>
+
+   <!-- 원형 -->
+   <svg width="120" height="120">
+      <circle cx="60" cy="60" r="50"
+      stroke="green" stroke-width="4" 
+      fill="yellow"></circle>
+   </svg>
+
+   <!-- 직사각형 -->
+   <svg width="200" height="150">
+     <rect width="150" height="80"
+     style="fill:rgb(0,100,255); stroke-width:10;
+     stroke:rgb(0,0,0);"></rect>
+   </svg>
+
+   <!-- 둥근 사각형 -->
+   <svg width="300" height="200">
+      <rect x="50" y="20" rx="20" ry="20"
+      width="150" height="150"
+      style="fill:red; stroke:black;
+      stroke-width:5;opacity:0.5;"></rect>
+   </svg>
+   <!-- 별 -->
+   <svg width="300" height="200">
+      <polygon points="100,10 40,198 190, 78 10, 78 160, 198"
+      style="fill:lime; stroke:purple;
+      stroke-width:5;fill-rule:evenodd;"></polygon>
+   </svg>
+   <!-- 그라디언트, 로고 -->
+   <svg width="500" height="130">
+       <defs>
+           <lineargradient id="grad1" x1="0%"
+           y1="0%" x2="100" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,255,0);
+            stop-opacity: 1;"></stop>
+            <stop offset="100%" style="stop-color:rgb(255,0,0);
+            stop-opacity: 0.5;"></stop>
+        </lineargradient>
+       </defs>
+       <ellipse cx="100" cy="70" rx="85"
+    ry="55" fill="ure(#grad1)"></ellipse><!-- 그라디언트 id를 ellipse의 file에 넣으면 출력된다-->
+       <text fill="#ffffff" font-size="45"
+       font-family="verdana" x="50" y="86">SVG</text>
+   </svg>
+</body>
+</html>

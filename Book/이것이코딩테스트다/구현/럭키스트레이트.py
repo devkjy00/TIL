@@ -6,11 +6,7 @@
 import time
 
 n = "7575"
-
-start = time.time()
-
 idx = len(n)//2
-
 front_num = sum(map(int, n[:idx]))
 back_num = sum(map(int, n[idx:]))
 
@@ -19,15 +15,11 @@ if front_num == back_num:
 else:
     print("READY")
 
-end = time.time()
-print(f"{end-start:.5f} sec")
-
 # 답안
-# 더 빠르다
-start = time.time()
 length = len(n)
 summary = 0
 
+# 왼쪽값에서 오른쪽값을 빼서 0이면 LUCKY
 for i in range(length//2):
     summary += int(n[i])
 
@@ -38,5 +30,3 @@ if summary == 0:
     print("LUCKY")
 else: 
     print("READY")
-end = time.time()
-print(f"{end-start:.5f} sec")
