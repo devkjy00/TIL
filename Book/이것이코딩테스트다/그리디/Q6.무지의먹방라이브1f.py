@@ -6,8 +6,6 @@
 
 # 효율성이 중요한 문제는 순서대로 하나씩 연산하면 안된다
 # 규칙성을 찾아서 동일한 연산을 한번에 처리해야 요구되는 성능을 얻을수 있다
-import time
-
 def my_solution(food_times, k):
 
     return
@@ -43,8 +41,5 @@ def solution(food_times, k):
     result = sorted(q, key=lambda x: x[1]) # 음식의 번호 기준으로 정렬
     return result[(k - sum_value) % length][1]
 
-start = time.time()
 for i in range(100000):
     solution([8, 6, 4,5,7,8,6,45,3,4,5,67,8,3,1], 73)
-end = time.time()
-print(f"{end-start:.5f}")
