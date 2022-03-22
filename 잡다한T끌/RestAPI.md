@@ -4,7 +4,8 @@ Representational State Transfer API
 - REST 구성
     - 자원(Resource) : URI
         - Uniform Resource Identifier : 웹 기술에서 사용하는 논리적 또는 물리적 리소스를 식별하는 고유한 문자열 시퀀스
-    - 행위(Verb) : HTTP 메소드
+            - 행위가 아닌 정보의 자원을 표현해야 한다
+    - 행위(Verb) : HTTP 메소드(GET, POST, PUT, DELETE)
     - 표현(Representations)
 
 - REST 특징
@@ -25,3 +26,10 @@ Representational State Transfer API
     
     - 계층형 구조
         - REST서버는 다중 계층으로 구성, 보안, 로드밸런싱, 암호화 계층을 추가
+
+- URI설계 시 고려사항
+    - 슬래시(/)는 계층관계를 나타내는데 사용, URI마지막 문자로 사용하지 않는다
+        - http://abc.com/home/room
+    - 하이픈(-)은 URI가독성을 위해 사용, 밑줄(_) 은사용하지 않는다
+    - URI경로에는 소문자가 적합
+    - 파일 확장자는 URI에 포함시키지 않는다 
