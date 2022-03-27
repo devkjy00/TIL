@@ -1,3 +1,4 @@
+https://github.com/JaeYeopHan/Interview_Question_for_Beginner/blob/master/Development_common_sense/README.md#restful-api
 Representational State Transfer API 
 - 로이 필딩은 웹(HTTP)의 장점을 최대한 활용할 수 있는 아키텍처로써 REST를 발표
 
