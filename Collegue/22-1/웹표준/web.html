@@ -5,17 +5,34 @@
     <title>웹</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        a{text-decoration:none;}
-        a:link{color:aqua;}
-        a:visited{color: salmon;}
-        a:hover{color: blueviolet;}
-        a:active{color: brown;}
+      html{
+          /* 스크롤 바 설정 */
+          scroll-behavior: smooth;
+      }
+      .scrollmenu{
+          background: #fff;
+          height: 175px;
+          width: 100%;
+          overflow-y:scroll;
+      }
+      .scrollmenu::-webkit-scrollbar{
+        width: 18px; height: 18px; border:2px solid ivory;
+      }
+      .scrollmenu::-webkit-scrollbar-button:star:decrement,
+      .scrollmenu::-webkit-scrollbar-button:end:increment{
+          display: block; height: 15px; background: yellow;
+      }
     </style>
 </head>
 <body>
-    <a href="#">Home</a>
-    <a href="#">News</a>
-    <a href="#">Contact</a>
+    <h1>header1</h1>
+    <div>div1</div>
+    <p>문단입력</p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero dolore dolorem amet fuga, totam est modi impedit earum quibusdam voluptate iste aspernatur quae commodi sed, beatae esse exercitationem? Doloremque!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero dolore dolorem amet fuga, totam est modi impedit earum quibusdam voluptate iste aspernatur quae commodi sed, beatae esse exercitationem? Doloremque!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero dolore dolorem amet fuga, totam est modi impedit earum quibusdam voluptate iste aspernatur quae commodi sed, beatae esse exercitationem? Doloremque!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero dolore dolorem amet fuga, totam est modi impedit earum quibusdam voluptate iste aspernatur quae commodi sed, beatae esse exercitationem? Doloremque!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero dolore dolorem amet fuga, totam est modi impedit earum quibusdam voluptate iste aspernatur quae commodi sed, beatae esse exercitationem? Doloremque!
 </body>
 </html>
      
