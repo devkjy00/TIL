@@ -4,17 +4,50 @@
     <meta charset="UTF-8">
     <title>웹</title>
     <style >
-        li{
-            list-style-type: square; /* 네모모양으로 구분적용*/
-            /* list-style-image: url(resource/image1.jpg);이미지로 구분 적용 */
+        /* div태그에서만 적용가능한 클래스 정의  */
+        div.gallery{
+            float: left;
+            margin: 5px; border: 1px solid brown;
+            width:180px;
         }
+        /* div태그만 젹용가능한 클래스 정의 */
+        div.desc{
+            padding: 15px; text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* .gallery 클래스를 가진 div태그 안에 정의된 img태그에 적용 */
+        div.gallery img{
+            width:100%; height:auto;
+        }
+
+        /* 마우스를 올렸을때 효과주기 */
+        div.gallery:hover{
+            border: 1px solid #777; 
+            color: yellowgreen;
+        }
+
     </style>
 </head>
 <body>
-    <ul>programming</ul>
-    <li>html5</li>
-    <li>css3</li>
-    <li>javascript</li>
+    <div class="gallery">
+        <!-- 텍스트가 아닌 이미지태그로 이미지 클릭시 이미지로 이동 -->
+        <a href="resource/image1.jpg" target="_blank">
+        <img src="resource/image1.jpg" alt="배경1"
+        width="600" height="400"></a>
+        <div class="desc">image1</div>
+    </div>
+    <div class="gallery">
+        <a href="http://placehold.it/640x480" target="_blank">
+        <img src="http://placehold.it/640x480" alt="배경1"
+        width="600" height="400"></a>
+        <div class="desc">http://placehold.it/640x480</div>
+    </div>
+    <div class="gallery">
+        <a href="http://placeimg.com/640/480/any" target="_blank">
+        <img src="http://placeimg.com/640/480/any" alt="배경1"
+        width="600" height="400"></a>
+        <div class="desc">http://placeimg.com/640/480/any</div>
+    </div>
 </body>
 </html>
-     
