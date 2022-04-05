@@ -4,50 +4,61 @@
     <meta charset="UTF-8">
     <title>웹</title>
     <style >
-        /* div태그에서만 적용가능한 클래스 정의  */
-        div.gallery{
-            float: left;
-            margin: 5px; border: 1px solid brown;
-            width:180px;
+        div{
+            border: 2px solid yellowgreen;
+            margin: 10px;
+            padding: 50px;
+            font-size:30px
         }
-        /* div태그만 젹용가능한 클래스 정의 */
-        div.desc{
-            padding: 15px; text-align: center;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        #grad1{
+            background-image: linear-gradient(red, yellow);
         }
-        /* .gallery 클래스를 가진 div태그 안에 정의된 img태그에 적용 */
-        div.gallery img{
-            width:100%; height:auto;
+        #grad2{
+            background-image: linear-gradient(to right, red, yellow);
         }
-
-        /* 마우스를 올렸을때 효과주기 */
-        div.gallery:hover{
-            border: 1px solid #777; 
-            color: yellowgreen;
+        #grad3{
+            /* webkit일때만 사용가능한 설정 */
+            background-image: -webkit-linear-gradient(left, rgba(255,0,0,0.5), rgba(0,0,255,1));
         }
-
+        #grad4{
+            /* 90은 왼쪽 -90은 오른쪽 */
+            background-image: linear-gradient(-90deg, red, blue);
+        }
+        #grad5{
+            background-image: linear-gradient(to right, red, orange, yellow
+            , green, blue, indigo, violet);
+        }
+        #grad6{
+            background-image: linear-gradient(to bottom, 
+            #33ccff, rgba(255,0,0,0.5));
+        }
+        #grad7{
+            background-image: repeating-linear-gradient(red, 
+            yellow 30%, green 40%);
+        }
+        #cir1{
+            background-image: radial-gradient(circle, red 5%, yellow 15%, green 60%);
+        }
+        #cir2{
+            background-image: radial-gradient(circle, red 80%, 
+            yellow 5%, green );
+        }
+        #cir3{
+            background-image: repeating-radial-gradient(red,
+            yellow 10%, green 15%);
+        }
     </style>
 </head>
 <body>
-    <div class="gallery">
-        <!-- 텍스트가 아닌 이미지태그로 이미지 클릭시 이미지로 이동 -->
-        <a href="resource/image1.jpg" target="_blank">
-        <img src="resource/image1.jpg" alt="배경1"
-        width="600" height="400"></a>
-        <div class="desc">image1</div>
-    </div>
-    <div class="gallery">
-        <a href="http://placehold.it/640x480" target="_blank">
-        <img src="http://placehold.it/640x480" alt="배경1"
-        width="600" height="400"></a>
-        <div class="desc">http://placehold.it/640x480</div>
-    </div>
-    <div class="gallery">
-        <a href="http://placeimg.com/640/480/any" target="_blank">
-        <img src="http://placeimg.com/640/480/any" alt="배경1"
-        width="600" height="400"></a>
-        <div class="desc">http://placeimg.com/640/480/any</div>
-    </div>
+    <div id="grad1"></div>
+    <div id="grad2"></div>
+    <div id="grad3"></div>
+    <div id="grad4"></div>
+    <div id="grad5"></div>
+    <div id="grad6"></div>
+    <div id="grad7"></div>
+    <div id="cir1"></div>
+    <div id="cir2"></div>
+    <div id="cir3"></div>
 </body>
 </html>
