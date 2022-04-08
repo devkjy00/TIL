@@ -34,3 +34,29 @@
     
 - 스태틱 메서드
     - 해당 타입 관련 헬퍼 또는 유틸리티 메소드를 제공할 때 인터페이스에 스태틱 메소드를 제공할 수 있다
+
+- iterable의 기본 메서드
+    - forEach()
+    - spliterator() : Spliterator를 반환
+        - .trySplit() : 이터레이터를 반으로 분할해서 반만 반환, 원래의 객체도 반으로 분할된다
+        - .tryAdance() : Consumer를 실행
+
+- Comparator의 기본 메소드 및 스태틱 메소드
+    - reversed()
+    - thenComparing()
+    - static reverseOrder() / naturalOrder()
+    - static nullsFirst() / nullsLast()
+    - static comparing()
+
+- 기본, 스태틱 메서드의 이점
+    - 추상클래스가 없이 인터페이스만으로도 구현된 메서드를 더 간단하게 상속할 수 있다
+
+## Stream
+- 종료 연산을 먼저 처리하고나서 그 다음에 중간 연산이 실행된다
+- 스트림의 paralleStream으로 간단하게 병렬처리를 할 수 있다
+
+- fillter에서 not 연산 구현
+    - .filter(Predicate.not(Objects::isNull));
+    - .filter(i -> !i.isNull());
+
+- flatMap으로 이터러블의 차원을 낮춰서 내부의 객체타입을 사용할 수 있다
