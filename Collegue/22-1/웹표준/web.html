@@ -1,50 +1,25 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>웹</title>
-    <style >
-        #mainbox{
-            text-align: center;
-            width: 300px; height: 300px;
-            font-size: 30px;
-            line-height: 300px;
-            background: yellowgreen;
-        }
-        a[href]{
-            font-size: 32px;
-        }
-        a[target="_blank"]{
-            color: black;
-        }
-        a[href*="g"]{
-            /* g가 있는 href값을 가진 태그만  */
-            font-size: 15px;
-            font-weight: bold;
-        }
-        h1[title*="first"]{color: hotpink;}
-        h1[title ^= "heading_s"]{
-            /* heading_s로 시작하는 값 */
-            color: lawngreen;
-        }
-        h1[title $= "xt1"]{
-            /* xt1로 끝나는 값 */
-            color: red;
-        }
-        p[lang|="ko"]{
-            color: skyblue;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>웹</title>
+<style >
+    * {
+        background-color: darkcyan;
+    }
+    input[type="text"]:valid{
+        background-color: ivory;
+    }
+    input[type="text"]:invalid{
+        background-color: red;
+    }
+</style>
 </head>
 <body>
-    <div id="mainbox">본문 내용 입력</div>
-    <a href="http://naver.com"
-    target="_blank">naver</a>
-    <a href="https://daum.net">daum</a>
-    <a href="https://google.co.kr">google</a>
-    <h1 title="heading_first">heading daum</h1>
-    <h1 title="heading_second">heading google</h1>
-    <h1 title="text1">heading naver</h1>
-    <p lang="ko">Hello</p>
+    <label for="">입력값 필요</label>
+    <input type="text" name="" value="반드시 입력" required><br>
+    <label for="">특수문자없는 8자리</label>
+    <input type="text" name="" value="1234abcd"
+           pattern="[a-zA-Z0-9]{8}"><br>
 </body>
 </html>

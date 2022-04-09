@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/웹개발종합_spa.iml" filepath="$PROJECT_DIR$/.idea/웹개발종합_spa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TIL.iml" filepath="$PROJECT_DIR$/.idea/TIL.iml" />
     </modules>
   </component>
 </project>
