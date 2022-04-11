@@ -40,3 +40,36 @@
 ## javascript
 - 구글 chrome의 Console을 통해 대화형으로 코드를 작성할 수 있다
 - html파일을 위에서 부터 읽어서 script에 정의된 명령은 페이지를 열면 바로 실행된다
+- JQuery : HTML요소를 조작하는 라이브러리
+  - https://www.w3schools.com/jquery/jquery_get_started.asp
+  - 요소의 id를 통해서 요소를 식별하고 동작한다
+    - $('#id명')
+      - .val('문자열') : 해당 태그에 값 입력
+      - .val() : 해당 태그의 값 반환
+      - .hide() : 태그 숨기기
+      - .show() : 태그 보이기
+      - .append(`태그`) : (`)백틱으로 작성된 태그를 HTML로 변환, 태그에 추가
+        ```js
+        let title = "title"
+        let a = `<h1>제목 : ${title}</h1>`
+        $('#id').append(a)
+        ```
+        - ${}를 사용해서 문자열에 변수를 추가 할 수 있다
+  
+      - .empty() : 태그 내용 지우기
+
+- Ajax 비동기로 XML, JSON 파일을 다룬다
+  - Rest API를 사용해서 JSON파일을 다룬다
+    - URI를 통해서 자원에 접근한다
+    
+  - 기본 골격
+  ```js
+  $.ajax({
+  type: "GET",
+  url: "여기에URL을입력",
+  data: {},
+  success: function(response){
+  console.log(response)
+  }
+  })
+  ``` 

@@ -69,6 +69,9 @@ crossorigin="anonymous"></script>
 
           box-shadow: 0px 0px 3px 0px gray;
           padding: 20px;
+
+            /* 처음에 나오지 않도록 설정 show함수와 같은 방법으로 출력*/
+          display: none;
         }
 
         .mybutton{
@@ -85,15 +88,36 @@ crossorigin="anonymous"></script>
         }
     </style>
 
+    <script>
+        function open_box(){
+            $('#post-box').show()
+        }
+        function close_box(){
+            $('#post-box').hide()
+        }
+        $.ajax({
+            type: "GET",
+            url: "http://spartacodingclub.shop/sparta_api/seoulair",
+            data: {},
+            success: function(response){
+            let rows = response['RealtimeCityAir']['row']
+            for (let i=0; i<rows.length; i++){
+                let gu_name = rows[i]['MSRSTE_NM']
+                let gu_mise = rows[i]['IDEX_MVL']
+                console.log(gu_name, gu_mise)
+            }
+        }
+        })
+    </script>
 </head>
 
 <body>
     <div class="mytitle">
         <h1>내 생에 최고의 영화들</h1>
-        <button >영화 기록하기🔥</button>
+        <button onclick="open_box()">영화 기록하기🔥</button>
     </div>
 
-    <div class="mypost">
+    <div class="mypost" id="post-box">
       <div class="form-floating mb-3">
         <input type="url" class="form-control" id="floatingInput" placeholder="url">
         <label for="floatingInput">URL</label>
@@ -119,7 +143,7 @@ crossorigin="anonymous"></script>
 
       <div class="mybutton">
         <button type="button" class="btn btn-dark">기록하기</button>
-        <button type="button" class="btn btn-light">닫기</button>
+        <button type="button" class="btn btn-light" onclick="close_box()">닫기</button>
       </div>
 
     </div>
