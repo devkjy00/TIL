@@ -55,21 +55,32 @@
         $('#id').append(a)
         ```
         - ${}를 사용해서 문자열에 변수를 추가 할 수 있다
-  
+        - **태그에 CSS클래스를 적용 시켜서 동적으로 스타일을 적용시킬 수 있다**
       - .empty() : 태그 내용 지우기
+      - .attr("속성명", 값) : 태그 속성 변경
+      - .text("문자열") : 태그 텍스트 변경
+  
 
 - Ajax 비동기로 XML, JSON 파일을 다룬다
   - Rest API를 사용해서 JSON파일을 다룬다
     - URI를 통해서 자원에 접근한다
     
   - 기본 골격
-  ```js
-  $.ajax({
-  type: "GET",
-  url: "여기에URL을입력",
-  data: {},
-  success: function(response){
-  console.log(response)
-  }
-  })
-  ``` 
+    ```js
+    $.ajax({
+    type: "GET",
+    url: "여기에URL을입력",
+    data: {},
+    success: function(response){
+    console.log(response)
+    }
+    })
+    ``` 
+    - JSON 인덱싱 할 때는 무조건 복사하기
+  
+  - 로딩 후 호출
+    ```js
+    $(document).ready(function(){
+    $.ajax({...})
+    });
+    ```
