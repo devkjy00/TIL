@@ -89,25 +89,50 @@ crossorigin="anonymous"></script>
     </style>
 
     <script>
+        $(document).ready(function () {
+            listing();
+        });
+
+        function listing() {
+            $("#a").empty()
+            $.ajax({
+                type:"GET",
+                url: "http://spartacodingclub.shop/web/api/movie",
+                data: {},
+                success: function (response){
+                    let rows = response['movies']
+                    for(let i=0; rows.length; i++){
+                        let img = rows[i]["image"]
+                        let star = '⭐'.repeat(rows[i]["star"])
+                        let title = rows[i]["title"]
+                        let comment = rows[i]["comment"]
+                        let desc = rows[i]["desc"]
+
+                        let temp_html = `
+                           <div class="col">
+                          <div class="card">
+                          <img src="${img}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          <h5 class="card-title">${title}</h5>
+                          <p class="card-text">${comment}</p>
+                          <p>${star}</p>
+                          <p class="mycomment">${desc}</p>
+                          </div>
+                          </div>
+                          </div>
+                            `
+
+                        $("#a").append(temp_html)
+                    }
+                }
+            })
+        }
         function open_box(){
             $('#post-box').show()
         }
         function close_box(){
             $('#post-box').hide()
         }
-        $.ajax({
-            type: "GET",
-            url: "http://spartacodingclub.shop/sparta_api/seoulair",
-            data: {},
-            success: function(response){
-            let rows = response['RealtimeCityAir']['row']
-            for (let i=0; i<rows.length; i++){
-                let gu_name = rows[i]['MSRSTE_NM']
-                let gu_mise = rows[i]['IDEX_MVL']
-                console.log(gu_name, gu_mise)
-            }
-        }
-        })
     </script>
 </head>
 
@@ -148,7 +173,7 @@ crossorigin="anonymous"></script>
 
     </div>
     <div class="wrap">
-      <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="row row-cols-1 row-cols-md-4 g-4" id="a">
         <div class="col">
                           <div class="card">
                           <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">

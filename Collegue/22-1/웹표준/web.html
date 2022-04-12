@@ -4,22 +4,75 @@
 <meta charset="UTF-8">
 <title>웹</title>
 <style >
-    * {
-        background-color: darkcyan;
+    ol > li:nth-child(2n){
+        /* 짝수번 태그*/
+        color: orange;
     }
-    input[type="text"]:valid{
-        background-color: ivory;
+    ol > li:nth-child(2n+1){
+        /* 홀수번 태그*/
+        color: navajowhite;
     }
-    input[type="text"]:invalid{
-        background-color: red;
+    ol > li:first-child{
+        color: hotpink;
+    }
+    ol > li:last-child{
+        color: aqua;
+    }
+    ol > li:nth-child(4){
+        background: brown;
+    }
+    ul > :nth-last-child(2n+1){
+        color: orange;
+    }
+    ul > :nth-last-child(3n){
+        color: darkcyan;
+    }
+    p:first-of-type{
+        color: darkcyan;
+    }
+    p:last-of-type{
+        color: orange;
+    }
+    p:nth-of-type(2n){
+        background: skyblue;
+    }
+    p:nth-last-of-type(2n+1){
+        background: navajowhite;
     }
 </style>
 </head>
 <body>
-    <label for="">입력값 필요</label>
-    <input type="text" name="" value="반드시 입력" required><br>
-    <label for="">특수문자없는 8자리</label>
-    <input type="text" name="" value="1234abcd"
-           pattern="[a-zA-Z0-9]{8}"><br>
+<ol>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ol>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+
+<h4>list</h4>
+<p>1.a</p>
+<p>2.b</p>
+<p>3.c</p>
+<p>4.d</p>
+<p>5.e</p>
+<div>
+    <h2>list</h2>
+    <p>1.a</p>
+    <p>2.b</p>
+    <p>3.c</p>
+    <p>4.d</p>
+    <p>5.e</p>
+</div>
 </body>
 </html>
