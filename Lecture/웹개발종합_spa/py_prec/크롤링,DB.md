@@ -31,6 +31,13 @@
   - .text() : text 반환
   - ['속성'] : 태그 속성값 문자열
 
+- meta 태그 가져오기
+  ```python
+  # soup = BeautifulSoup객체
+  title = soup.select_one('meta[property="og:title"]')
+  ```
+  - html의 head에서 meta태그를 찾아서 원하는 태그를 가져오면 된다
+
 ## MongoDB
 - 대표적 noSQL
 - mongoDB Atlas : 클라우드 환경 데이터 베이스
@@ -44,7 +51,7 @@
   client = MongoClient('여기에 URL 입력')
   db = client.네임스페이스명
   # DB에 데이터 저장
-  db.user.insert_one(dict)
+  db.테이블명.insert_one(dict)
   ```
   - url은 mongoDB에서 생성만 데이터베이스에 Connect과정에서 생성된다
     - url에 ```<password>```에 비밀번호 입력
