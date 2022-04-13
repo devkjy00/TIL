@@ -62,3 +62,25 @@
 - flatMap으로 이터러블의 차원을 낮춰서 내부의 객체타입을 사용할 수 있다
 - iterate(람다식)으로 무한한 스트림을 만들 수 있다
     - limit으로 제한가능
+
+## Optional
+- if(obj==null) 과 같은 형식은 좋지 않다
+- 값을 제대로 리턴할 수 없는 경우 대책
+    - 예외를 던진다
+        - 리소스를 많이 사용한다, 비즈니스 로직을 처리하기에 좋지 않은 방법
+    
+    - null을 반환한다
+        - 항상 조건문으로 null을 체크해야 한다
+
+    - Optional을 반환한다
+        - null이거나 아닌 객체를 Optional에 넣어서 nullPointerException을 방지할 수 있다
+
+- Optional은 메소드의 리턴값으로만 사용하는 것이 좋다
+    - 다른 방법은 null을 관리하는 Optional에 의미가 없다
+
+- Collection, Map, Stream, Array, Optional은  Optional로 감싸면 안된다
+- 기본형은 기본형을 감싸는 OptionalInt를 사용
+
+- API
+    - 생성 : of, ofNullable, empty
+    - 메서드 : isPresent, isEmpty, get, ifPresent, orElse, orElseGet, orElseThrow, filter, map, flatMap

@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
 # DB
-client = MongoClient('mongodb+srv://anwjsrlrhwkd:wmfrlwk0@cluster0.da3km.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://anwjsrlrhwkd:<password>@cluster0.da3km.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 db = client.dbsparta
 
 # 크롤링
