@@ -217,6 +217,7 @@
         ```
 
 
+
     - 비동기로 작업 실행하기
         - 리턴값이 없는 경우: runAsync()
             ```java
@@ -275,8 +276,32 @@
             } 
             ```
         - thenCombine(): 두 작업을 독립적으로 실행하고 둘 다 종료 했을 때 콜백 실행
+            ```java
+            CompletableFuture<String> cf = CompletableFuture.supplyAsync(() -> {
+                return "Hello";
+            });
+            CompletableFuture<String> cf2 = CompletableFuture.supplyAsync(() -> {
+                return "nice to meet you";
+            });
+
+            CompletableFuture<String> future = cf.thenCombine(cf2, (a, b) -> a + " " + b);
+            System.out.println(future.get());
+            ```
+
         - allOf(): 여러 작업을 모두 실행하고 모든 작업 결과에 콜백 실행
-        - anyOf():여러작업중에가장빨리끝난하나의결과에콜백실행
-    - 예외처리
-        - exeptionally(Function) 
+            ```java
+            CompletableFuture[] futuresArr = ...;
+            CompletableFuture<...> result = CompletableFuture.allOf(futuresArr)
+                .thenAccept(() -> {
+                    return futures.stream()...
+
+                });
+            ```
+            - 포함된 타입이 동일해야 한다
+
+        - anyOf():여러 작업중에 가장 빨리 끝난 하나의 결과에 콜백 실행
+
+    - 예외처리 : 예외 발생시에 예외 타입을 받아서 처리할 수 있다
+        - exeptionally(Function)
+            
         - handle(BiFunction)
