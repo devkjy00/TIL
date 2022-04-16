@@ -1,11 +1,9 @@
-*.DS_store
+*.DS_Store
 
 *.swp
-
-.gitignore
 
 *.png
 
 *.jpg
 
-.idea
+*.idea

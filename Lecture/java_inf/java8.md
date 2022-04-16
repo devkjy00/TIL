@@ -84,3 +84,199 @@
 - API
     - 생성 : of, ofNullable, empty
     - 메서드 : isPresent, isEmpty, get, ifPresent, orElse, orElseGet, orElseThrow, filter, map, flatMap
+
+## Date, Time
+
+- Instant는 기계용 시간을 표현, 메소드 처리시간에 사용된다
+- Period 
+    - .between : 두 LocalDate객체 간의 day차이를 연산
+
+- Duration  
+    - .between : 두 Instant객체 간의 차이를 연산
+
+## CompletableFuture
+- 자바 Concurrent 프로그래밍
+    - Thread 상속 
+    - Thread 생성자의 매개변수로 Runnable이나 람다식 사용
+
+- Executors
+    - 고수준 Concurrency 프로그래밍
+        - 쓰레드를 만들고 관리하는 작업을 애플리케이션에서 분리해서 Executors에 위임
+
+    - Executors가 하는 일
+        - 쓰레드 만들기: 애플리케이션이 사용할 쓰레드 풀을 만들어 관리한다.
+            - execute(Runnable)
+        - 쓰레드 관리: 쓰레드 생명 주기를 관리한다.
+        - 작업처리 및 실행: 쓰레드로 실행할 작업을 제공할 수있는 API를 제공한다.
+
+    - ExecutorService 
+        - Executor 상속 받은 인터페이스, 구현체로 손쉽게 멀티 프로세서를 활용할 수 있게끔 도와준다
+        - Callable동시실행, Executor를 종료 기능을 제공한다.
+        - ExecutorService로 작업 실행하기
+            ```java
+            // Runnable으로 구현, 스레드 하나 생성
+            ExecutorService es = Executors.newSingleThreadExecutor();
+            es.excute(new Runnable(){ 
+                @override
+                void run(){
+
+                }
+            })
+            // 람다식으로 구현, 2개의 스레드로 구현
+            ExecutorService es = Executors.newFixedThreadPool(2);
+
+            // 2개의 스레드로 여러번 실행해도 모두 처리된다
+            // 스레드가 모두 실행중이면 다른 작업은 Bloking Queue에서 대기한다
+            es.submit(() -> {});
+            es.submit(() -> {});
+            es.submit(() -> {});
+            es.submit(() -> {});
+
+
+            es.shutdown();
+            ```
+        - ExecutorService로 멈추기
+            - executorService.shutdown(); // 처리중인 작업 기다렸다가 종료
+            - executorService.shutdownNow(); // 당장 종료 Fork/Join 프레임워크
+
+    - ScheduledExecutorService 
+        - ExecutorService를 상속 받은 인터페이스, 특정 시간 이후 또는 주기적으로 작업을 실행할 수 있다 
+        ```java
+        ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
+        // (작업, 시작시간, 대기시간, 단위)
+        ses.scheduleAtFixedRate(()->{System.out.println("Hello");}, 2, 2, TimeUnit.SECONDS);
+        ```
+
+- Callable과 Future Callable
+    - Callable : Runnable과 유사하지만 작업의 결과를 받을 수 있다.
+    - Future
+        - 비동기적인 작업의 현재 상태를 조회하거나 결과를 가져올 수 있다.
+        - https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html
+
+        - get() : 결과를 가져오기 
+            ```java
+            ExecutorService es = Executors.newSingleThreadExecutor();
+
+            Callable<String> hello = () -> {
+                Thread.sleep(2000L);
+                return "Hello";
+            };
+            // Callable을 처리하는 쓰레드는 값을 반환할 수 있다
+            // submit은 Future를 반환한다
+            Future<String> submit = es.submit(hello);
+
+            submit.get();
+            ```
+            - 블록킹 콜이다.
+            - 타임아웃(최대한으로 기다릴 시간)을 설정할 수 있다.
+
+        - isDone() : 작업 상태 확인하기 
+            - 완료 했으면 true 아니면 false를 리턴한다.
+
+        - cancel() : 작업 취소하기 
+            - 취소 했으면 true 못했으면 false를 리턴한다.
+            - parameter로 true를 전달하면 현재 진행중인 쓰레드를 interrupt하고 그러지 않으면 현재 진행중인 작업이 끝날때까지 기다린다 
+        - invokeAll() : 여러 작업 동시에 실행하기 
+            ```java
+            List<Future<String>> futures = es.invokeAll(Arrays.asList(hello, hello, hello));
+
+            for(Future<String> f : futures){
+                System.out.println(f.get());
+            }
+            ```
+            - 동시에 실행한 작업중에 제일 오래 걸리는 작업만큼 시간이 걸린다
+        - invokeAny() : 여러 작업 중에 하나라도 먼저 응답이 오면 끝내기 
+            ```java
+            String s = futures = es.invokeAny(Arrays.asList(hello, hello, hello));
+            System.out.println(s);
+            ```
+            - 동시에 실행한 작업중에 제일 짧게 걸리는 작업만큼 시간이 걸린다
+            - 블록킹 콜이다    
+
+
+- CompletableFuture
+    - 자바에서 비동기(Asynchronous) 프로그래밍을 가능케하는 인터페이스.
+
+    - Future로는 하기 어렵던 작업들
+        - Future를 외부에서 완료 시킬 수 없다. 취소하거나, get()에 타임아웃을 설정할 수는 있다.
+        - 블로킹 코드(get())를 사용하지 않고서는 작업이 끝났을 때 콜백을 실행할 수 없다.
+        - 여러 Future를 조합할 수 없다, 예) Event 정보 가져온 다음 Event에 참석하는 회원 목록
+        가져오기
+        - 예외 처리용 API를 제공하지 않는다.
+
+    - CompletableFuture
+        - Implements Futurem, ​CompletionStage
+        ```java
+		// complete cf의 기본값을 정하고 get에서 작업이 완료되지 않았으면 기본값을 반환
+		CompletableFuture<String> cf = new CompletableFuture<>();
+		cf.complete("value");
+		System.out.println(cf.get());
+
+		CompletableFuture<String> cf2 = CompletableFuture.completedFuture("value");
+		System.out.println(cf2.get());
+        ```
+
+
+    - 비동기로 작업 실행하기
+        - 리턴값이 없는 경우: runAsync()
+            ```java
+            CompletableFuture<Void> cf = CompletableFuture.runAsync(() -> {
+                System.out.println("Hello");
+            });
+            cf.get();
+            ```
+        - 리턴값이 있는 경우: supplyAsync()
+            ```java
+            CompletableFuture<String> cf = CompletableFuture.supplyAsync(() -> {
+                return "Hello";
+            });
+            System.out.println(cf.get());
+            ```
+        - 원하는 Executor(쓰레드풀)를 사용해서 실행할 수도 있다. (기본은 ForkJoinPool.commonPool())
+
+    - 콜백 제공하기
+        - thenApply(Function): 리턴값을 받아서 다른 값으로 바꾸는 콜백
+            ```java
+            CompletableFuture<String> cf = CompletableFuture.supplyAsync(() -> {
+                return "Hello";
+            }).thenApply((s) -> {
+                return s.toUpperCase();
+            });
+            System.out.println(cf.get());
+            ```
+        - thenAccept(Consumer): 리턴값을 또 다른 작업을 처리하는 콜백 (리턴없이)
+            ```java
+            CompletableFuture<String> cf = CompletableFuture.supplyAsync(() -> {
+                return "Hello";
+            }).thenAccept((s) -> {
+                System.out.println(s.toUpperCase());
+            });
+            cf.get();
+            ```
+        - thenRun(Runnable): 리턴값 받지 않고 다른 작업을 처리하는 콜백
+        - 콜백 자체를 또다른 쓰레드에서 실행할 수 있다.
+
+    - 조합하기
+        - thenCompose(): 두 작업이 서로 이어서 실행하도록 조합
+            ```java
+            class A{
+                public static void main(String[] args) throws Exception {
+                    CompletableFuture<String> cf = CompletableFuture.supplyAsync(() -> {
+                        return "Hello";
+                    });
+                    CompletableFuture<String> future = cf.thenCompose(A::compose);
+                    System.out.println(future.get());
+                }
+                static CompletableFuture<String> compose(String msg){
+                    return CompletableFuture.supplyAsync(() -> {
+                        return msg + " composed";
+                    });
+                }
+            } 
+            ```
+        - thenCombine(): 두 작업을 독립적으로 실행하고 둘 다 종료 했을 때 콜백 실행
+        - allOf(): 여러 작업을 모두 실행하고 모든 작업 결과에 콜백 실행
+        - anyOf():여러작업중에가장빨리끝난하나의결과에콜백실행
+    - 예외처리
+        - exeptionally(Function) 
+        - handle(BiFunction)

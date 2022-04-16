@@ -3,62 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>웹</title>
-    <style >
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
         div{
-            border: 2px solid yellowgreen;
-            margin: 10px;
-            padding: 50px;
-            font-size:30px
+            width: 100px; height: 100px;
+            text-align: center;
+            line-height: 100px;
         }
-        #grad1{
-            background-image: linear-gradient(red, yellow);
+        /* 태그 바로 다음에 붙여서 정의하면 해당 태그의 속성값 */
+        div#a{
+            background: skyblue;
+            position: static;
         }
-        #grad2{
-            background-image: linear-gradient(to right, red, yellow);
+        div#b{
+            background: hotpink;
+            position: relative;
+            top: 0px;
+            left: 100px;
         }
-        #grad3{
-            /* webkit일때만 사용가능한 설정 */
-            background-image: -webkit-linear-gradient(left, rgba(255,0,0,0.5), rgba(0,0,255,1));
-        }
-        #grad4{
-            /* 90은 왼쪽 -90은 오른쪽 */
-            background-image: linear-gradient(-90deg, red, blue);
-        }
-        #grad5{
-            background-image: linear-gradient(to right, red, orange, yellow
-            , green, blue, indigo, violet);
-        }
-        #grad6{
-            background-image: linear-gradient(to bottom,
-            #33ccff, rgba(255,0,0,0.5));
-        }
-        #grad7{
-            background-image: repeating-linear-gradient(red,
-            yellow 30%, green 40%);
-        }
-        #cir1{
-            background-image: radial-gradient(circle, red 5%, yellow 15%, green 60%);
-        }
-        #cir2{
-            background-image: radial-gradient(circle, red 80%,
-            yellow 5%, green );
-        }
-        #cir3{
-            background-image: repeating-radial-gradient(red,
-            yellow 10%, green 15%);
+        div#c{
+            background: yellow;
+            position: absolute;
+            top: 50px;
+            left: 50px;
         }
     </style>
 </head>
 <body>
-<div id="grad1"></div>
-<div id="grad2"></div>
-<div id="grad3"></div>
-<div id="grad4"></div>
-<div id="grad5"></div>
-<div id="grad6"></div>
-<div id="grad7"></div>
-<div id="cir1"></div>
-<div id="cir2"></div>
-<div id="cir3"></div>
+    <div id="a">a</div>
+    <div id="b">b</div>
+    <div id="c">c</div>
 </body>
 </html>
