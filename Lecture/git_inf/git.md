@@ -132,4 +132,11 @@
 - 용어 
     - HEAD : 현재 속한 브랜치의 가장 최신 커밋, 현재 파일의 시점
         - reset이나 checkout등에 사용
- 
+
+- gitignore 
+    - 적용안될때 cache 삭제 필요
+        ```
+        git rm -r --cached .
+        git add .
+        git commit -m "fixed untracked files"
+        ``` 
