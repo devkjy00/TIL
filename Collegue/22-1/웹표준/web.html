@@ -2,39 +2,46 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>웹</title>
+    <title></title>
     <style>
-        * {
-            padding: 0;
+        *{
             margin: 0;
-        }
-        div{
-            width: 100px; height: 100px;
+            padding: 0;
+            border: 1px solid hotpink;
             text-align: center;
-            line-height: 100px;
         }
-        /* 태그 바로 다음에 붙여서 정의하면 해당 태그의 속성값 */
-        div#a{
-            background: skyblue;
-            position: static;
+        aside{
+            width: 35%;
+            height: 200px;
+            float: right;
+            box-sizing: border-box;
         }
-        div#b{
-            background: hotpink;
-            position: relative;
-            top: 0px;
-            left: 100px;
+        article, section{
+            width: 65%; height: 100px;
+            float: left;
+            box-sizing: border-box;
         }
-        div#c{
-            background: yellow;
-            position: absolute;
-            top: 50px;
-            left: 50px;
+
+        header, footer, nav, aside, section{
+            display: block;
+        }
+        article, section{
+            background-color: skyblue;
+            height: 100px;
+        }
+        footer{
+            clear: both;
         }
     </style>
+
 </head>
 <body>
-    <div id="a">a</div>
-    <div id="b">b</div>
-    <div id="c">c</div>
+    <nav>
+        navitator
+    </nav>
+    <aside class="">aside</aside>
+    <article>article</article>
+    <section>section</section>
+    <footer>footer</footer>
 </body>
 </html>

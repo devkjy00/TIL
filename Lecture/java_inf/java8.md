@@ -305,3 +305,20 @@
         - exeptionally(Function)
             
         - handle(BiFunction)
+
+# 그 외
+## 애노테이션의 변화
+- 애노테이션을 타입 선언부에 선언 할 수 있고 중복 선언할 수 있게 되었다
+    - 제네릭, 변수, 매개변수, 예외 ...
+
+- @Target(...)
+    - ElementType.TYPE_PARAMETER
+        - 타입 파라미터에 선언할 수 있게 해준다
+        - class a<@annotationName T> 
+        - <@annotationName T> void func(...){}
+    
+    - ElementType.TYPE_USE
+        - 모든 타입 선언부에 사용할 수 있게 해준다
+    
+- @Repeatable(컨테이너클래스.class)
+    - 컨테이너 애노테이션은 중복 애노테이션과 @Retention 및 @Target이 같거나 더 넓어야 한다. 
