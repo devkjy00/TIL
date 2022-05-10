@@ -22,6 +22,12 @@
 
 - 폰트를 검색, 코드를 가져올수 있다
   - https://fonts.google.com/?subset=korean
+	```html
+	<!-- head에 링크할 코드 --!>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Gowun+Dodum&family=Hi+Melody&family=Jua&family=Nanum+Gothic&display=swap" rel="stylesheet">
+	```
     
 - bootstrap : 미리 정의된 CSS를 제공, 간단하게 스타일을 적용할 수 있다
   - https://getbootstrap.com/docs/5.0/components/buttons/
