@@ -2,7 +2,7 @@
 
 
 <details>
-    <summary># 항해 99</summary>
+    <summary><h2> 항해 99 </h2></summary>
 
 > 1일차 
 - 
