@@ -4,7 +4,7 @@ import requests
 
 app = Flask(__name__)
 
-client = MongoClient('mongodb://anwjsrlrhwkd:spa0000@54.180.94.15', 27017)
+client = MongoClient('mongodb+srv://anwjsrlrhwkd:<password>@cluster0.da3km.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 db = client.dbsparta_plus_week2
 
 
