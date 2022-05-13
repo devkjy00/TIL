@@ -47,6 +47,8 @@
         - 데이터의 흐름에 대해서 파악하고 그에 따른 구현이 필요하다
         - 로직을 프론트에서 구현할지 백엔드에서 구현할지 에대한 기준은?
         - URI 설계가 중요하다, 일종의 인터페이스 역할을 하는 것 같다
+	
+	> REST API를 적용한 구현의 필요성을 더 크게 느낀 것 같다
 
 - 참고자료
     - <a href="http://daplus.net/mongodb-mongo-%EC%BD%98%EC%86%94%EC%97%90%EC%84%9C-objectid%EB%A1%9C-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B2%80%EC%83%89%ED%95%A9%EB%8B%88%EA%B9%8C/">.</a>
