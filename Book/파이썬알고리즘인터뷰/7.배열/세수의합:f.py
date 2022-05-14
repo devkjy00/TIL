@@ -7,7 +7,13 @@ https://leetcode.com/problems/3sum/
 :return: [[-1, 0, 1], [-1, -1, 2]]
 '''
 
-def solution(nums):
+def answer(nums):
+    '''
+    투 포인터를 이용해서 시간복잡도를 줄인 풀이이다
+    1. 3개의 포인터가 필요한 상황
+    2. 첫번째는 하나의 for문으로 만들고 그 다음 2개의 포인터는 내부의 하나의 while문으로 만들었다
+    3. 정렬을 해서 값이 클 때와 작을 때에 포인터를 옮겨 줬다
+    '''
     result = []
     nums.sort()
 
@@ -35,5 +41,5 @@ def solution(nums):
     return result
 
 
-print(solution([-1, 0, 1, 2, -1, -4]))
+print(answer([-1, 0, 1, 2, -1, -4]))
 
