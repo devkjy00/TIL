@@ -1,6 +1,20 @@
+USE fruitstore3
+
+GO
+CREATE PROC orders_received_by_kim
+AS
 SELECT I.cno, f.fname, I.odate
 FROM indent3 I
 JOIN fruit3 F
 ON I.fno = F.fno
 WHERE oprs = '김효선' AND qty >= 250;
+GO
 
+GO
+CREATE PROC triple_point
+WITH ENCRYPTION
+AS
+UPDATE customer3
+SET point = point*3
+WHERE city = '부산';
+GO
