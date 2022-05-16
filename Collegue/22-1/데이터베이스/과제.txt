@@ -1,0 +1,6 @@
+SELECT I.cno, f.fname, I.odate
+FROM indent3 I
+JOIN fruit3 F
+ON I.fno = F.fno
+WHERE oprs = '김효선' AND qty >= 250;
+
