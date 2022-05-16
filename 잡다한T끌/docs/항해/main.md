@@ -5,3 +5,4 @@
 - <a href="https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_4.md"> 4일차 </a><br>
 
 <h3> 알고리즘 1 주차 </h3>
+- <a href="https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_7.md"> 7일차(스택) </a><br>
