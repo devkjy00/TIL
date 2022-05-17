@@ -15,7 +15,7 @@
 	-  강의자료가 혼동을 주는 점이 조금 아쉽다
 
 - TIL 정리
-	- <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/%EC%9B%B9%EA%B0%9C%EB%B0%9C%ED%94%8C%EB%9F%AC%EC%8A%A4_spa/project02/%EC%9A%94%EC%95%BD.md">정리</a>
-	- <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/%EC%9B%B9%EA%B0%9C%EB%B0%9C%ED%94%8C%EB%9F%AC%EC%8A%A4_spa/project04/%EC%9A%94%EC%95%BD.md">..</a>
+	- <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/%EC%9B%B9%EA%B0%9C%EB%B0%9C%ED%94%8C%EB%9F%AC%EC%8A%A4_spa/project02/%EC%9A%94%EC%95%BD.md">Jinja2, 정적/동적 웹 페이지</a>
+	- <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/%EC%9B%B9%EA%B0%9C%EB%B0%9C%ED%94%8C%EB%9F%AC%EC%8A%A4_spa/project04/%EC%9A%94%EC%95%BD.md">JWT, Bulma</a>
 
 
