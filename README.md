@@ -4,7 +4,7 @@
 
 ## 자바
 <ul type="circle">
- <a href="https://github.com/southoftheriver/TIL/tree/master/Book/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D"> 자바의 정석 </a>
+ <li><a href="https://github.com/southoftheriver/TIL/tree/master/Book/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D"> 자바의 정석 </a></li>
 <li><a href="https://github.com/southoftheriver/TIL/tree/master/Book/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94"> 이펙티브 자바 </a></li>
 <li><a href="https://github.com/southoftheriver/TIL/blob/master/Book/%EC%9E%90%EB%B0%94%EC%9B%B9%EA%B0%9C%EB%B0%9C/%EB%A9%94%EC%9D%B4%EB%B8%90.md"> 메이븐 </a></li>
 <li> <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/java_inf/java8.md"> java8_inf </a></li>
