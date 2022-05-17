@@ -21,8 +21,8 @@
 <li> <a href="https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%BD%94%EB%94%A9%EC%9D%98%EA%B8%B0%EC%88%A0"> 파이썬 코딩의 기술 </a></li>
 <li> <a href="https://github.com/southoftheriver/TIL/tree/master/Lecture/python_inf"> 파이썬강의_inf</a></li>
 <li> <a href="https://github.com/southoftheriver/TIL/blob/master/Collegue/21-2/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D.md"> 파이썬 데이터 분석_sdu </a></li>
-
 </ul>
+
 ## CS
 <ul type="circle">
 <li> <a href="https://github.com/southoftheriver/TIL/tree/master/Book/%ED%95%9C%EA%B6%8C%EC%9C%BC%EB%A1%9C%EB%B0%B0%EC%9A%B0%EB%8A%94%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B5%AC%EC%A1%B0%2C%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D"> 한권으로배우는컴퓨터구조 </a></li>
@@ -31,7 +31,6 @@
 <li> <a href="https://github.com/southoftheriver/TIL/blob/master/Collegue/21-2/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md"> 자료구조, 알고리즘_sdu</a></li>
 <li> <a href="https://github.com/southoftheriver/TIL/tree/master/Collegue/22-1/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C"> 운영체제_sdu </a></li>
 <li> <a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/CS50.md"> CS50 </a></li>
-
 </ul>
 
 ## DB
