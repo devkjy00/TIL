@@ -11,7 +11,6 @@
 	> REST API를 적용한 구현의 필요성을 더 크게 느낀 것 같다
 
 - 참고자료
-    - <a href="http://daplus.net/mongodb-mongo-%EC%BD%98%EC%86%94%EC%97%90%EC%84%9C-objectid%EB%A1%9C-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B2%80%EC%83%89%ED%95%A9%EB%8B%88%EA%B9%8C/">.</a>
-    - <a href="https://ssamko.tistory.com/38">..</a>
-    - <a href="https://velog.io/@leyuri/TIL-input-%EC%97%90%EC%84%9C-%EC%9E%85%EB%A0%A5-%EA%B8%80%EC%9E%90%EC%88%98-%EC%A0%9C%ED%95%9C%ED%95%98%EB%8A%94-2%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95">...</a>
+    - <a href="https://ssamko.tistory.com/38">[pymongo] ObjectId로 검색하기기</a>
+    - <a href="https://velog.io/@leyuri/TIL-input-%EC%97%90%EC%84%9C-%EC%9E%85%EB%A0%A5-%EA%B8%80%EC%9E%90%EC%88%98-%EC%A0%9C%ED%95%9C%ED%95%98%EB%8A%94-2%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95">input 에서 입력 글자수 제한하는 2가지 방법</a>
 
