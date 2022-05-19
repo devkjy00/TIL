@@ -16,6 +16,7 @@
    <li><a href="https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/9.%EC%8A%A4%ED%83%9D_%ED%81%90"> 7일차(스택) </a></li>
    <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/day_8.md"> 8일차(큐) </a></li>
      <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/day_9.md"> 9일차(해쉬테이블) </a></li>
+   <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/day_10.md"> 10일차(DFS) </a></li>
   <li><a href=""> 2주차 회고 </a></li>
  </ul>
 
