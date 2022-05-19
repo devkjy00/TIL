@@ -1,14 +1,14 @@
 '''
 절차지향적으로 풀었던 바이러스문제를 객체지향적으로 풀어보았다
     -> 데이터와 함수를 하나로 묶는다
-
+    -> 예외처리는 생략하고 간단하게 작성
 
 class VirusComputer
-    - infect : 컴퓨터를 상태를 변경시켜서 감염시킨다
+    - infect : Computer객체를 감염시킨다
 
 class Computer
-    - communicate : 연결된 Computer 객체들에게 자신의 상태를 적용시킨다
-    - link : Computer 객체 연결 정보를 저장
+    - communicate : 연결된 Computer 객체들에게 자신의 상태를 전달한다
+    - link : Computer 객체 연결 정보를 저장한다
 
 class Admin
     - set_computers : Computer 객체를 생성한다
@@ -96,7 +96,7 @@ class Admin:
             if com.status == "infected":
                 count += 1
 
-        return count
+        return str(count)
 
 
 
@@ -105,18 +105,20 @@ class Admin:
 
 
 # 관리자가 초기 셋업을 해준다 (컴퓨터 객체 생성, 연결)
-관리자_A = Admin()
-관리자_A.set_computer(7)
-관리자_A.connect([1, 2], [2, 3], [1, 5], [5, 2], [5, 6], [4, 7])
+황태영매니저님 = Admin()
+황태영매니저님.set_computer(7)
+황태영매니저님.connect([1, 2], [2, 3], [1, 5], [5, 2], [5, 6], [4, 7])
+
+
 
 
 
 # print("컴퓨터의 상태")
-# [print(com,":", com.status) for com in 관리자_A.computers]
+# [print(com,":", com.status) for com in 황태영매니저님.computers]
 
 
 # print("컴퓨터의 연결상태")
-# for com in 관리자_A.computers:
+# for com in 황태영매니저님.computers:
 #     print(com, "와 연결된:", end=" ")
 #     for linked in com.linked_computers:
 #         print(linked, end=", ")
@@ -133,9 +135,9 @@ class Admin:
 
 
 # 바이러스 컴퓨터가 관리자_A의 컴퓨터를 감염시킨다
-VirusComputer.infect(관리자_A.computers[0])
-# print("컴퓨터의 상태")
-# [print(com,":", com.status) for com in 관리자_A.computers]
+VirusComputer.infect(황태영매니저님.computers[0])
+print("컴퓨터의 상태")
+[print(com,":", com.status) for com in 황태영매니저님.computers]
 
 
 
@@ -151,7 +153,8 @@ VirusComputer.infect(관리자_A.computers[0])
 
 
 # 관리자가 감염된 컴퓨터의 개수를 세어서 반환한다, 첫번째 컴퓨터 포함
-# print(관리자_A.infection_check())
+print("감염된 PC : " + 황태영매니저님.infection_check() + " 개")
+
 
 
 
