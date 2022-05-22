@@ -19,6 +19,6 @@
    <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/day_10.md"> 10일차(DFS) </a></li>   
     <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/day_11.md"> 11일차(DFS, BFS) </a></li>
     <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/day_12.md"> 12일차(백트래킹) </a></li>
-  <li><a href=""> 2주차 회고 </a></li>
+  <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_2.md"> <strong><i>----- WIL -----</i></strong> </a></li>
  </ul>
 
