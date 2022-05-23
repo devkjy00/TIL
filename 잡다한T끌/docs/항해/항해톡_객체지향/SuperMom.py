@@ -1,15 +1,19 @@
-'''
-class SuperMom
-    -> commute() : 직장으로 출근한다
-    -> get_children_to_school() : 자녀들을 어린이집에 등원시킨다
-'''
 
 class SuperMom:
     def __init__(self):
         self.time = 8
 
-    def commute(self):
+    def commute(self, company):
+        company.check_commute_time(self.time)
+
+    def get_children_to_school(self, son):
+        self.time += son.never_listen()
 
 
-    def get_children_to_school(self):
+
+
+
+
+
+
 
