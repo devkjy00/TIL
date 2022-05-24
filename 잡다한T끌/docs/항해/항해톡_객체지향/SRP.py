@@ -14,10 +14,7 @@ class Company
 class Son
     -> never_listen(): 엄마말 안듣기 시전, 시간을 지체시킨다
 '''
-
 import Company, Son, SuperMom
-
-
 
 
 
