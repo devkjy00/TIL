@@ -9,7 +9,7 @@
 <li><a href="https://github.com/southoftheriver/TIL/blob/master/Book/%EC%9E%90%EB%B0%94%EC%9B%B9%EA%B0%9C%EB%B0%9C/%EB%A9%94%EC%9D%B4%EB%B8%90.md"> 메이븐 </a></li>
 <li> <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/java_inf/java8.md"> java8_inf </a></li>
 <li> <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/java_inf/JVM%EC%9D%B4%ED%95%B4.md"> JVM </a></li>
-<li> <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/java_inf/%EB%A6%AC%ED%94%8C%EB%9E%99%EC%85%98.md>"> reflection </a></li>
+<li> <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/java_inf/%EB%A6%AC%ED%94%8C%EB%9E%99%EC%85%98.md"> reflection </a></li>
 <li> <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/java_inf/%EB%B0%94%EC%9D%B4%ED%8A%B8%EC%BD%94%EB%93%9C.md"> bytecode </a></li>
 <li> <a href="https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_inf/%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC.md"> spring 개념 </a></li>
 </ul>
