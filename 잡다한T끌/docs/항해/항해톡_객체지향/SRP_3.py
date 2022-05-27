@@ -36,10 +36,10 @@ class Time:
 
 class WiseMom:
     def __init__(self, time):
-        self.time = time
+        self.time = Time(time)
 
     def commute(self, company):
-        print("지금은", self.time, "시 빨리 출근하자")
+        print("지금은", self.time.get_time(), "시 빨리 출근하자")
         print()
         company.check_commute_time(self.time)
 
@@ -50,12 +50,12 @@ class WiseMom:
 
 class Uncle:
     def __init__(self, time):
-        self.time = time
+        self.time = Time(time)
 
     def get_children_to_school(self, son):
-        print("삼촌 : 지금은", self.time, "시 이제 조카 깨우고 등원 시켜야겠다")
+        print("삼촌 : 지금은", self.time.get_time(), "시 이제 조카 깨우고 등원 시켜야겠다")
         print()
-        self.time += son.never_listen()
+        self.time.add_time(son.never_listen())
 
 
 
@@ -74,12 +74,12 @@ class Son:
 
 
 
-
 class Company:
     def __init__(self, time):
         self.출근시간 = Time(time)
 
-    def check_commute_time(self, time: Time):
+    def check_commute_time(self, time):
+        print("----회사도착----")
         if self.출근시간.check_time(time):
             print("부장님 : 오 우리회사객체를 위해 준비된 객체로군요!!")
         else:
@@ -92,7 +92,18 @@ class Company:
 
 
 
+와이스맘 = WiseMom(8)
+백수삼촌 = Uncle(8)
+말절대안듣는아들 = Son()
+항해99 = Company(9)
 
+
+
+
+
+
+백수삼촌.get_children_to_school(말절대안듣는아들)
+와이스맘.commute(항해99)
 
 
 
@@ -108,6 +119,22 @@ class Company:
 
 
 '''
+
+책임 분리를 잘 하는 팁...!!!
+클래스를 정의할 때 변수가 아니라 메서드를 먼저 생각한다!!!
+자동차 -> 바퀴, 창문 x
+자동차 -> 시동켜기, 운전하기 o
+
+-> 필요한 것만 가지게 되서 응집력을 높이고 책임을 생각하기 쉽다
+
+
+
+
+
+
+
+
+
 제가 짠 코드는 정답이 아닙니다! 
 다들 많은 코드를 접하시고 올바른 코드를 작성하시기를 바랍니다 !!!
 '''

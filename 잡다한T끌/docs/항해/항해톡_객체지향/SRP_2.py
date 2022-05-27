@@ -26,20 +26,24 @@ class Uncle
 
 
 
+class WiseMom:
+    def __init__(self, time):
+        self.time = time
+
+    def commute(self, company):
+        print("지금은", self.time, "시 빨리 출근하자")
+        print()
+        company.check_commute_time(self.time)
 
 
+class Uncle:
+    def __init__(self, time):
+        self.time = time
 
-
-
-
-
-
-
-
-
-
-
-
+    def get_children_to_school(self, son):
+        print("지금은", self.time, "시 이제 조카를 깨우고 등원 시켜야겠다")
+        print()
+        self.time += son.never_listen()
 
 
 class Son:
@@ -80,17 +84,18 @@ class Company:
 
 # 객체 생성
 
+와이스맘 = WiseMom(8)
+백수삼촌 = Uncle(8)
+말절대안듣는아들 = Son()
+항해99 = Company(9)
 
 
 
 
 
 
-
-
-
-
-
+백수삼촌.get_children_to_school(말절대안듣는아들)
+와이스맘.commute(항해99)
 
 
 
