@@ -39,5 +39,6 @@
    <li><a  href="https://github.com/southoftheriver/TIL/tree/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89%ED%8A%B8%EB%A6%AC"> 14일차(이진탐색 트리) </a></li>
 	   <li><a  href="https://github.com/southoftheriver/TIL/tree/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%ED%9E%99"> 15일차(힙) </a></li>
 	   <li><a  href="https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/17.%EC%A0%95%EB%A0%AC"> 16~17일차(정렬) </a></li>
+  <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_3.md"> <strong><i>----- WIL -----</i></strong> </a></li>
 	
 </ul>
