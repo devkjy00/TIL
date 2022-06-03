@@ -216,8 +216,6 @@
 		System.out.println(cf2.get());
         ```
 
-
-
     - 비동기로 작업 실행하기
         - 리턴값이 없는 경우: runAsync()
             ```java
@@ -322,3 +320,16 @@
     
 - @Repeatable(컨테이너클래스.class)
     - 컨테이너 애노테이션은 중복 애노테이션과 @Retention 및 @Target이 같거나 더 넓어야 한다. 
+  
+## 배열 Parallel 정렬
+- Arrays.parallelSort() : Fork/Join 프레임워크를 사용해서 병렬로 정렬(병합정렬)
+
+## Metaspace
+- JVM의 메모리 영역중 Permgen이 없어지고 Metaspace영역이 생겼다
+- PermGen
+  - permanent generation, 클래스 메타데이터를 담는 곳
+  - heap 영역에 속하고 기본값으로 제한된 크기를 가진다
+
+- Metaspace
+  - 클래스 메타데이터를 담는 곳
+  - Native메모리 영역에 속하고 필요한 만큼 계속 늘어난다
