@@ -9,3 +9,12 @@
 
 	
 
+## 배포 파일 build 하기
+- intellij에서 jar 파일 생성
+	- Gradle 탭 -> Tasks > build > build 더블클릭
+	- lib에 jar 생성
+
+- jar 실행
+```
+java -jar JAR파일명.jar
+```

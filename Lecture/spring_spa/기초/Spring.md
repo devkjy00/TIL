@@ -5,7 +5,6 @@
 		- 생성자에 해당 객체의 repository를 준다
 		- 서비스에 꼭 필요한 변수는 final로 지정해서 스프링에 알려준다
 	- Repository :  가장 안쪽, DB와의 통신을 처리
-		- repository객체는 해당 객체의 테이블을 의미
 		- DB Update는 Service에서 처리한다
 
 - DTO(Data Transfer Object)
@@ -32,7 +31,12 @@
 	- @PutMapping("uri") : 지정된 주소로 온 PUT(수정) 요청을 처리하는 메서드임을 명시
 
 	- @RequestBody : POST요청의 body를 저장할 변수임을 명시
+	- @RequestParam : URI의 쿼리를 문자열로 저장할 변수임을 명시
 	- @PathVariable : URI에서 지정한 값을 받을 변수임을 명시, 같은 이름이어야 한다
+	- @Scheduled : 주기적인 작업을 처리할 Scheduler클래스임을 명시한다
+		- ~Applicatino 클래스에 @EnableScheduling을 추가해서 스케줄러사용을 명시
+		- 속성 : cron, fixedDelay, fixedDelayString, fixedRate, fixedRateString, initialDelay, initialDelayString, zone
+		- https://jeong-pro.tistory.com/186
 
 - javax.transactional
 	- @Transactional : 메서드에 SQL쿼리가 일어나는 것을 명시
@@ -52,11 +56,10 @@
 		- https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=adamdoha&logNo=222139716154
 
 	- @EntityListeners(Listener클래스.class) : 엔티티의 변화를 감지하고 데이블의 데이터를 조작하는 일을 한다
-		- https://velog.io/@seongwon97/Spring-Boot-Entity-Listener
 		- (AuditingEntityListener.class) : JPA에서 제공
 			-  ~Application.java파일에 @EnableJpaAuditing annotation을 추가해줘야한다
 			- LocalDateTime변수에 @CreatedDate, @LastModifiedDate등을 붙여서 업데이트할 변수 명시
-
+		- https://velog.io/@seongwon97/Spring-Boot-Entity-Listener
 
 
 - lombok : 필수적으로 필요한 메서드/생성자등을 자동으로 생성해주는 라이브러리
@@ -86,7 +89,7 @@
 - Domain(DB의 테이블 기능)
 - Repository(DB의 SQL 기능)
 - ***JpaRepository***
-	- 이 클래스를 상속한 클래스를 이용해서 개체가 DB와 통신한다
+	- 이 클래스를 상속한 인터페이스를 이용해서 개체가 DB와 통신한다
 		- 각 테이블(개체)마다 생성해줘야 한다
 		- 제네릭에 엔티티이름,pk값 타입을 명시해야 한다
 
@@ -139,8 +142,15 @@ System.out.println(response);
 		- value() : 상태 코드(int) 반환
 
 - json.org (JSON In Java 라이브러리)
-	- JSONObject(json문자열) : 문자열 정보를 json으로 바꿔서 JSONObject 반환
-		- getJSONArray("키값") : 해당 값을 
-	- JSONArray()
+	- JSONObject(json문자열) : 문자열 정보를 json으로 바꿔서 JSONObject 객체 반환
+		- getJSONArray("키값") : 해당 키의 값들을 가진 JSONArray 객체 반환
+		- getString("키값") : 해당 키의 값을 String으로 반환
+		- getInt("키값") : 해당 키의 값을 Int로 반환
+
+	- JSONArray : JSON 배열
+		- get(idx) : 특정 idx를 반환, 형 변환이 필요하다
+		- getJSONObject(idx) : 특정 idx를 반환
+
+
 
 
