@@ -20,6 +20,7 @@ public class CommentController {
         return commentService.findComments(boardId);
     }
 
+
     @PostMapping("/comments")
     public Comment createComment(@RequestBody CommentDto commentDto){
         return commentService.createComment(commentDto);

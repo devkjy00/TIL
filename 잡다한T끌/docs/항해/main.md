@@ -31,7 +31,7 @@
   <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_2.md"> <strong><i>----- WIL -----</i></strong> </a></li>
 
 <h3> 2 주차 </h3> 
- <ul type="circle"> </ul>
+ <ul type="circle"> 
    <li><a  href="https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/14.%ED%8A%B8%EB%A6%AC"> 13일차(이진트리) </a></li>
   <ul>
     <li>4bit가 데이터 처리 기본단위인 컴퓨터의 CPU 레지스터가 32bit이고 최신 컴퓨터는 8bit로 레지스터는 64bit이다, 레지스터의 크기가 한번에 처리되는 데이터의 크기이고 이는 ‘워드’라는 단위이다 따라서 데이터 처리단위에 따라 워드가 바뀐다</li>
@@ -40,5 +40,18 @@
 	   <li><a  href="https://github.com/southoftheriver/TIL/tree/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%ED%9E%99"> 15일차(힙) </a></li>
 	   <li><a  href="https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/17.%EC%A0%95%EB%A0%AC"> 16~17일차(정렬) </a></li>
   <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_3.md"> <strong><i>----- WIL -----</i></strong> </a></li>
+</ul>
+
+<h3> 4 주차 </h3>
+  <ul type="circle"> 
+  [Spring의 다양한 예외 처리방법](https://mangkyu.tistory.com/20://mangkyu.tistory.com/204)
+  </ul>
+
+
+
+
+
+
+
 	
 </ul>
