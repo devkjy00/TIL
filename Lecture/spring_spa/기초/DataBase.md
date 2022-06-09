@@ -14,7 +14,7 @@
 - AWS RDS 세팅
 	- https://www.notion.so/Spring-5-e1b5ceb6ede84d70b3366f03207e2e8c#8525792f30864e378a87448de90f53ef
 	```
-	spring.datasource.url=jdbc:mysql://나의엔드포인트:3306/myselectshop
+	spring.datasource.url=jdbc:mysql://나의엔드포인트:3306/DB명
 	spring.datasource.username=나의USERNAME
 	spring.datasource.password=나의패스워드
 	spring.jpa.hibernate.ddl-auto=update

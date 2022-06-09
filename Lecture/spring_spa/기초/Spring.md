@@ -1,11 +1,11 @@
 ## 개념
 - 3계층 : 책임을 분리로 결합을 느슨하게 해서 유연성과 확장성을 가지게 한다
-	- Controller : 가장 바깥쪽, 요청/응답을 처리
-	- Service : 중간, 중요한 로직을 처리
+	- Controller : 가장 바깥쪽, 요청을 받아서 Service에 요청하고 반환값으로 응답
+	- Service : 중요한 로직을 처리, DB와 통신한다
 		- 생성자에 해당 객체의 repository를 준다
 		- 서비스에 꼭 필요한 변수는 final로 지정해서 스프링에 알려준다
 	- Repository :  가장 안쪽, DB와의 통신을 처리
-		- DB Update는 Service에서 처리한다
+		- DB Update는 Service에서 처리한다 -> 조회해서 변경후 다시 COMMIT
 
 - DTO(Data Transfer Object)
 	- 테이블에 사용할 객체로 데이터를 바로 입력 받는 것 보다 DTO객체를 따로 만들어서 객체로 옮기는 것이 안전하다
@@ -29,6 +29,7 @@
 	- @GetMapping("uri") : 지정된 주소로 온 GET(조회) 요청을 처리하는 메서드임을 명시
 	- @PostMapping("uri") : 지정된 주소로 온 POST(삽입) 요청을 처리하는 메서드임을 명시
 	- @PutMapping("uri") : 지정된 주소로 온 PUT(수정) 요청을 처리하는 메서드임을 명시
+	- https://m.blog.naver.com/cmh348/221912870674
 
 	- @RequestBody : POST요청의 body를 저장할 변수임을 명시
 	- @RequestParam : URI의 쿼리를 문자열로 저장할 변수임을 명시
@@ -37,6 +38,7 @@
 		- ~Applicatino 클래스에 @EnableScheduling을 추가해서 스케줄러사용을 명시
 		- 속성 : cron, fixedDelay, fixedDelayString, fixedRate, fixedRateString, initialDelay, initialDelayString, zone
 		- https://jeong-pro.tistory.com/186
+	
 
 - javax.transactional
 	- @Transactional : 메서드에 SQL쿼리가 일어나는 것을 명시
@@ -51,14 +53,14 @@
 	- @Column : 변수가 컬럼 값임을 명시
 		- (nullable = false) : 반드시 값이 존재해야함을 명시
 	
-	- @MappedSuperclass : 테이블에 공통정보를 가진 부모클래스로 매핑되도록 명시
+	- @MappedSuperclass : 테이블에 공통정보를 가진 추상클래스로 매핑되도록 명시
 		- Etity 종류에 상관없이 공통으로 가져야하는 정보(생성시간, 수정시간등)를 공통 클래스로 추출하고 이를 상속하는 방식으로 구현할 때 사용된다
+		- LocalDateTime변수에 @CreatedDate, @LastModifiedDate등을 붙여서 업데이트할 변수 명시
 		- https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=adamdoha&logNo=222139716154
 
 	- @EntityListeners(Listener클래스.class) : 엔티티의 변화를 감지하고 데이블의 데이터를 조작하는 일을 한다
 		- (AuditingEntityListener.class) : JPA에서 제공
-			-  ~Application.java파일에 @EnableJpaAuditing annotation을 추가해줘야한다
-			- LocalDateTime변수에 @CreatedDate, @LastModifiedDate등을 붙여서 업데이트할 변수 명시
+		-  ~Application.java파일에 @EnableJpaAuditing annotation을 추가해줘야한다
 		- https://velog.io/@seongwon97/Spring-Boot-Entity-Listener
 
 
