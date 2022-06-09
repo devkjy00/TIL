@@ -45,6 +45,8 @@
 <h3> 4 주차 </h3>
   <ul type="circle"> 
 	  <li><a href="https://mangkyu.tistory.com/20://mangkyu.tistory.com/204"> Spring의 다양한 예외 처리방법 </a></li>
+	  <li><a href="https://goodteacher.tistory.com/369"> Entity Column default값 설정</a></li>
+	  <li><a href="https://kwonnam.pe.kr/wiki/java/lombok/pitfall"> lombok 주의점</a></li>
   </ul>
 
 
