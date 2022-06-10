@@ -29,8 +29,9 @@
 
 
 ### 4 주차 
-- [ Spring의 다양한 예외 처리방법](https://mangkyu.tistory.com/20://mangkyu.tistory.com/204)
 - [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
 - [ lombok 주의점](https://kwonnam.pe.kr/wiki/java/lombok/pitfall)
 - [ Spring Security 인증절차 인터페이스](https://to-dy.tistory.com/86)
+- [스프링 시큐리티 기본 API및 Filter 이해](https://catsbi.oopy.io/c0a4f395-24b2-44e5-8eeb-275d19e2a536)
 - [ HttpSecurity, WebSecurity의 차이](https://velog.io/@gkdud583/HttpSecurity-WebSecurity%EC%9D%98-%EC%B0%A8%EC%9D%B4)
+- [Session 기반 인증과 Token 기반 인증](https://jins-dev.tistory.com/entry/Session-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D%EA%B3%BC-Token-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D)

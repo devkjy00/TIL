@@ -9,10 +9,10 @@
 - org.springframework.web.bind.annotation
 	- @RestController : 요청에 JSON을 리턴하는 클래스임을 명시
 	- @Controller : 요청에 HTML, CSS등을 주고받는 클래스임을 명시
-	- @GetMapping("uri") : 지정된 주소로 온 GET(조회) 요청을 처리하는 메서드임을 명시
-	- @PostMapping("uri") : 지정된 주소로 온 POST(삽입) 요청을 처리하는 메서드임을 명시
-	- @PutMapping("uri") : 지정된 주소로 온 PUT(수정) 요청을 처리하는 메서드임을 명시
 	- https://m.blog.naver.com/cmh348/221912870674
+		- @GetMapping("uri") : 지정된 주소로 온 GET(조회) 요청을 처리하는 메서드임을 명시
+		- @PostMapping("uri") : 지정된 주소로 온 POST(삽입) 요청을 처리하는 메서드임을 명시
+		- @PutMapping("uri") : 지정된 주소로 온 PUT(수정) 요청을 처리하는 메서드임을 명시
 
 	- @RequestBody : POST요청의 body를 저장할 변수임을 명시
 	- @RequestParam : URI의 쿼리를 문자열로 저장할 변수임을 명시
@@ -22,10 +22,12 @@
 		- 속성 : cron, fixedDelay, fixedDelayString, fixedRate, fixedRateString, initialDelay, initialDelayString, zone
 		- https://jeong-pro.tistory.com/186
 	
+- org.springframework.beans.factory.annotation
+	- @Autowired : 생성자, setter, 필드에 사용할 수 있다
+		- [@Autowired란 무엇인가](https://devlog-wjdrbs96.tistory.com/166)
 
 - javax.transactional
 	- @Transactional : 메서드에 SQL쿼리가 일어나는 것을 명시
-
 
 - javax.persistence
 	- @Entity : 클래스가 테이블임을 명시

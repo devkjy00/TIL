@@ -31,21 +31,52 @@
 - Dependency 추가를 해줘야 한다
 	- implementation 'org.springframework.boot:spring-boot-starter-security'
 
-- 스프링 시큐리티 활성화
+- 스프링 시큐리티 활성화, 인증/인가 설정
 	``` java
 	@Configuration
-	public class SecurityConfiguration {
+	@EnableWebSecurity // 스프링 Security 지원을 가능하게 함
+	public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+		@Override
+		protected void configure(HttpSecurity http) throws Exception {
 
-		@Bean
-		public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-
-			http.authorizeHttpRequests((authz) -> authz
-					.anyRequest().authenticated())
-				.httpBasic(withDefaults());
-			return http.build();
+			http.authorizeRequests()
+					.antMatchers("/images/**").permitAll() 	// image 폴더를 login 없이 허용
+					.antMatchers("/css/**").permitAll() 	// css 폴더를 login 없이 허용
+					.anyRequest().authenticated()			// 어떤 요청이든 인증해야만 응답
+					.and()
+						// 로그인 요청은 허용
+						.formLogin()
+						.loginPage("/user/login") 			// 로그인 페이지 설정
+						.defaultSuccessUrl("/") 			// 인증 성공하면 반환
+						.failureUrl("/user/login?error")	// 인증 실패하면 반환
+						.permitAll()
+					.and()
+						// 로그아웃 기능도 허용
+						.logout()
+						.permitAll();
 		}
 	}
-
 	```
-	- HttpSecurity
-		- [HttpSecurity, WebSecurity의 차이](https://velog.io/@gkdud583/HttpSecurity-WebSecurity%EC%9D%98-%EC%B0%A8%EC%9D%B4)
+	- WebSecurityConfigurerAdapter
+		- security 5.7버전 부터 deprecated된다
+		- implementation group: 'org.springframework.security', name: 'spring-security-config', version: '5.6.3'
+			- 버전을 낮춰서 사용
+
+	- HttpSecurity : 인증, 인가의 세부적인 기능을 설정할 수 있도록 API를 제공해주는 클래스
+		- https://catsbi.oopy.io/c0a4f395-24b2-44e5-8eeb-275d19e2a536
+		- https://dev-setung.tistory.com/29
+		- formLogin() : 로그인 방식에 대해서 설정
+		- logout() : 로그아웃 설정
+		- rememberMe() : SessionId가 만료되어도 쿠키에 remember-me 값이 유효하면 로그인 유
+		- sessionManagement() : 세션을 설정한다
+			```java
+			http.sessionManagement()
+				.maximumSessions(1)                // 최대 허용 가능 세션 수 , -1 : 무제한 로그인 세션 허용
+				.maxSessionsPreventsLogin(true)    // true 동시 로그인 차단, false 기존 세션 만료
+				.expiredUrl("/expired");           // 세션이 만료된 경우 이동 할 페이지
+			```
+		- authorizeRequests() : 접근하는 url에 따라 인가를 설정
+			- antMatchers("/images/**").permitAll() : image 폴더를 login 없이 허용
+			- antMatchers("/css/**").permitAll() : css 폴더를 login 없이 허용
+		- csrf()
+			- 서버에 요청 시 서버에서 발급해준 토큰을 HTTP 파라미터로 보냄으로써 보안을 강화하는 기능
