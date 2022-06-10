@@ -40,7 +40,6 @@
 	   <li><a  href="https://github.com/southoftheriver/TIL/tree/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%ED%9E%99"> 15일차(힙) </a></li>
 	   <li><a  href="https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/17.%EC%A0%95%EB%A0%AC"> 16~17일차(정렬) </a></li>
   <li><a href="https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_3.md"> <strong><i>----- WIL -----</i></strong> </a></li>
-</ul>
 
 <h3> 4 주차 </h3>
   <ul type="circle"> 
@@ -48,14 +47,7 @@
 	  <li><a href="https://goodteacher.tistory.com/369"> Entity Column default값 설정</a></li>
 	  <li><a href="https://kwonnam.pe.kr/wiki/java/lombok/pitfall"> lombok 주의점</a></li>
 	  <li><a href="https://to-dy.tistory.com/86"> Spring Security 인증절차 인터페이스 </a></li>
-	- [HttpSecurity, WebSecurity의 차이](https://velog.io/@gkdud583/HttpSecurity-WebSecurity%EC%9D%98-%EC%B0%A8%EC%9D%B4)
+	  <li><a href="https://velog.io/@gkdud583/HttpSecurity-WebSecurity%EC%9D%98-%EC%B0%A8%EC%9D%B4"> HttpSecurity, WebSecurity의 차이 </a></li>
   </ul>
 
-
-
-
-
-
-
-	
 </ul>
