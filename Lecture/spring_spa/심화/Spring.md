@@ -98,7 +98,6 @@ public class SpringcoreApplication {
         - ***DI(Dependency Injection, 의존성 주입) : 완성된 필요한 객체를 그냥 가져다 사용하는 것***
     - 객체를 딱 1번만 생성해서 모든 곳에서 재사용(싱글톤)
     ```java
-    // 싱글톤으로 생성해서 계속 사용
     public class 
     Repository repository = new repository();
     
@@ -150,5 +149,6 @@ public class SpringcoreApplication {
 # Spring
 - 요구사항 해결에 초점을 맞춘 프레임 워크
     - 비즈니스 로직에 집중할 수 있게 해준다
+
 - Enterprise applications
     - 신뢰성, 서버 안정성, 데이터 관리가 중요

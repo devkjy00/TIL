@@ -47,6 +47,8 @@
 	  <li><a href="https://mangkyu.tistory.com/20://mangkyu.tistory.com/204"> Spring의 다양한 예외 처리방법 </a></li>
 	  <li><a href="https://goodteacher.tistory.com/369"> Entity Column default값 설정</a></li>
 	  <li><a href="https://kwonnam.pe.kr/wiki/java/lombok/pitfall"> lombok 주의점</a></li>
+	  <li><a href="https://to-dy.tistory.com/86"> Spring Security 인증절차 인터페이스 </a></li>
+	- [HttpSecurity, WebSecurity의 차이](https://velog.io/@gkdud583/HttpSecurity-WebSecurity%EC%9D%98-%EC%B0%A8%EC%9D%B4)
   </ul>
 
 
