@@ -29,12 +29,19 @@
 
 
 ### 4 주차 
-- [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
-- [ lombok 주의점](https://kwonnam.pe.kr/wiki/java/lombok/pitfall)
-- [ Spring Security 인증절차 인터페이스](https://to-dy.tistory.com/86)
-- [스프링 시큐리티 기본 API및 Filter 이해](https://catsbi.oopy.io/c0a4f395-24b2-44e5-8eeb-275d19e2a536)
-- [ HttpSecurity, WebSecurity의 차이](https://velog.io/@gkdud583/HttpSecurity-WebSecurity%EC%9D%98-%EC%B0%A8%EC%9D%B4)
-- [Session 기반 인증과 Token 기반 인증](https://jins-dev.tistory.com/entry/Session-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D%EA%B3%BC-Token-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D)
-- [Spring security JWT 로그인](https://velog.io/@shinmj1207/Spring-Spring-Security-JWT-%EB%A1%9C%EA%B7%B8%EC%9D%B8)
+- TIL
+	- [어노테이션](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/Spring_anotation.md)
+	- [스프링 기초](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EA%B8%B0%EC%B4%88/Spring.md)
+	- [스프링 심화](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EC%8B%AC%ED%99%94/Spring.md)
+	- [스프링 시큐리티](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EC%8B%AC%ED%99%94/Spring_%EC%9D%B8%EC%A6%9D%2C%EC%9D%B8%EA%B0%80.md)
+	- [JPA](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EC%8B%AC%ED%99%94/Jpa.md)
+- 참고자료
+	- [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
+	- [ lombok 주의점](https://kwonnam.pe.kr/wiki/java/lombok/pitfall)
+	- [ Spring Security 인증절차 인터페이스](https://to-dy.tistory.com/86)
+	- [스프링 시큐리티 기본 API및 Filter 이해](https://catsbi.oopy.io/c0a4f395-24b2-44e5-8eeb-275d19e2a536)
+	- [ HttpSecurity, WebSecurity의 차이](https://velog.io/@gkdud583/HttpSecurity-WebSecurity%EC%9D%98-%EC%B0%A8%EC%9D%B4)
+	- [Session 기반 인증과 Token 기반 인증](https://jins-dev.tistory.com/entry/Session-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D%EA%B3%BC-Token-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D)
+	- [Spring security JWT 로그인](https://velog.io/@shinmj1207/Spring-Spring-Security-JWT-%EB%A1%9C%EA%B7%B8%EC%9D%B8)
 
 
