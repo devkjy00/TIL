@@ -106,6 +106,19 @@
 - 스프링 시큐리티는 사용자의 Request가 Controller에 전달되기 전에 인증/인가를 확인하고 실패하면 Error Response를 사용자에게 보낸다
 	- clien <-> Spring Security -> Controller(client에게 직접 응답) <-> Service
 
+- 스프링 시큐리티 인증 절차
+	- ![순서도](https://blog.kakaocdn.net/dn/eaZBbV/btqENsxS3YJ/UqmYIdb5p5c5yFMewsr4Gk/img.png)
+	1. 사용자가 입력한 사용자 정보를 가지고 인증을 요청한다.(Request)
+	2. AuthenticationFilter가 이를 가로채 UsernamePasswordAuthenticationToken(인증용 객체)를 생성한다
+	3. 필터는 요청을 처리하고 AuthenticationManager의 구현체 ProviderManager에 Authentication과 UsernamePasswordAuthenticationToken을 전달한다.
+	4. AuthenticationManager는 검증을 위해 AuthenticationProvider에게 Authentication과 UsernamePasswordAuthenticationToken을 전달한다.
+	5. 이제 DB에 담긴 사용자 인증정보와 비교하기 위해 UserDetailsService에 사용자 정보를 넘겨준다.
+	6. DB에서 찾은 사용자 정보인 UserDetails 객체를 만든다.
+	7. AuthenticationProvider는 UserDetails를 넘겨받고 비교한다.
+	8. 인증이 완료되면 권한과 사용자 정보를 담은 Authentication 객체가 반환된다.
+	9. AuthenticationFilter까지 Authentication정보를 전달한다.
+	10. Authentication을 SecurityContext에 저장한다.
+
 - 로그인 처리
 	1. "post /user/login" 으로 로그인 요청
 		- 로그인 시도 URL은 WebSecurityConfig 클래스에서 관리(.loginProcessingUrl("/user/login"))
@@ -283,5 +296,22 @@
             
     2. **JWTAuthFilter** : API 요청 Header 에 전달되는 JWT 유효성 인증
 
+- 생성된 토큰 헤더에 추가하기
+	```java
+	public class FormLoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
+		public static final String AUTH_HEADER = "Authorization";
+		public static final String TOKEN_TYPE = "BEARER";
 
+		@Override
+		public void onAuthenticationSuccess(final HttpServletRequest request, final HttpServletResponse response,
+											final Authentication authentication) {
+			final UserDetailsImpl userDetails = ((UserDetailsImpl) authentication.getPrincipal());
+			// Token 생성
+			final String token = JwtTokenUtils.generateJwtToken(userDetails);
+			// 응답 헤더에 토큰 추가
+			response.addHeader(AUTH_HEADER, TOKEN_TYPE + " " + token);
+		}
 
+	}
+
+	```
