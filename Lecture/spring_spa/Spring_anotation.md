@@ -36,7 +36,8 @@
 		- (strategy = GenerationType.AUTO) : 변수가 자동증가 되도록 명시
 	
 	- @Column : 변수가 컬럼 값임을 명시
-		- (nullable = false) : 반드시 값이 존재해야함을 명시
+		- nullable = false : 반드시 값이 존재해야함을 명시
+		- unique = true : 중복 값을 허용하지 않는다
 	
 	- @MappedSuperclass : 테이블에 공통정보를 가진 추상클래스로 매핑되도록 명시
 		- Etity 종류에 상관없이 공통으로 가져야하는 정보(생성시간, 수정시간등)를 공통 클래스로 추출하고 이를 상속하는 방식으로 구현할 때 사용된다
@@ -48,5 +49,18 @@
 		-  ~Application.java파일에 @EnableJpaAuditing annotation을 추가해줘야한다
 		- https://velog.io/@seongwon97/Spring-Boot-Entity-Listener
 
+- org.springframework.security
+	- .core.annotation
+		- @AuthenticationPrincipal : 시큐리티에서 인증된 회원 정보 객체를 주입할 것을 명시, 매개변수에 작성할 수 있다
+
+	- .access.annotation
+		- @Secured("ROLE_...") : 지정된 권한을 가진 요청만 허용하도록 Controller의 메서드에 명시
+
+	- .config.annotation.web.configuration
+		- @EnableWebSecurity : WebSecurityConfigurerAdapter를 구현한 클래스에 명시해서 시큐리티 활성화
+	
+	- .config.annotation.method.configuration
+		- @EnableGlobalMethodSecurity  
+			- securedEnabled = true : @Secured 어노테이션을 활성화할 것을 명시
 
 - lombok : 필수적으로 필요한 메서드/생성자등을 자동으로 생성해주는 라이브러리

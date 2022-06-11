@@ -27,7 +27,7 @@
 
 
 
-## 스프링 시큐리티
+## 스프링 시큐리티 활성화
 - Dependency 추가를 해줘야 한다
 	- implementation 'org.springframework.boot:spring-boot-starter-security'
 
@@ -80,3 +80,208 @@
 			- antMatchers("/css/**").permitAll() : css 폴더를 login 없이 허용
 		- csrf()
 			- 서버에 요청 시 서버에서 발급해준 토큰을 HTTP 파라미터로 보냄으로써 보안을 강화하는 기능
+
+		- exceptionHandling()
+			- accessDeniedPage("/..") : 접근 불가 페이지 URL 설정
+## 패스워드 암호화
+- 회원 등록 시 '비밀번호'는 사용자가 입력한 문자 그대로 DB 에 안 된다, '정보통신망법, 개인정보보호법' 에 의해 비밀번호는 암호화(Encryption)가 의무!!
+	- 복호화가 불가능한 '일방향' 암호 알고리즘 사용이 필요
+	- 입력받은 패스워드를 암호화 해서 비교
+
+- 구현
+ 	```java
+	// 스프링 시큐리티에서 '권고'하고 있는 'BCrypt 해시함수'를 사용
+	@Bean
+    public BCryptPasswordEncoder encodePassword() {
+		return new BCryptPasswordEncoder();
+	}
+
+	// 패스워드 암호화
+	String password = passwordEncoder.encode(requestDto.getPassword());
+	```
+
+
+
+## 로그인, 로그아웃 구현
+- 스프링 시큐리티는 사용자의 Request가 Controller에 전달되기 전에 인증/인가를 확인하고 실패하면 Error Response를 사용자에게 보낸다
+	- clien <-> Spring Security -> Controller(client에게 직접 응답) <-> Service
+
+- 로그인 처리
+	1. "post /user/login" 으로 로그인 요청
+		- 로그인 시도 URL은 WebSecurityConfig 클래스에서 관리(.loginProcessingUrl("/user/login"))
+	2. 인증관리자(Authentication Manager)가 Service 객체에게 id 전달
+	3. DB에서 id로 찾은 세부정보로 생성한 객체를 인증관리자에게 전달
+	4. id와 암호화된 password를 비교해서 인증
+
+- 로그아웃 처리
+	1. "get /user/logout" 으로 로그아웃 요청
+	2. 서버 세션에 저장된 로그인 사용자 정보 삭제	
+
+- 로그인 구현
+	```java
+	//
+	// 허용할 것들을 설정
+	//
+	// 모든 요청은 인증
+	.anyRequest().authenticated()
+	.and()
+		.formLogin()
+		.loginPage("/user/login")   // get 로그인 View 제공 url
+        .loginProcessingUrl("/user/login")  // post 로그인 처리 url
+        .defaultSuccessUrl("/")     // 인증 성공 url
+        .failureUrl("/user/login?error")    // 인증 실패 url
+        .permitAll()
+    .and()
+        // 로그아웃 기능 허용
+		.logout()
+	 	.logoutUrl("/user/logout") // 로그아웃 처리 url
+	 	.permitAll();
+	```
+
+- 회원 정보 조회해서 인증관리자에게 전달
+	```java
+	@Service
+	public class UserDetailsServiceImpl implements UserDetailsService {
+
+		private final UserRepository userRepository;
+
+		@Autowired
+		public UserDetailsServiceImpl(UserRepository userRepository) {
+			this.userRepository = userRepository;
+		}
+
+		public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+			User user = userRepository.findByUsername(username)
+					.orElseThrow(() -> new UsernameNotFoundException("Can't find " + username));
+
+			return new UserDetailsImpl(user);
+		}
+	}
+	```
+
+- 회원 정보를 저장할 객체 구현 
+	```java
+	public class UserDetailsImpl implements UserDetails {
+
+		private final User user;
+
+		public UserDetailsImpl(User user) {
+			this.user = user;
+		}
+
+		public User getUser() {
+			return user;
+		}
+
+		@Override
+		public String getPassword() {
+			return user.getPassword();
+		}
+
+		@Override
+		public String getUsername() {
+			return user.getUsername();
+		}
+
+		@Override
+		public boolean isAccountNonExpired() {
+			return true;
+		}
+
+		@Override
+		public boolean isAccountNonLocked() {
+			return true;
+		}
+
+		@Override
+		public boolean isCredentialsNonExpired() {
+			return true;
+		}
+
+		@Override
+		public boolean isEnabled() {
+			return true;
+		}
+
+		@Override
+		public Collection<? extends GrantedAuthority> getAuthorities() {
+			return Collections.emptyList();
+		}
+	}
+	```
+	- @AuthenticationPrincipal 어노테이션으로 주입할 객체, UserDetails를 implements
+
+
+## 권한 설정
+- 스프링 시큐리티에 권한(Authority) 설정방법
+	- 인증 관리자가 정보를 전달하는 회원ServiceImpl을 통해서 권한 설정
+	- 권한을 1개 이상 설정 가능
+	- 권한 이름 규칙 : ROLE_ 로 시작해야 한다("ROLE_ADMIN")
+	```java
+	public class UserDetailsImpl implements UserDetails {
+		// ...
+
+		@Override
+		public Collection<? extends GrantedAuthority> getAuthorities() {
+			SimpleGrantedAuthority adminAuthority = new SimpleGrantedAuthority("ROLE_ADMIN");
+			Collection<GrantedAuthority> authorities = new ArrayList<>();
+			authorities.add(adminAuthority);
+
+			return authorities;
+		}
+	}
+	```
+	- GrantedAuthority
+	- SimpleGrantedAuthority
+	- 권한 명을 Enum 으로 정의 해서 테이블에 저장하고 사용하는 것이 좋다
+	- @Secured("권한 명")으로 API요청을 특정 권한만 가능하도록 제한할 수 있다
+
+	
+## OAuth
+- 회원가입을 하지 않고 다른 웹사이트에 있는 자신의 정보에 대한 접근 권한을 부여하는 접근 위임을 위한 개방형 표준으로 HTTP 기반의 보안 프로토콜이다
+
+
+## JWT(Json Web Token)
+- JWT 장/단점
+    -  장점
+        - 동시 접속자가 많을 때 서버 측 부하 낮춤
+        - Client, Sever 가 다른 도메인을 사용할 때
+            - 예) 카카오 OAuth2 로그인 시 JWT Token 사용
+            
+    -  단점
+        - 구현의 복잡도 증가
+        - JWT 에 담는 내용이 커질 수록 네트워크 비용 증가 (클라이언트 → 서버)
+        - 기생성된 JWT 를 일부만 만료시킬 방법이 없음
+        - Secret key 유출 시 JWT 조작 가능
+
+- JWT 구조
+	- JWT 는 누구나 평문으로 복호화 가능
+	- 하지만 Secret Key 가 없으면 JWT 수정 불가능
+		- 결국 JWT 는 **Read only 데이터**
+	
+- 주요 클래스
+	- JWTAuthFilter : API요청 Header에 전달되는 JWT 유효성 인증
+		- 모든 API 에 대해 JWTAuthFilter 가 JWT 확인
+		- 로그인 전 허용이 필요한 API 는 예외처리 필요 ⇒ FilterSkipMatcher
+    		-  ex) 로그인 폼 페이지, 로그인 처리, css 파일 등
+	
+	- FormLoginFilter : 회원 폼 로그인 요청 시 username / password 인증
+		- 인증에 성공시 응답에 JWT 포함
+		- Authorization: BEARER "JWT문자열"  과 같이 헤더에 넣어서 전달할 수 있다
+
+- JWT 로그인 적용인증 처리 (Filter)
+    - Filter 는 Client 의 API 요청이 Controller 에 전달되기 전, 사전처리를 하는 영역
+    - 즉, Controller 에 도달하기 전에 인증 처리를 하기 위해 사용
+    1. **FormLoginFilter** : 회원 폼 로그인 요청 시 username / password 인증
+        1. **POST "/user/login"** API 에 대해서만 동작 필요
+            1. "GET /user/login" 가 처리되지 않게 하기 위해 API 주소 변경
+                1. "GET /user/login" → "GET /user/loginView"
+        2. Client 로부터 username, password 를 전달받아 인증 수행
+        3. 인증 성공 시
+            1. FormLoginSuccessHandler 통해 JWT 생성
+            2. 이후 Client 에서는 모든 API 응답 Header 에 JWT 를 포함하여 인증
+            
+    2. **JWTAuthFilter** : API 요청 Header 에 전달되는 JWT 유효성 인증
+
+
+
