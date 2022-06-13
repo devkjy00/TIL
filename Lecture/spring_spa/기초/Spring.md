@@ -86,5 +86,14 @@ System.out.println(response);
 		- getJSONObject(idx) : 특정 idx를 반환
 
 
+- 스프링에 원하는 명령 작성하는 법
+	```java
+	    @Bean
+	    public CommandLineRunner demo(UserRepository userRepository) {
+		return (args) -> {
+		// ... 실행하고 싶은 로직
+	
+		};
+	    }
 
-
+	```
