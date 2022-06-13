@@ -63,4 +63,11 @@
 		- @EnableGlobalMethodSecurity  
 			- securedEnabled = true : @Secured 어노테이션을 활성화할 것을 명시
 
+- javax.annotation
+	- @Resource : @Autowired와 같은 역할, 빈의 이름을 사용해서 주입할 빈 객체를 찾기 때문에, @Resource 어노테이션의 값으로 빈 객체의 이름을 지정
+		- 필드나 메서드에만 적용할 수 있다
+		- Autowired와 차이점은 타입과 이름 중 무엇을 먼저 사용하느냐에 대한 것이다
+
+		
+
 - lombok : 필수적으로 필요한 메서드/생성자등을 자동으로 생성해주는 라이브러리
