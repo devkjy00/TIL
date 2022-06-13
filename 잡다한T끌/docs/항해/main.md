@@ -45,5 +45,6 @@
 	- [Spring security JWT 로그인](https://velog.io/@shinmj1207/Spring-Spring-Security-JWT-%EB%A1%9C%EA%B7%B8%EC%9D%B8)
 	- [Hibernate vs JPA vs Spring Data JPA](https://blog.devgenius.io/hibernate-vs-jpa-vs-spring-data-jpa-ff4485aaa780)
 	- [Github issue](https://hbase.tistory.com/211)
+	- [DB의 키워드와 테이블 명이 같으면 안된다](https://yelimkim98.tistory.com/32)
 
 
