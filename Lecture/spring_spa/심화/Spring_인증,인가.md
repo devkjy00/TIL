@@ -80,12 +80,12 @@
 					.expiredUrl("/expired");           // 세션이 만료된 경우 이동 할 페이지
 				```
 		- authorizeRequests() : 접근하는 url에 따라 인가를 설정
-
 		- csrf()
 			- 서버에 요청 시 서버에서 발급해준 토큰을 HTTP 파라미터로 보냄으로써 보안을 강화하는 기능
-
 		- exceptionHandling()
 			- accessDeniedPage("/..") : 접근 불가 페이지 URL 설정
+	- AuthenticationManagerBuilder : Filter에서 호출한 AuthenticationManager가 Provider에게 인증/인가를 위임하도록 설정한다
+		- authenticationProvider() : Provider 객체를 매개변수로 넣어서 설정
 		
 ## 패스워드 암호화
 - 회원 등록 시 '비밀번호'는 사용자가 입력한 문자 그대로 DB 에 안 된다, '정보통신망법, 개인정보보호법' 에 의해 비밀번호는 암호화(Encryption)가 의무!!
