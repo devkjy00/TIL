@@ -65,24 +65,28 @@
 	- HttpSecurity : 인증, 인가의 세부적인 기능을 설정할 수 있도록 API를 제공해주는 클래스
 		- https://catsbi.oopy.io/c0a4f395-24b2-44e5-8eeb-275d19e2a536
 		- https://dev-setung.tistory.com/29
+		- antMatchers(): antMatchers에 있는 endpoint에 대한 '인증'을 무시한다.
+		- addFilterBefore(등록할 필터, 특정 필터) : 특정 필터 전에 정의된 새로운 필터를 등록하도록 한다
 		- formLogin() : 로그인 방식에 대해서 설정
 		- logout() : 로그아웃 설정
 		- rememberMe() : SessionId가 만료되어도 쿠키에 remember-me 값이 유효하면 로그인 유
 		- sessionManagement() : 세션을 설정한다
-			```java
-			http.sessionManagement()
-				.maximumSessions(1)                // 최대 허용 가능 세션 수 , -1 : 무제한 로그인 세션 허용
-				.maxSessionsPreventsLogin(true)    // true 동시 로그인 차단, false 기존 세션 만료
-				.expiredUrl("/expired");           // 세션이 만료된 경우 이동 할 페이지
-			```
+			- sessionCreationPolicy(SessionCreationPolicy.STATELESS) : 토큰 기반 인증시에 세션을 저장하지 않도록 설정
+			- 설정 예시
+				```java
+				http.sessionManagement()
+					.maximumSessions(1)                // 최대 허용 가능 세션 수 , -1 : 무제한 로그인 세션 허용
+					.maxSessionsPreventsLogin(true)    // true 동시 로그인 차단, false 기존 세션 만료
+					.expiredUrl("/expired");           // 세션이 만료된 경우 이동 할 페이지
+				```
 		- authorizeRequests() : 접근하는 url에 따라 인가를 설정
-			- antMatchers("/images/**").permitAll() : image 폴더를 login 없이 허용
-			- antMatchers("/css/**").permitAll() : css 폴더를 login 없이 허용
+
 		- csrf()
 			- 서버에 요청 시 서버에서 발급해준 토큰을 HTTP 파라미터로 보냄으로써 보안을 강화하는 기능
 
 		- exceptionHandling()
 			- accessDeniedPage("/..") : 접근 불가 페이지 URL 설정
+		
 ## 패스워드 암호화
 - 회원 등록 시 '비밀번호'는 사용자가 입력한 문자 그대로 DB 에 안 된다, '정보통신망법, 개인정보보호법' 에 의해 비밀번호는 암호화(Encryption)가 의무!!
 	- 복호화가 불가능한 '일방향' 암호 알고리즘 사용이 필요
@@ -107,7 +111,7 @@
 	- clien <-> Spring Security -> Controller(client에게 직접 응답) <-> Service
 
 - 스프링 시큐리티 인증 절차
-	- ![순서도](https://blog.kakaocdn.net/dn/eaZBbV/btqENsxS3YJ/UqmYIdb5p5c5yFMewsr4Gk/img.png)
+	- <img src="https://blog.kakaocdn.net/dn/eaZBbV/btqENsxS3YJ/UqmYIdb5p5c5yFMewsr4Gk/img.png" width="600">
 	1. 사용자가 입력한 사용자 정보를 가지고 인증을 요청한다.(Request)
 	2. AuthenticationFilter가 이를 가로채 UsernamePasswordAuthenticationToken(인증용 객체)를 생성한다
 	3. 필터는 요청을 처리하고 AuthenticationManager의 구현체 ProviderManager에 Authentication과 UsernamePasswordAuthenticationToken을 전달한다.
@@ -123,8 +127,7 @@
 	1. "post /user/login" 으로 로그인 요청
 		- 로그인 시도 URL은 WebSecurityConfig 클래스에서 관리(.loginProcessingUrl("/user/login"))
 	2. 인증관리자(Authentication Manager)가 Service 객체에게 id 전달
-	3. DB에서 id로 찾은 세부정보로 생성한 객체를 인증관리자에게 전달
-	4. id와 암호화된 password를 비교해서 인증
+	3. DB에서 id로 찾은 세부정보로 생성한 객체의 id와 암호화된 password를 비교해서 인증
 
 - 로그아웃 처리
 	1. "get /user/logout" 으로 로그아웃 요청
@@ -151,7 +154,7 @@
 	 	.permitAll();
 	```
 
-- 회원 정보 조회해서 인증관리자에게 전달
+- 회원 정보 조회해서 비교
 	```java
 	@Service
 	public class UserDetailsServiceImpl implements UserDetailsService {
@@ -223,6 +226,7 @@
 	}
 	```
 	- @AuthenticationPrincipal 어노테이션으로 주입할 객체, UserDetails를 implements
+	- SecurityContextHolder에 저장된다
 
 
 ## 권한 설정
