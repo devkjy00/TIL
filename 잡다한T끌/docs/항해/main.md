@@ -50,5 +50,6 @@
 	- [DB의 키워드와 테이블 명이 같으면 안된다](https://yelimkim98.tistory.com/32)
 	- [@Valid, @Validated](https://velog.io/@damiano1027/Spring-Valid-Validated%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%A6%9D)
 	- [Validator](https://engkimbs.tistory.com/728)
+	- [@NotNull, @NotEmpty, @NotBlank 의 차이점 및 사용법](https://sanghye.tistory.com/36)
 
 
