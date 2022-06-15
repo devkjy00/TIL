@@ -34,7 +34,7 @@
 	- [스프링 기초](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EA%B8%B0%EC%B4%88/Spring.md)
 	- [스프링 심화](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EC%8B%AC%ED%99%94/Spring.md)
 	- [스프링 시큐리티](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EC%8B%AC%ED%99%94/Spring_%EC%9D%B8%EC%A6%9D%2C%EC%9D%B8%EA%B0%80.md)
-	- [JPA](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EC%8B%AC%ED%99%94/Jpa.md)
+	- [JPA](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/Jpa.md)
 - [----- 4_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_4.md)
 - [----- 5_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_5.md)
 - 참고자료
