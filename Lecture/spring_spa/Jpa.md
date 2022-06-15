@@ -48,7 +48,6 @@
 - @OneToMany, @ManyToOne, @OneToOne, @ManyToMany
 - @JoinColumn(name = "외래키", nullable = false)
 	- 외래키를 지정해서 연관관계를 정의한다
-- 관계의 양쪽 객체에서 각각 서로를 가리키도록 설정해줘야 한다
 
 
 
