@@ -55,4 +55,4 @@
 	- [예외처리](https://bloowhale.tistory.com/72)
 	- [@AuthenticationPrincipal과 ArgumentResolver](https://sillutt.tistory.com/entry/Spring-Security-AuthenticationPrincipal%EA%B3%BC-ArgumentResolver)
 	- [Spring Data JPA save()](https://minkukjo.github.io/framework/2020/07/05/Spring-130/)
-	- [JPA 관계](https://jogeum.net/7)
+	- [JPA 관계](https://jeong-pro.tistory.com/231)
