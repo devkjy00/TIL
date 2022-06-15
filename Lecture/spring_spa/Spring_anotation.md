@@ -39,6 +39,9 @@
 		- nullable = false : 반드시 값이 존재해야함을 명시
 		- unique = true : 중복 값을 허용하지 않는다
 	
+	- @Transactional : 메서드가 트랜잭션임을 명시
+		- Dirty check, 메서드가 끝나면 변경된 부분을 알아서 업데이트 해준다
+
 	- @MappedSuperclass : 테이블에 공통정보를 가진 추상클래스로 매핑되도록 명시
 		- Etity 종류에 상관없이 공통으로 가져야하는 정보(생성시간, 수정시간등)를 공통 클래스로 추출하고 이를 상속하는 방식으로 구현할 때 사용된다
 		- LocalDateTime변수에 @CreatedDate, @LastModifiedDate등을 붙여서 업데이트할 변수 명시
