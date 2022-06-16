@@ -1,13 +1,13 @@
 # 항해99
 [ CS study(1day1logIT) ](https://github.com/hh99-CSstudy/1day1logIT)
-## 웹 미니 프로젝트 주차
+## 웹 미니 프로젝트 1 주차
 - [ 2일차]( https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_2.md)
 - [ 3일차 ](https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_3.md)
 - [4일차](https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_4.md">)
 
 ## 알고리즘 주차
 - [ 파이썬 알고리즘 인터뷰 정리 ](https://github.com/southoftheriver/TIL/blob/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/%EC%A0%95%EB%A6%AC.md)
-### 1 주차
+### 2 주차
 - [ 6일차(연결리스트, 러너, 투포인터) ](https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/8.%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8)
 - [ 7일차(스택) ](https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/9.%EC%8A%A4%ED%83%9D%2C%ED%81%90)
 - [ 8일차(큐) ](https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/9.%EC%8A%A4%ED%83%9D%2C%ED%81%90)
@@ -19,7 +19,7 @@
 	- 1차원 리스트는 [:], copy.copy()로 값을 복사 다차원 리스트는 copy.deepcopy()로 복사한다
 - [----- 1_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_2.md)
 
-### 2 주차 
+### 3 주차 
 - [ 13일차(이진트리) ](https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/14.%ED%8A%B8%EB%A6%AC)
     - 4bit가 데이터 처리 기본단위인 컴퓨터의 CPU 레지스터가 32bit이고 최신 컴퓨터는 8bit로 레지스터는 64bit이다, 레지스터의 크기가 한번에 처리되는 데이터의 크기이고 이는 ‘워드’라는 단위이다 따라서 데이터 처리단위에 따라 워드가 바뀐다
 - [14일차(이진탐색 트리)](https://github.com/southoftheriver/TIL/tree/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89%ED%8A%B8%EB%A6%AC)
@@ -28,7 +28,7 @@
 - [----- 2_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_3.md)
 
 
-### 4 주차 
+### 5-6 주차 
 - Spring
 	- [어노테이션](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/Spring_anotation.md)
 	- [스프링 기초](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EA%B8%B0%EC%B4%88/Spring.md)
