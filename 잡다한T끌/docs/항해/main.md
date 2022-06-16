@@ -37,23 +37,31 @@
 	- [JPA](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/Jpa.md)
 - [----- 4_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_4.md)
 - [----- 5_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_5.md)
-- 참고자료
-	- [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
+#### 참고자료
+- 참고
 	- [ lombok 주의점](https://kwonnam.pe.kr/wiki/java/lombok/pitfall)
+	- [Github issue](https://hbase.tistory.com/211)
+	- [java 정규 표현식](https://zzang9ha.tistory.com/322)
+	- [예외처리](https://bloowhale.tistory.com/72)
+	- [github action](https://goodgid.github.io/Github-Action-CI-CD-AWS-EC2/)
+	
+- **JPA**
+	- [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
+	- [Hibernate vs JPA vs Spring Data JPA](https://blog.devgenius.io/hibernate-vs-jpa-vs-spring-data-jpa-ff4485aaa780)
+	- [DB의 키워드와 테이블 명이 같으면 안된다](https://yelimkim98.tistory.com/32)
+	- [Spring Data JPA save()](https://minkukjo.github.io/framework/2020/07/05/Spring-130/)
+	- [***JPA 요약***](https://ultrakain.gitbooks.io/jpa/content/) 
+	- [***Spring Data JPA Repository 예제***](https://github.com/spring-projects/spring-data-examples/tree/main/jpa/example/src/main/java/example/springdata/jpa)
+	
+- **Security**
 	- [ Spring Security 인증절차 인터페이스](https://to-dy.tistory.com/86)
 	- [스프링 시큐리티 기본 API및 Filter 이해](https://catsbi.oopy.io/c0a4f395-24b2-44e5-8eeb-275d19e2a536)
 	- [ HttpSecurity, WebSecurity의 차이](https://velog.io/@gkdud583/HttpSecurity-WebSecurity%EC%9D%98-%EC%B0%A8%EC%9D%B4)
 	- [Session 기반 인증과 Token 기반 인증](https://jins-dev.tistory.com/entry/Session-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D%EA%B3%BC-Token-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D)
 	- [Spring security JWT 로그인](https://velog.io/@shinmj1207/Spring-Spring-Security-JWT-%EB%A1%9C%EA%B7%B8%EC%9D%B8)
-	- [Hibernate vs JPA vs Spring Data JPA](https://blog.devgenius.io/hibernate-vs-jpa-vs-spring-data-jpa-ff4485aaa780)
-	- [Github issue](https://hbase.tistory.com/211)
-	- [DB의 키워드와 테이블 명이 같으면 안된다](https://yelimkim98.tistory.com/32)
 	- [@Valid, @Validated](https://velog.io/@damiano1027/Spring-Valid-Validated%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%A6%9D)
 	- [Validator](https://engkimbs.tistory.com/728)
 	- [@Valid Constraint 어노테이션](https://jyami.tistory.com/55)
-	- [java 정규 표현식](https://zzang9ha.tistory.com/322)
-	- [예외처리](https://bloowhale.tistory.com/72)
 	- [@AuthenticationPrincipal과 ArgumentResolver](https://sillutt.tistory.com/entry/Spring-Security-AuthenticationPrincipal%EA%B3%BC-ArgumentResolver)
-	- [Spring Data JPA save()](https://minkukjo.github.io/framework/2020/07/05/Spring-130/)
-	- [***JPA 요약***](https://ultrakain.gitbooks.io/jpa/content/) 
-	- [github action](https://goodgid.github.io/Github-Action-CI-CD-AWS-EC2/)
+
+	
