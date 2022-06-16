@@ -56,3 +56,4 @@
 	- [@AuthenticationPrincipal과 ArgumentResolver](https://sillutt.tistory.com/entry/Spring-Security-AuthenticationPrincipal%EA%B3%BC-ArgumentResolver)
 	- [Spring Data JPA save()](https://minkukjo.github.io/framework/2020/07/05/Spring-130/)
 	- [***JPA 요약***](https://ultrakain.gitbooks.io/jpa/content/) 
+	- [github action](https://goodgid.github.io/Github-Action-CI-CD-AWS-EC2/)
