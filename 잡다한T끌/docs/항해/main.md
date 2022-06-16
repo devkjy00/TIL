@@ -1,6 +1,7 @@
 # 항해99
 [ CS study(1day1logIT) ](https://github.com/hh99-CSstudy/1day1logIT)
-## 웹 미니 프로젝트 1 주차
+## 웹 미니 프로젝트 
+###1 주차
 - [ 2일차]( https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_2.md)
 - [ 3일차 ](https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_3.md)
 - [4일차](https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_4.md">)
