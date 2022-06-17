@@ -45,6 +45,7 @@
 	- [java 정규 표현식](https://zzang9ha.tistory.com/322)
 	- [예외처리](https://bloowhale.tistory.com/72)
 	- [github action](https://goodgid.github.io/Github-Action-CI-CD-AWS-EC2/)
+	- Stack Unwinding(스택 풀기) : 예외가 해결되지 않으면 상위 함수로 던져진다.. main까지 던져지고 처리못하면 프로그램 정지
 	
 - **JPA**
 	- [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
