@@ -74,7 +74,7 @@
 - org.hibernate.annotations
 	- @ColumnDefault(value = "...") : 데이터베이스에서 테이블을 생성할 때 디폴트 값을 지정하도록 명시
 	- @DynaminInsert : 튜플 INSERT 할 때 null인 필드는 빼고 INSERT 한다
-	- @DynaminUpdate : 튜플 값 UPDATE 할 때 null인 필드는 그대로 두고 UPDATE한다
+	- [@DynaminUpdate](https://velog.io/@recordsbeat/DynamicUpdate%EA%B0%80-%EC%99%B8%EC%95%8A%EB%90%82%EB%8D%B0) : 튜플 값 UPDATE 할 때 null인 필드는 그대로 두고 UPDATE한다
 
 - javax.servlet.annotation
 	- [@WebServlet](https://ryuuv.tistory.com/82)
