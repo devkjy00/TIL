@@ -76,4 +76,7 @@
 	- @DynaminInsert : 튜플 INSERT 할 때 null인 필드는 빼고 INSERT 한다
 	- @DynaminUpdate : 튜플 값 UPDATE 할 때 null인 필드는 그대로 두고 UPDATE한다
 
+- javax.servlet.annotation
+	- [@WebServlet](https://ryuuv.tistory.com/82)
+
 - lombok : 필수적으로 필요한 메서드/생성자등을 자동으로 생성해주는 라이브러리
