@@ -71,6 +71,9 @@
 		- 필드나 메서드에만 적용할 수 있다
 		- Autowired와 차이점은 타입과 이름 중 무엇을 먼저 사용하느냐에 대한 것이다
 
-		
+- org.hibernate.annotations
+	- @ColumnDefault(value = "...") : 데이터베이스에서 테이블을 생성할 때 디폴트 값을 지정하도록 명시
+	- @DynaminInsert : 튜플 INSERT 할 때 null인 필드는 빼고 INSERT 한다
+	- @DynaminUpdate : 튜플 값 UPDATE 할 때 null인 필드는 그대로 두고 UPDATE한다
 
 - lombok : 필수적으로 필요한 메서드/생성자등을 자동으로 생성해주는 라이브러리
