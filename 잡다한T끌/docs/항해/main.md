@@ -64,5 +64,6 @@
 	- [Validator](https://engkimbs.tistory.com/728)
 	- [@Valid Constraint 어노테이션](https://jyami.tistory.com/55)
 	- [@AuthenticationPrincipal과 ArgumentResolver](https://sillutt.tistory.com/entry/Spring-Security-AuthenticationPrincipal%EA%B3%BC-ArgumentResolver)
+	- [HttpServletResponse](https://yeonyeon.tistory.com/99)
 
 	
