@@ -66,5 +66,4 @@
 	- [@Valid Constraint 어노테이션](https://jyami.tistory.com/55)
 	- [@AuthenticationPrincipal과 ArgumentResolver](https://sillutt.tistory.com/entry/Spring-Security-AuthenticationPrincipal%EA%B3%BC-ArgumentResolver)
 	- [HttpServletResponse](https://ohju.tistory.com/373)
-
-	
+	- [sendError, sendRedirect](https://bloodygale.tistory.com/entry/Servlet-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC-URL-%EC%9D%B4%EB%8F%99)
