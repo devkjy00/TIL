@@ -46,9 +46,10 @@
 	- [예외처리](https://bloowhale.tistory.com/72)
 	- [github action](https://goodgid.github.io/Github-Action-CI-CD-AWS-EC2/)
 	- Stack Unwinding(스택 풀기) : 예외가 해결되지 않으면 상위 함수로 던져진다.. main까지 던져지고 처리못하면 프로그램 정지
-	- [HTTP multipart](https://velog.io/@shin6403/HTTP-multipartform-data-%EB%9E%80)
 	- [HttpServletResponse](https://ohju.tistory.com/373)
 	- [sendError, sendRedirect](https://bloodygale.tistory.com/entry/Servlet-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC-URL-%EC%9D%B4%EB%8F%99)
+	- [HTTP multipart](https://velog.io/@shin6403/HTTP-multipartform-data-%EB%9E%80)
+	- [Spring S3](https://earth-95.tistory.com/117)
 	
 - **JPA**
 	- [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
