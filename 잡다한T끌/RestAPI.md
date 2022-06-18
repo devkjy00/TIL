@@ -7,7 +7,6 @@ Representational State Transfer API
         - Uniform Resource Identifier : 웹 기술에서 사용하는 논리적 또는 물리적 리소스를 식별하는 고유한 문자열 시퀀스
             - 행위가 아닌 정보의 자원을 표현해야 한다
     - 행위(Verb) : HTTP 메소드(GET, POST, PUT, DELETE)
-    - 표현(Representations)
 
 - REST 특징
     - Uniform(유니폼 인터페이스)
