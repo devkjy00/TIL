@@ -50,6 +50,7 @@
 	- [sendError, sendRedirect](https://bloodygale.tistory.com/entry/Servlet-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC-URL-%EC%9D%B4%EB%8F%99)
 	- [HTTP multipart](https://velog.io/@shin6403/HTTP-multipartform-data-%EB%9E%80)
 	- [Spring S3](https://earth-95.tistory.com/117)
+	- [application.yml](https://goddaehee.tistory.com/213)
 	
 - **JPA**
 	- [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
