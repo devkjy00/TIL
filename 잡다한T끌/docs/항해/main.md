@@ -51,6 +51,7 @@
 	- [HTTP multipart](https://velog.io/@shin6403/HTTP-multipartform-data-%EB%9E%80)
 	- [Spring S3](https://earth-95.tistory.com/117)
 	- [application.yml](https://goddaehee.tistory.com/213)
+	- [properties 개인 정보 gitignore](https://kelly-tech.tistory.com/38)
 	
 - **JPA**
 	- [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
