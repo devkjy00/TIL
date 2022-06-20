@@ -73,4 +73,5 @@
 	- [Validator](https://engkimbs.tistory.com/728)
 	- [@Valid Constraint 어노테이션](https://jyami.tistory.com/55)
 	- [@AuthenticationPrincipal과 ArgumentResolver](https://sillutt.tistory.com/entry/Spring-Security-AuthenticationPrincipal%EA%B3%BC-ArgumentResolver)
+	- [Axios Response header의 값이 없는 경우에 대해](https://bogmong.tistory.com/5)
 	
