@@ -54,6 +54,7 @@
 	- [properties 개인 정보 gitignore](https://kelly-tech.tistory.com/38)
 	- [s3 정책 오류 (Action does not apply to any resource(s) in statement)](https://24hours-beginner.tistory.com/151)
 	- [@RequestBody와 @ModelAttribute 차이점](https://dionysus2074.tistory.com/172)
+	- [생활코딩 github action](https://www.youtube.com/watch?v=uBOdEEzjxzE)
 	
 - **JPA**
 	- [ Entity Column default값 설정](https://goodteacher.tistory.com/369)
