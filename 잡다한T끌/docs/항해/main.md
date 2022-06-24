@@ -37,7 +37,6 @@
 	- [스프링 시큐리티](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/%EC%8B%AC%ED%99%94/Spring_%EC%9D%B8%EC%A6%9D%2C%EC%9D%B8%EA%B0%80.md)
 	- [JPA](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/Jpa.md)
 - [----- 4_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_4.md)
-- [----- 5_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_5.md)
 #### 참고자료
 - 참고
 	- [ lombok 주의점](https://kwonnam.pe.kr/wiki/java/lombok/pitfall)
@@ -76,3 +75,7 @@
 	- [@AuthenticationPrincipal과 ArgumentResolver](https://sillutt.tistory.com/entry/Spring-Security-AuthenticationPrincipal%EA%B3%BC-ArgumentResolver)
 	- [Axios Response header의 값이 없는 경우에 대해](https://bogmong.tistory.com/5)
 	
+	
+### [실전 프로젝트](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%EC%8B%A4%EC%A0%84%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.md)
+
+
