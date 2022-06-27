@@ -152,3 +152,91 @@ public class SpringcoreApplication {
 
 - Enterprise applications
     - 신뢰성, 서버 안정성, 데이터 관리가 중요
+
+
+# AOP(Aspect Oriented Programming)
+- 비즈니스 로직을 보조하는 부가기능들을 모듈화할 필요하다
+    - 핵심 기능마다 부가기능을 넣어줘야 한다면?
+        - 중복되는 코드가 계속 늘어난다
+        - 핵심 기능 이해를 위해 부가 기능까지 이해 필요
+        - 핵심 기능 개수 만큼 부가기능도 수정해줘야 함
+
+    - AOP를 통해 부가기능을 모듈화
+        - 핵심기능과 분리해서 부가기능 중심으로 설계, 구현
+        - 스프링에서는 어드바이스(부가 기능)와 포인트컷(부가기능 적용위치)를 제공해서 AOP를 구현할 수 있다
+            - 포인트 컷 Expression Language
+                ```java 
+                execution(modifiers-pattern? return-type-pattern declaring-type-pattern? method-name-pattern(param-pattern) throws-pattern?)
+                ```
+                - ?가 붙은 구몬은 생략 가능
+                - modifiers-pattern
+                    - **public**, private, *
+                - return-type-pattern
+                    - void, String, List<String>, *****
+                - declaring-type-pattern
+                    - 클래스명 (패키지명 필요)
+                    - **com.sparta.springcore.controller.*** - controller 패키지의 모든 클래스에 적용
+                    - **com.sparta.springcore.controller..** - controller 패키지 및 하위 패키지의 모든 클
+                    
+                - **method-name-pattern(param-pattern)**
+                    - 함수명
+                        - **addFolders** : addFolders() 함수에만 적용
+                        - **add*** : add 로 시작하는 모든 함수에 적용
+                    - 파라미터 패턴 (param-pattern)
+                        - **(com.sparta.springcore.dto.FolderRequestDto)** - FolderRequestDto 인수 (arguments) 만 적용
+                        - **()** - 인수 없음
+                        - **(*)** - 인수 1개 (타입 상관없음)
+                        - **(..)** - 인수 0~N개 (타입 상관없음)
+                    
+    - @Aspect, @Around는 클로져와 같은 방식으로 실행할 핵심 기능 함수를 매개변수로 받아서 별개로 부가 기능을 정의한다
+        ```java
+        @Aspect
+        @Component
+        public class UseTimeAop {
+            private final ApiUseTimeRepository apiUseTimeRepository;
+
+            public UseTimeAop(ApiUseTimeRepository apiUseTimeRepository) {
+                this.apiUseTimeRepository = apiUseTimeRepository;
+            }
+
+            @Around("execution(public * com.sparta.springcore.controller..*(..))")
+            public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
+                // 측정 시작 시간
+                long startTime = System.currentTimeMillis();
+
+                try {
+                    // 핵심기능 수행
+                    Object output = joinPoint.proceed();
+                    return output;
+                } finally {
+                    // 측정 종료 시간
+                    long endTime = System.currentTimeMillis();
+                    // 수행시간 = 종료 시간 - 시작 시간
+                    long runTime = endTime - startTime;
+
+                    // 로그인 회원이 없는 경우, 수행시간 기록하지 않음
+                    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+                    if (auth != null && auth.getPrincipal().getClass() == UserDetailsImpl.class) {
+                        // 로그인 회원 정보
+                        UserDetailsImpl userDetails = (UserDetailsImpl) auth.getPrincipal();
+                        User loginUser = userDetails.getUser();
+
+                        // API 사용시간 및 DB 에 기록
+                        ApiUseTime apiUseTime = apiUseTimeRepository.findByUser(loginUser)
+                                .orElse(null);
+                        if (apiUseTime == null) {
+                            // 로그인 회원의 기록이 없으면
+                            apiUseTime = new ApiUseTime(loginUser, runTime);
+                        } else {
+                            // 로그인 회원의 기록이 이미 있으면
+                            apiUseTime.addUseTime(runTime);
+                        }
+
+                        System.out.println("[API Use Time] Username: " + loginUser.getUsername() + ", Total Time: " + apiUseTime.getTotalTime() + " ms");
+                        apiUseTimeRepository.save(apiUseTime);
+                    }
+                }
+            }
+        }
+        ```
+

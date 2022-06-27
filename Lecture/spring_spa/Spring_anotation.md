@@ -76,6 +76,13 @@
 	- @DynaminInsert : 튜플 INSERT 할 때 null인 필드는 빼고 INSERT 한다
 	- [@DynaminUpdate](https://velog.io/@recordsbeat/DynamicUpdate%EA%B0%80-%EC%99%B8%EC%95%8A%EB%90%82%EB%8D%B0) : 튜플 값 UPDATE 할 때 null인 필드는 그대로 두고 UPDATE한다
 
+- AOP 어노테이션
+	- @Aspect : AOP클래스임을 명시, 스프링 빈 클래스에만 적용가능
+	- @Around : 핵심기능 수행 전과 후 
+	- @Before, @After
+	- @AfterReturning : 핵심기능 호출 성공시 
+	- @AfterThrowing : 핵심기능 호출 실패시(예외가 발생한 경우만 동작)
+
 - javax.servlet.annotation
 	- [@WebServlet](https://ryuuv.tistory.com/82)
 
