@@ -1,6 +1,11 @@
 # 항해99
-[ CS study(1day1logIT) ](https://github.com/hh99-CSstudy/1day1logIT)
-## 웹 미니 프로젝트 
+
+### [**실전 프로젝트**](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%EC%8B%A4%EC%A0%84%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.md)
+
+### CS 스터디
+[1day1logIT](https://github.com/hh99-CSstudy/1day1logIT)
+
+## 웹 미니 프로젝트 주차
 ### 1 주차
 - [ 2일차]( https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_2.md)
 - [ 3일차 ](https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_3.md)
@@ -28,7 +33,7 @@
 - [16~17일차(정렬)](https://github.com/southoftheriver/TIL/tree/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/17.%EC%A0%95%EB%A0%AC)
 - [----- 2_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_3.md)
 
-
+## 주특기 주차 
 ### 5-6 주차 
 - Spring
 	- [어노테이션](https://github.com/southoftheriver/TIL/blob/master/Lecture/spring_spa/Spring_anotation.md)
@@ -76,6 +81,5 @@
 	- [Axios Response header의 값이 없는 경우에 대해](https://bogmong.tistory.com/5)
 	
 	
-### [실전 프로젝트](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%EC%8B%A4%EC%A0%84%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.md)
 
 
