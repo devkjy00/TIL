@@ -1,6 +1,6 @@
 # 항해99
 
-### [**실전 프로젝트**](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%EC%8B%A4%EC%A0%84%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.md)
+### [***실전 프로젝트**](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/%EC%8B%A4%EC%A0%84%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.md)
 
 ### CS 스터디
 [1day1logIT](https://github.com/hh99-CSstudy/1day1logIT)
