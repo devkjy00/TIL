@@ -35,4 +35,5 @@
     
     
 ### 참고자료
-[에디블로그](https://jessyt.tistory.com/category/Develop/spring-data)
+- [에디블로그](https://jessyt.tistory.com/category/Develop/spring-data)
+    - @Id 필드 값이 있는 Entity를 save하면 값을 가져와서 변경됬는지 검사하고 저장한다(sql문 2번 실행) -> 1차 캐시로 값을 변경하고 @Transaction하면 1번만 실행
