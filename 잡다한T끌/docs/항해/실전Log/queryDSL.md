@@ -35,8 +35,10 @@
     
     
 ### 참고자료
+- [Query DSL 설정](https://nomoreft.tistory.com/m/25)
 - [우아한 형제들 Query DSL 사용법](https://github.com/Youngerjesus/Querydsl)
+- [QueryDsl 을 사용한 쿼리 튜닝과 N+1 해결](https://velog.io/@recordsbeat/QueryDsl-%EA%B3%BC-JPA-Repository-%EC%82%AC%EC%9A%A9%EC%B2%98)
 - [에디블로그](https://jessyt.tistory.com/category/Develop/spring-data)
     - @Id 필드 값이 있는 Entity를 save하면 값을 가져와서 변경됬는지 검사하고 저장한다(sql문 2번 실행) -> 1차 캐시로 값을 변경하고 @Transaction하면 1번만 실행
 
-- [Query DSL 설정](https://nomoreft.tistory.com/m/25)
+
