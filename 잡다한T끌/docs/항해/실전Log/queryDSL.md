@@ -32,3 +32,7 @@
             .fetch();
     }
     ```
+    
+    
+### 참고자료
+[에디블로그](https://jessyt.tistory.com/category/Develop/spring-data)
