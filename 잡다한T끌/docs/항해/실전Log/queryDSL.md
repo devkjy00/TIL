@@ -12,7 +12,7 @@
     - 쿼리 작성시에 사용되서 Type-safe하게 작성할 수 있다
     - Gradle 설정을 통해 소스코드에서 Q-클래스를 import해서 사용
 
-- JPA의 EntityManager
+- JPA의 EntityManager를 매개변수로 JPAQueryFactory를 생성해서 
 
 
 
