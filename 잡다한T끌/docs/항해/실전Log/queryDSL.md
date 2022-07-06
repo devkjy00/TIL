@@ -17,21 +17,6 @@
 
 
 ### 구현
-- 예시
-    ```java
-    void queryDsl_findPostsByMyCriteria_Three() {
-        EntityManager entityManager = testEntityManager.getEntityManager();
-
-        JPAQuery<Post> query = new JPAQuery<>(entityManager);
-        QPost qPost = new QPost("p");
-
-        List<Post> posts = query.from(qPost)
-            .where(qPost.content.contains("hi")
-                .and(qPost.comments.size().gt(0))
-            ).orderBy(qPost.id.desc())
-            .fetch();
-    }
-    ```
     
     
 ### 참고자료
