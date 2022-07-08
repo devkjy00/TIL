@@ -7,9 +7,7 @@
 
 ## 웹 미니 프로젝트 주차
 ### 1 주차
-- [ 2일차]( https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_2.md)
-- [ 3일차 ](https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_3.md)
-- [4일차](https://github.com/southoftheriver/TIL/blob/master/잡다한T끌/docs/항해/day_4.md">)
+- [----- 1_WIL -----](https://github.com/southoftheriver/TIL/blob/master/%EC%9E%A1%EB%8B%A4%ED%95%9CT%EB%81%8C/docs/%ED%95%AD%ED%95%B4/week_1.md)
 
 ## 알고리즘 주차
 - [ 파이썬 알고리즘 인터뷰 정리 ](https://github.com/southoftheriver/TIL/blob/master/Book/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%ED%84%B0%EB%B7%B0/%EC%A0%95%EB%A6%AC.md)
