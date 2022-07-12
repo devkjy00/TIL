@@ -173,3 +173,4 @@ public class GreetingController {
 - [테코톡 아론](https://www.youtube.com/watch?v=rvss-_t6gzg)
 - [web socket](https://dev-gorany.tistory.com/3)
 - [ConcurrentHashMap](https://devlog-wjdrbs96.tistory.com/269)
+- [postman 소켓 ](https://blog.naver.com/PostView.naver?blogId=pjt3591oo&logNo=222525963872&parentCategoryNo=&categoryNo=85&viewDate=&isShowPopularPosts=true&from=search)
