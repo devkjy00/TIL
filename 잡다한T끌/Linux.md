@@ -127,3 +127,6 @@
 	- id_rsa  디폴트 파일명
 	- 비밀번호는 패스가능
 	- ~/.ssh/id_rsa.pub  
+
+### 참고자료
+- [aws ec2 ubuntu 계정 초기 ](https://serina-the-best.tistory.com/16)
