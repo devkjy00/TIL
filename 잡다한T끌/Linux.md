@@ -131,3 +131,4 @@
 ### 참고자료
 - [aws ec2 ubuntu 계정 초기 비번  ](https://serina-the-best.tistory.com/16)
 - [우분투 공장 초기화](https://i5i5.tistory.com/256)
+- [zsh, oh-my-zsh ](https://blackinkgj.github.io/zsh-installation/)
