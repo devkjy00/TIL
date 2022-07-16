@@ -108,7 +108,7 @@ A buffer is an in-memory space where you can write and edit some text. When you 
 - :bdelete, :qall(qall!, wqall) 	->  [n] 버퍼 닫기, quit-all버퍼전부 닫기
 - window 
 	- :split [파일명]/<ctrl>w+v  	-> 윈도우 위,아래 분할 (vsplit/<ctrl>w+s:왼,오분할)
-	- <ctrl>w+h,j,k,l 		-> 윈도우 이동 왼,아,위,오(+c:윈도우닫기)
+	- ```<ctrl>``` w+h,j,k,l 		-> 윈도우 이동 왼,아,위,오(+c:윈도우닫기)
 
 > tabs
 - :tabnew [파일명] 		-> 새 탭 열기
