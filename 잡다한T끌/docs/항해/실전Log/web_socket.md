@@ -167,8 +167,6 @@ public class GreetingController {
 
 
 
-
-
 ## 참고자료
 - [테코톡 아론](https://www.youtube.com/watch?v=rvss-_t6gzg)
 - [web socket](https://dev-gorany.tistory.com/3)
