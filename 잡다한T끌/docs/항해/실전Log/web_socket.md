@@ -173,3 +173,4 @@ public class GreetingController {
 - [ConcurrentHashMap](https://devlog-wjdrbs96.tistory.com/269)
 - [스프링 웹소켓 구현 코드](https://github.com/Java-Techie-jt/Spring-Boot-WebSocket)
 - [카카오 실시간 댓글 개발기 1~3](https://tech.kakao.com/2020/06/08/websocket-part1/)
+- [RandomStringUtils](https://hahaha2016.tistory.com/3)
