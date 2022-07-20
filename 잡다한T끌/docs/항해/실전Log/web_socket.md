@@ -174,3 +174,4 @@ public class GreetingController {
 - [스프링 웹소켓 구현 코드](https://github.com/Java-Techie-jt/Spring-Boot-WebSocket)
 - [카카오 실시간 댓글 개발기 1~3](https://tech.kakao.com/2020/06/08/websocket-part1/)
 - [RandomStringUtils](https://computer-science-student.tistory.com/526)
+- [jmeter stomp](https://stackoverflow.com/questions/56713295/how-i-can-get-stomp-protocol-checkbox-option-on-websocket-sampler)
