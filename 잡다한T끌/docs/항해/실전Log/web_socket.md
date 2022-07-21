@@ -175,3 +175,5 @@ public class GreetingController {
 - [카카오 실시간 댓글 개발기 1~3](https://tech.kakao.com/2020/06/08/websocket-part1/)
 - [RandomStringUtils](https://computer-science-student.tistory.com/526)
 - [jmeter stomp](https://stackoverflow.com/questions/56713295/how-i-can-get-stomp-protocol-checkbox-option-on-websocket-sampler)
+- [메시지 서비스 개선1](https://hyunminh.github.io/chatting-response-upgrade/)
+- [메시지 서비스 개선2](https://hyunminh.github.io/chatting-response-upgrade2/)
