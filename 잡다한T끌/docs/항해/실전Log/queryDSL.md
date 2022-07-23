@@ -30,3 +30,4 @@
     - @Id 필드 값이 있는 Entity를 save하면 값을 가져와서 변경됬는지 검사하고 저장한다(sql문 2번 실행) -> 1차 캐시로 값을 변경하고 @Transaction하면 1번만 실행
 - [JPAQuery<T> 와 JPAQueryFactory 차이](https://www.inflearn.com/questions/37565)
 - [BooleanBuilder, BooleanExpression](https://whitekeyboard.tistory.com/306)
+- [프로젝션, distinct, 동적 쿼리, 벌크 연산](https://ykh6242.tistory.com/entry/QueryDSL3-%ED%94%84%EB%A1%9C%EC%A0%9D%EC%85%98-distinct-%EB%8F%99%EC%A0%81-%EC%BF%BC%EB%A6%AC-%EB%B2%8C%ED%81%AC-%EC%97%B0%EC%82%B0)
