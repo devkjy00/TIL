@@ -14,3 +14,4 @@
 - [Spring-Redis Pub/Sub](https://brunch.co.kr/@springboot/374)
 - [redis pub/sub 구현](https://zkdlu.github.io/2020-12-29/redis04-spring-boot%EC%97%90%EC%84%9C-pub,sub-%EB%AA%A8%EB%8D%B8-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/)
 - [linux에 redis 설치](https://www.psjco.com/26)
+- [mac redis 사용](https://wlswoo.tistory.com/44) 
