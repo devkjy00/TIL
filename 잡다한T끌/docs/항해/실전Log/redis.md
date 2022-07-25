@@ -16,3 +16,4 @@
 - [ubuntu에 redis 설치](https://hayden-archive.tistory.com/429) 
 - [linux에 redis설정](https://server-talk.tistory.com/472) 
 - [mac redis 사용](https://wlswoo.tistory.com/44) 
+- [redis.conf](https://www.happykoo.net/@happykoo/posts/41)
