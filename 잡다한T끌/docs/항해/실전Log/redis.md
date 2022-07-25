@@ -17,3 +17,4 @@
 - [linux에 redis설정](https://server-talk.tistory.com/472) 
 - [mac redis 사용](https://wlswoo.tistory.com/44) 
 - [redis 설정](https://moss.tistory.com/entry/Redis-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%A0%95-%EC%A0%95%EB%A6%AC) 
+- [Spring boot redis 2가지 방법](https://wildeveloperetrain.tistory.com/32)
