@@ -10,6 +10,8 @@
     - 메시지가 저장되지 않고 전송된 후에 삭제 된다
     - 수신자가 메시지를 받는 것을 보장하지 않아서 별도의 구현이 필요할 수 있다
 
+- *Spring stomp의 Message broker로 redis를 적용해서 구독과 발신을 관리할 수 있다*
+
 
 ## 참고 자료
 - [Spring-Redis Pub/Sub](https://brunch.co.kr/@springboot/374)
