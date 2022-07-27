@@ -74,6 +74,7 @@
 	- [Spring security JWT 로그인](https://velog.io/@shinmj1207/Spring-Spring-Security-JWT-%EB%A1%9C%EA%B7%B8%EC%9D%B8)
 	- [@Valid, @Validated](https://velog.io/@damiano1027/Spring-Valid-Validated%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%A6%9D)
 	- [Validator](https://engkimbs.tistory.com/728)
+	- [redis pub/sub구현](https://daddyprogrammer.org/post/4077/spring-websocket-chatting/)
 	- [@Valid Constraint 어노테이션](https://jyami.tistory.com/55)
 	- [@AuthenticationPrincipal과 ArgumentResolver](https://sillutt.tistory.com/entry/Spring-Security-AuthenticationPrincipal%EA%B3%BC-ArgumentResolver)
 	- [Axios Response header의 값이 없는 경우에 대해](https://bogmong.tistory.com/5)
