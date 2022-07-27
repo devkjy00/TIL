@@ -23,3 +23,4 @@
 - [Spring boot redis 2가지 방법](https://wildeveloperetrain.tistory.com/32)
 - [Spring stomp에 redis 적용](https://thdwngus2.tistory.com/100)
 - [RedisTemplate docs](https://docs.spring.io/spring-data/redis/docs/current/api/org/springframework/data/redis/core/RedisTemplate.html)
+- [SimpMessageHeaderAccessor vs StompHeaderAccessor](https://stackoverflow.com/questions/46138831/what-is-the-major-difference-between-simpmessageheaderaccessor-vs-stompheaderacc)
