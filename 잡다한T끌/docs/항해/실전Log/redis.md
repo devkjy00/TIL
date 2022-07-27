@@ -15,11 +15,11 @@
 
 ## 참고 자료
 - [Spring-Redis Pub/Sub](https://brunch.co.kr/@springboot/374)
-- [redis pub/sub 구현](https://zkdlu.github.io/2020-12-29/redis04-spring-boot%EC%97%90%EC%84%9C-pub,sub-%EB%AA%A8%EB%8D%B8-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/)
+- [redis pub/sub 구현](https://daddyprogrammer.org/post/4731/spring-websocket-chatting-server-redis-pub-sub/)
 - [ubuntu에 redis 설치](https://hayden-archive.tistory.com/429) 
 - [linux에 redis설정](https://server-talk.tistory.com/472) 
 - [mac redis 사용](https://wlswoo.tistory.com/44) 
 - [redis 설정](https://moss.tistory.com/entry/Redis-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%A0%95-%EC%A0%95%EB%A6%AC) 
 - [Spring boot redis 2가지 방법](https://wildeveloperetrain.tistory.com/32)
-- [***Spring stomp에 redis 적용***](https://thdwngus2.tistory.com/100)
+- [Spring stomp에 redis 적용](https://thdwngus2.tistory.com/100)
 - [RedisTemplate docs](https://docs.spring.io/spring-data/redis/docs/current/api/org/springframework/data/redis/core/RedisTemplate.html)
