@@ -28,3 +28,4 @@
 - [Spring stomp에 redis 적용](https://thdwngus2.tistory.com/100)
 - [RedisTemplate docs](https://docs.spring.io/spring-data/redis/docs/current/api/org/springframework/data/redis/core/RedisTemplate.html)
 - [SimpMessageHeaderAccessor vs StompHeaderAccessor](https://stackoverflow.com/questions/46138831/what-is-the-major-difference-between-simpmessageheaderaccessor-vs-stompheaderacc)
+- [redis @id](https://stackoverflow.com/questions/53286528/autoincrement-with-long-in-redis-using-spring-data-repository)
