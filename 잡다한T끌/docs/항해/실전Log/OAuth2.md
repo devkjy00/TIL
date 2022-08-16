@@ -78,3 +78,5 @@
 - [Spring Security 와 OAuth 2.0 와 JWT 의 콜라보](https://velog.io/@tmdgh0221/Spring-Security-%EC%99%80-OAuth-2.0-%EC%99%80-JWT-%EC%9D%98-%EC%BD%9C%EB%9D%BC%EB%B3%B4)
 - [OAuth2.0 구현을 위해 알아야 할 것들](https://developer88.tistory.com/372)
 - [OAuth2 인증 방식](https://cheese10yun.github.io/oauth2/)
+- [카카오 로그인 1](https://sudo-minz.tistory.com/77)
+- [카카오 로그인 2](https://sudo-minz.tistory.com/78?category=1012147)
