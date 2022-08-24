@@ -22,3 +22,5 @@
 ## 참고자료
 - [github actions 구성요소, cicd](https://ji5485.github.io/post/2021-06-06/build-ci-cd-pipeline-using-github-actions/)
 - [spring boot&gradle cicd 1~4](https://stalker5217.netlify.app/devops/github-action-aws-ci-cd-1/)
+- [Ubuntu 22.04에 CodeDeploy설치법](https://ssue95.tistory.com/31)
+- [AWS CodeDeploy 그룹 생성, 역할 에러](https://velog.io/@16fekim/AWS-CodeDeploy-%EA%B7%B8%EB%A3%B9-%EC%83%9D%EC%84%B1-%EC%97%AD%ED%95%A0-%EC%97%90%EB%9F%AC)
