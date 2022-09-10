@@ -24,3 +24,12 @@
 - [spring boot&gradle cicd 1~4](https://stalker5217.netlify.app/devops/github-action-aws-ci-cd-1/)
 - [AWS CodeDeploy 그룹 생성, 역할 에러](https://velog.io/@16fekim/AWS-CodeDeploy-%EA%B7%B8%EB%A3%B9-%EC%83%9D%EC%84%B1-%EC%97%AD%ED%95%A0-%EC%97%90%EB%9F%AC)
 - [code deploy 실행오류, log보기 ](https://sarc.io/index.php/aws/1327)
+- [code deploy appspec 오류 해결](https://stackoverflow.com/questions/53103139/the-codedeploy-agent-did-not-find-an-appspec-file-within-the-unpacked-revision-d)
+	- zip 파일을 폴더안에 생성하면 안된다	
+		```zsh
+		폴더안에 압축하면 안된다
+		run: zip -r ./$PROJECT_NAME.zip ./deploy
+
+		run: zip -r ./$PROJECT_NAME.zip .
+		```
+
