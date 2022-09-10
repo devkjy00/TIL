@@ -32,4 +32,4 @@
 
 		run: zip -r ./$PROJECT_NAME.zip .
 		```
-
+- [aws 설정](https://velog.io/@hwany/AWS-EC2-CodeDeploy-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0) 
