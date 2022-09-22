@@ -16,6 +16,7 @@
 	- container : image를 실행시킨 것, 독립성 보장을 위해 네트워크나 저장소가 분리
 
 - registry : image를 저장하는 공간
+	- docker hub : 대부분의 공식 이미지가 관리된다
 - dockerd : docker API requests를 받아서 docker object(image, container등)을 관리
 - client : docker를 사용하기 위한 cli
 
