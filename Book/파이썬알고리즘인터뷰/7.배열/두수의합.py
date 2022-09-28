@@ -28,6 +28,4 @@ def use_in(nums, target):
             # return [nums.index(n), nums[i+1:].index(temp_target)+(i+1)]
             return [i, nums.index(temp_target)]
 
-
 print(use_in([2, 7, 11, 15], 9))
-
