@@ -33,3 +33,4 @@
 		run: zip -r ./$PROJECT_NAME.zip .
 		```
 - [aws 설정](https://velog.io/@hwany/AWS-EC2-CodeDeploy-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0) 
+- [배포시에 .gitignore 된 파일 올리기 ](https://ji5485.github.io/post/2021-06-26/create-env-with-github-actions-secrets/)
