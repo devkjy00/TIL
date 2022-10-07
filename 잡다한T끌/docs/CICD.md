@@ -35,3 +35,4 @@
 - [aws 설정](https://velog.io/@hwany/AWS-EC2-CodeDeploy-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0) 
 - [github 파일 암호화](https://kimmj.github.io/git/git-secret/)
 - [git-secret-reveal on github actions](https://stackoverflow.com/questions/65385671/git-secret-reveal-failed-on-github-actions)
+- [gpg private key 깃헙 시크릿에 저장](https://stackoverflow.com/questions/61096521/how-to-use-gpg-key-in-github-actions)
