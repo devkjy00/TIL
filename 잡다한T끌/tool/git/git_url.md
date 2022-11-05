@@ -2,3 +2,4 @@
 - [로컬에서 원격 브랜치 삭제하기](https://remagine.tistory.com/17)
 - [원격 저장소에 올라간 커밋 강제로 삭제하기](https://oen-blog.tistory.com/107)
 - [git diff](https://kotlinworld.com/278)
+- [필요한 라인만 커밋하기 git add -p](https://blog.outsider.ne.kr/1247)
