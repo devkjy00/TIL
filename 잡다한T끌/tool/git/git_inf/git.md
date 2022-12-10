@@ -34,7 +34,11 @@
 - ***reflog : git으로 한 모든 활동들이 기록된다***
 	- git reset --hard reflog해쉬 : 해당 작업전으로 상태를 되돌린다
 
-- merge : 두 브랜치를 한 커밋에서 병합 -> 브랜치 내역을 남긴다
+- merge : 두 브랜치를 한 커밋에서 병합(3way-merge) -> 브랜치 내역을 남긴다
+	- --no-ff : 공통된 커밋에서 브랜치가 파생된경우에 사용가능(Fastforward)
+		- 브랜치 내역을 남기지 않는다
+	
+	- --squash : 브랜치의 커밋기록을 하나로 묶어서 병합한다
 
 
 - rebase : 한 브랜치를 다른 브랜치안에 병합 -> 브랜치내역이 없어지고 한줄로 정리된다(팀원과 공유된 커밋에는 지양)
@@ -46,6 +50,10 @@
             - rebase --continue 로 다시 돌아올수 있다
         - d, drop : 커밋 삭제
         - s, squash : 이전 커밋에 합치기
+	
+	- --onto (도착 브랜치) (출발 브랜치) (이동할 브랜치) : 다른 브랜치에서 파생된 브랜치만 옮겨붙이기
+		- 도착 브랜치에 이동할 브랜치를 옮겨붙인다(이동할 브랜치는 출발 브랜치에서 파생됨)
+		
 
 - restore 파일명 : 파일을 이전 커밋으로 되돌린다
     - --staged 파일 : 스테이징된 파일을 Working 영역으로 되돌린다
@@ -108,6 +116,7 @@
 	- push로 태그를 올려서 태그를 release 버전으로 만들수 있다
 
 
+- cherry-pick [커밋 해시] : 다른 브랜치의 원하는 커밋만 가져오기
     
 
 
@@ -166,3 +175,10 @@
         git add .
         git commit -m "fixed untracked files"
         ``` 
+
+- Gitflow : [협업을 위한 브랜치 전략](https://nvie.com/posts/a-successful-git-branching-model/)
+	- main : 제품 출시/배포
+	- develop : 다음 출시/배포를 위한 개발 진행
+	- release : 출시/배포 전 테스트 진행(QA)
+	- feature : 기능 개발
+	- hotfix : 긴급한 버그 수정
