@@ -205,5 +205,7 @@
 	- feature : 기능 개발
 	- hotfix : 긴급한 버그 수정
 
-- GitHooks : git 이벤트마다 자동으로 실행할 스크립트를 지정할수 있다
+- Git Hooks : git 이벤트마다 자동으로 실행할 스크립트를 지정할수 있다
 	- .git/hooks 폴더에 .sample 파일의 확장자를 지우면 실행가능한 스크립트가 된다 
+
+- Git Submodules : 프로젝트 폴더 안에 또 다른 프로젝트가 포함 될 때 사용
