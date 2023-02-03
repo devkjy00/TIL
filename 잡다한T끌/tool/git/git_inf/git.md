@@ -204,3 +204,6 @@
 	- release : 출시/배포 전 테스트 진행(QA)
 	- feature : 기능 개발
 	- hotfix : 긴급한 버그 수정
+
+- GitHooks : git 이벤트마다 자동으로 실행할 스크립트를 지정할수 있다
+	- .git/hooks 폴더에 .sample 파일의 확장자를 지우면 실행가능한 스크립트가 된다 
