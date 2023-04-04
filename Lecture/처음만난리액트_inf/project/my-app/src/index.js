@@ -7,28 +7,16 @@ import reportWebVitals from './reportWebVitals';
 import Clock from './chapter_04/Clock';
 import CommentList from './chapter_05/CommentList';
 import NotificationList from './chapter_06/NotificationList';
+import ConfirmButton from './chapter_08/ConfirmButton';
+import LandingPage from './chapter_09/LandingPage'
+import AttendanceBook from './chapter_10/AttendanceBook';
 
-// setInterval(() => {
-//   ReactDOM.render(
-//     <React.StrictMode>
-//       <Clock />
-//     </React.StrictMode>,
-//     document.getElementById('root')
-//   );
-// }, 1000);
-
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <CommentList />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// )
 
 ReactDOM.render(
   <React.StrictMode>
-    <NotificationList />
+    <AttendanceBook/>
   </React.StrictMode>,
+
   document.getElementById('root')
 );
 
