@@ -11,11 +11,12 @@ import ConfirmButton from './chapter_08/ConfirmButton';
 import LandingPage from './chapter_09/LandingPage'
 import AttendanceBook from './chapter_10/AttendanceBook';
 import SignUp from './chapter_11/SignUp';
+import ProfileCard from './chapter_13/ProfileCard';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <SignUp/>    
+    <ProfileCard/>
   </React.StrictMode>,
 
   document.getElementById('root')
