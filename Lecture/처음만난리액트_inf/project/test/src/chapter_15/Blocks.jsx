@@ -47,7 +47,7 @@ function Blocks(props){
                 return (
                     <Block
                         padding={blockItem.padding}
-                        backgroundColo={blockItem.backgroundColor}>
+                        backgroundColor={blockItem.backgroundColor}>
                             {blockItem.label}
                         </Block>
                 );
