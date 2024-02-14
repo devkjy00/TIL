@@ -1,8 +1,5 @@
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-
-
-
 "set shell=/bin/zsh
 set shell=/bin/bash
 
@@ -32,6 +29,9 @@ filetype plugin indent on " python 자동 들여쓰기 on "
 "plugin 'nvie/vim-flake8' " python 문법 검사 plugin " 
 "let g:syntastic_python_checkers=['flake8'] " ↓ 실행시 현재줄 주석 " 
 "let g:syntastic_python_flake8_args='--ignore=' " 무시하고자 하는
+
+
+
 
 call vundle#end()
 " plug-in setting
@@ -82,7 +82,4 @@ set mouse=a " vim에서 마우스 사용
 set autochdir " 실행파일의 경로로 자동 이동 
 colorscheme jellybeans
 
-
-
-" 키 맵핑
 
