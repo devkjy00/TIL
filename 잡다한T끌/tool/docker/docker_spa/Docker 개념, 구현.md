@@ -20,3 +20,9 @@
 - dockerd : docker API requests를 받아서 docker object(image, container등)을 관리
 - client : docker를 사용하기 위한 cli
 
+- ! run 했을때 Exit(0) 오류
+	- [Docker는 Virtual machine이 아니다](https://woochan-autobiography.tistory.com/488) 
+	- -it 를 넣으니까 된다
+	
+
+
