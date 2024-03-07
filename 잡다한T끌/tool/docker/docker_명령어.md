@@ -74,3 +74,4 @@
 	- RUN script : script를 실행
 	- CMD : docker image를 실행할 때 자동으로 실행되는 커맨드
 
+

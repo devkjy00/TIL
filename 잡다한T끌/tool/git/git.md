@@ -1,3 +1,7 @@
+- git 한글 깨짐
+	- git config --global core.quotepath false
+
+
 ### config
 - 속성값 저장
 	- git config --globla <속성값> <저장할 값>
