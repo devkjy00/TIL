@@ -75,3 +75,19 @@
 	- CMD : docker image를 실행할 때 자동으로 실행되는 커맨드
 
 
+## 경험
+
+- dockerfile 작성하는 중에 명령어 테스트를 위한 콤보
+	- `docker run -it ubuntu`
+
+
+```
+// 기본 이미지 에서 시작
+
+docker build -t name .
+docker run -d name
+docker exec -it name /bin/bash
+
+// 명령어 테스트하고 Dockerfile에 추가
+```
+
