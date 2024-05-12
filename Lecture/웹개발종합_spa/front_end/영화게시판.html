@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--    부트스트랩 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+crossorigin="anonymous"></script>
+
+<!--    Jquery 임포트-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        .mytitle{
+            color: white;
+
+
+            width: 100%;
+            height: 250px;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+            ,url("https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg");
+            background-size: cover;
+            background-position: center;
+
+            /* 텍스트를 박스의 정 가운데로 정렬하기 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .mytitle > button{
+            width: 200px;
+            height : 50px;
+
+            background-color: transparent;
+            color:white;
+
+            border-radius: 50px;
+            border: 1px solid white;
+        }
+        .mytitle > button:hover{
+            border: 2px solid white;
+        }
+
+        .mycomment{
+          color: gray;
+        }
+        .wrap{
+          max-width: 1200px;
+          width: 95%;
+          margin: 20px auto 0px auto;
+        }
+
+        .mypost{
+          max-width: 500px;
+          width: 95%;
+
+          margin: 20px auto 0px auto;
+
+          box-shadow: 0px 0px 3px 0px gray;
+          padding: 20px;
+
+            /* 처음에 나오지 않도록 설정 show함수와 같은 방법으로 출력*/
+          display: none;
+        }
+
+        .mybutton{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          margin-top: 10px;
+        }
+
+        .mybutton > button {
+          margin-right: 10px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            listing();
+        });
+
+        function listing() {
+            $("#a").empty()
+            $.ajax({
+                type:"GET",
+                url: "http://spartacodingclub.shop/web/api/movie",
+                data: {},
+                success: function (response){
+                    let rows = response['movies']
+                    for(let i=0; rows.length; i++){
+                        let img = rows[i]["image"]
+                        let star = '⭐'.repeat(rows[i]["star"])
+                        let title = rows[i]["title"]
+                        let comment = rows[i]["comment"]
+                        let desc = rows[i]["desc"]
+
+                        let temp_html = `
+                           <div class="col">
+                          <div class="card">
+                          <img src="${img}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          <h5 class="card-title">${title}</h5>
+                          <p class="card-text">${comment}</p>
+                          <p>${star}</p>
+                          <p class="mycomment">${desc}</p>
+                          </div>
+                          </div>
+                          </div>
+                            `
+
+                        $("#a").append(temp_html)
+                    }
+                }
+            })
+        }
+        function open_box(){
+            $('#post-box').show()
+        }
+        function close_box(){
+            $('#post-box').hide()
+        }
+    </script>
+</head>
+
+<body>
+    <div class="mytitle">
+        <h1>내 생에 최고의 영화들</h1>
+        <button onclick="open_box()">영화 기록하기🔥</button>
+    </div>
+
+    <div class="mypost" id="post-box">
+      <div class="form-floating mb-3">
+        <input type="url" class="form-control" id="floatingInput" placeholder="url">
+        <label for="floatingInput">URL</label>
+      </div>
+
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">별점</label>
+        <select class="form-select" id="inputGroupSelect01">
+          <option selected>-선택-</option>
+          <option value="1">⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+      </div>
+
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                  style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+      </div>
+
+      <div class="mybutton">
+        <button type="button" class="btn btn-dark">기록하기</button>
+        <button type="button" class="btn btn-light" onclick="close_box()">닫기</button>
+      </div>
+
+    </div>
+    <div class="wrap">
+      <div class="row row-cols-1 row-cols-md-4 g-4" id="a">
+        <div class="col">
+                          <div class="card">
+                          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          <h5 class="card-title">제목</h5>
+                          <p class="card-text">코멘트</p>
+                          <p>⭐⭐⭐</p>
+                          <p class="mycomment">세부 내용</p>
+                          </div>
+                          </div>
+                          </div>
+        <div class="col">
+                          <div class="card">
+                          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          <h5 class="card-title">제목</h5>
+                          <p class="card-text">코멘트</p>
+                          <p>⭐⭐⭐</p>
+                          <p class="mycomment">세부 내용</p>
+                          </div>
+                          </div>
+                          </div>
+        <div class="col">
+                          <div class="card">
+                          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          <h5 class="card-title">제목</h5>
+                          <p class="card-text">코멘트</p>
+                          <p>⭐⭐⭐</p>
+                          <p class="mycomment">세부 내용</p>
+                          </div>
+                          </div>
+                          </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">제목</h5>
+              <p class="card-text">코멘트</p>
+              <p>⭐⭐⭐</p>
+              <p class="mycomment">세부 내용</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

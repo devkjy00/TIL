@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function hey(){
+            $.ajax({
+                type: "POST",
+                url: "/test",
+                // 서버에 전달할 데이터
+                data: {title_give: '봄날은간다'},
+                success: function (response) {
+                    console.log(response['msg'])
+                }
+           })
+        }
+    </script>
+</head>
+<body>
+    <h1>웹 페이지</h1>
+    <button onclick="hey()">btn</button>
+</body>
+</html>

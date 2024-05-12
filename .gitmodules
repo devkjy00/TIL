@@ -1,0 +1,3 @@
+[submodule "Book/JavaORMJPA"]
+	path = Book/JavaORMJPA
+	url = https://github.com/JPA-Challenger/JavaORMJPA.git
