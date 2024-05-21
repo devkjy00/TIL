@@ -4,6 +4,8 @@
     - -am 'msg' : '변경'된 파일만 모두 추가/커밋
     - --amend : 커밋된 메시지를 수정할 수 있다
     - -v : 커밋 메시지 작성 파일에서 커밋된 부분들을 확인할 수 있다(commit과 diff확인을 동시에 하는것)
+	- issue 언급하기 : `{상태} #{issue 번호}`
+		- 지원되는 키워드는 "close", "closes", "closed", "fix", "fixes", "fixed", "resolve", "resolves", "resolved" 등
 
 - switch 브랜치명 : 브랜치 교체
 
