@@ -23,4 +23,3 @@
 	sudo service codedeploy-agent status
 	```
 
-
