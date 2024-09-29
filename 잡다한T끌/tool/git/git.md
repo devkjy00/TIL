@@ -12,7 +12,7 @@
 
 ### config
 - 속성값 저장
-	- git config --globla <속성값> <저장할 값>
+	- git config --global <속성값> <저장할 값>
 
 
 - 로그인 정보 저장

@@ -17,7 +17,7 @@
 	- 배포가 오랜 시간 걸린다
 	- 장애 시 전체 서비스 다운
 - negative use case
-	- DevOps 역량 충분, 보안보다는 빠른 기능 개발과 배포가 중요, 많은 서비스를 동시 다발적으로 개발, 
+	- DevOps 역량 충분, 보안보다는 빠른 기능 개발과 배포가 중요, 많은 서비스를 동시 다발적으로 개발
 
 ## SOA(Service Oriented Architecture)
 "서비스" 단위로 개발, 서비스 간 규격화된 인터페이스로 통신
@@ -55,14 +55,14 @@
 - Smart endpoints and dumb pipes : 단순한 방식의 프로토콜 사용
 - Decentralized Data Management / Governance
 	- 데이터 유연성, 탄력성의 확보
-	- 비즈니스 필요성에 따른 최적의 기술스택 사용
+	- 비즈니스 필요성에 따른 최적의 기술스택 사용해야 한다
 		- 닭 잡는데 소 잡는 칼 쓰지 말자
 - Infrastructure Automation : 자! 동! 화!
 
 - Design for Failrue : 시스템 에러를 예상한 설계 필요
 	1. 감지(Circuit Breaker) 
 		- 서킷 브레이커 : 특정 시스템이 정상동작 하지 않을 때 트래픽을 다른 정상 노드로 옮기는 등의 역할(장애 감지, 차단, 복구)
-			- 모놀리식에는 없던 기능(if문으로 처리)
+			- 모놀리식에는 없던 기능(if문으로 처리하던 기능)
 			- 특정 레이어 안에서는 K8S 보다 세밀한 조절 가능
 	2. 복구(K8s) 
 		- K8S : Deployment, Replica set
@@ -75,3 +75,23 @@
 	4. 서비스 간의 영향도(Chaos Test)
 		- Chaos Engineering 
 			- 응답 속도를 늦추는 등... 통신에 부하를 주는 등의 테스트를 통해 각 노드의 영향도를 테스트 할 수 있다
+
+#### 분산 시스템이 어려운 이유
+- **IPC(Inter Process Communication)**
+	- 출처: [https://jwprogramming.tistory.com/54](https://jwprogramming.tistory.com/54) [개발자를 꿈꾸는 프로그래머:티스토리]
+	- MSA 환경에서 서비스 간 통신은 HTTP/gRPC등을 활용
+		- Keepalive? Connection Pool? Connection/Business Logic Timeout의 차이등의 이해 필요
+	- CI/CD 측면에서 Devops, SRE 가 책임질 수 있는 부분들에 한계가 존재
+		- 로깅, 모니터링 등 각 서비스 간 동작 방식을 알아야 트러블 슈팅이 가능하다(서비스간의 결합도가 낮기 때문)
+
+- **Transactions**
+	- 분산환경 트랜잭션에 대한 이해 -> 2PC, 보상 트랜잭션 - Saga
+		- 보상 트랜잭션 : 다른 프로세서간의 트랜잭션 공유할 수 없기 때문에 트랜잭션 실패 시 해당 메시지를 다시 던진다
+	- 분산환경에서는 트랜잭션관련 구현이 어렵다.. 트랜잭션이 없는 게 베스트
+	- Data Query의 어려움
+		- ***API 조합 패턴*** : 여러 프로세스의 API를 조합해서 원하는 결과를 얻는 것
+			- DB가 여러개이기 때문에 연관있는 데이터가 여러 DB에 나뉘어 져있다... 원하는 데이터를 얻기 위해 여러 DB를 뒤져야 함
+
+- **Monitoring**
+	- 하나의 요청에 대한 모니터링(레이턴시등)이 각 서비스에 나뉘어져 있기 때문에 단번에 파악이 어렵다
+	- 어떤 트랜잭션이 어느 구간에서 왜 문제가 발생했는지...
