@@ -46,3 +46,6 @@ CMD ["java", "-jar", "/usr/share/jenkins/jenkins.war"]
 ## 설정
 - git credential 추가
     - Dashboard > Jenkins 관리 > Credentials > System > Global credentials (unrestricted)
+
+### 이슈
+ - home brew로 jenkins-lts 설치시 콘솔 한글깨짐
